@@ -831,7 +831,7 @@
     });
     if (name === 'words') { openList(); }
     if (name === 'progress') { renderProgress(); }
-    if (name === 'grammar') { renderGrammarStage(); renderGrammarList(); }
+    if (name === 'grammar') { renderGrammarStage(); renderGrammarTree(); }
   }
   function bindPages() {
     Array.prototype.forEach.call(document.querySelectorAll('.nav-item'), function (b) {
@@ -841,13 +841,13 @@
       showPage('practice');
       $('btnSettings').click();
     };
-    // 语法页：搜索/级别筛选
-    if ($('grammarSearch')) $('grammarSearch').addEventListener('input', function () { renderGrammarList(); });
-    if ($('grammarLevel')) $('grammarLevel').onchange = function () { renderGrammarStage(); renderGrammarList(); };
+    // 语法页：搜索 + 三阶筛选
+    if ($('grammarSearch')) $('grammarSearch').addEventListener('input', function () { renderGrammarTree(); });
   }
 
   // ---------------------------------------------------------------- 语法（句法心诀）
-  var GR = { books: [], levels: [], items: [], byId: {} };
+  var GR = { books: [], tiers: [], trunks: [], items: [], byId: {} };
+  var grammarTier = null; // 当前选中的修道三阶（null = 全部）
   function loadGrammar() {
     if (GR.items.length) return Promise.resolve(GR);
     var embedded = (window.JP_GRAMMAR) || null;
@@ -859,83 +859,153 @@
         });
     return p.then(function (j) {
       GR.books = j.books || [];
-      GR.levels = (j.levels || []).slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+      GR.tiers = (j.tiers || []).slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+      GR.trunks = j.trunks || [];
       GR.items = j.items || [];
       GR.items.forEach(function (it) { GR.byId[it.id] = it; });
+      // 主干下挂的语法点（trunk.branches[].points 只是 id 列表，补全字段）
+      GR.trunks.forEach(function (T) {
+        var total = 0;
+        (T.branches || []).forEach(function (B) {
+          B._items = (B.points || []).map(function (id) { return GR.byId[id]; }).filter(Boolean);
+          total += B._items.length;
+        });
+        T._count = total;
+      });
       return GR;
     });
   }
 
   function grammarStageState() {
-    // 当前选中的阶梯级别（默认最高已解锁 = 最后一级）
-    var sel = $('grammarLevel') ? $('grammarLevel').value : 'all';
-    return sel === 'all' ? null : sel;
+    return grammarTier; // null = 全部
   }
 
   function renderGrammarStage() {
     var box = $('grammarStage');
     if (!box) return;
-    var sel = grammarStageState();
-    var html = GR.levels.map(function (L) {
-      var n = GR.items.filter(function (it) { return it.level === L.id; }).length;
-      var on = (sel === L.id) ? ' on' : '';
-      return '<button class="stage-chip' + on + '" data-lv="' + L.id + '">' + L.name +
+    var sel = grammarTier;
+    var html = '<button class="stage-chip' + (sel === null ? ' on' : '') + '" data-tier="all">全部心诀' +
+               '<small>' + GR.items.length + ' 诀</small></button>';
+    html += GR.tiers.map(function (T) {
+      var n = GR.items.filter(function (it) { return it.tier === T.id; }).length;
+      var on = (sel === T.id) ? ' on' : '';
+      return '<button class="stage-chip' + on + '" data-tier="' + T.id + '">' + T.name +
              '<small>' + n + ' 诀</small></button>';
     }).join('');
     box.innerHTML = html;
     Array.prototype.forEach.call(box.querySelectorAll('.stage-chip'), function (b) {
       b.onclick = function () {
-        var lv = b.getAttribute('data-lv');
-        if ($('grammarLevel')) $('grammarLevel').value = lv;
+        grammarTier = b.getAttribute('data-tier');
+        if (grammarTier === 'all') grammarTier = null;
         renderGrammarStage();
-        renderGrammarList();
+        renderGrammarTree();
       };
     });
   }
 
-  function renderGrammarList() {
-    var body = $('grammarBody');
-    if (!body) return;
-    var lv = grammarStageState();
+  // 把一条语法点渲染成思维导图叶子（可点开看例句）
+  function leafHtml(it) {
+    var bk = '';
+    for (var k = 0; k < GR.books.length; k++) if (GR.books[k].id === it.book) bk = GR.books[k].name;
+    var tierName = '';
+    for (var t = 0; t < GR.tiers.length; t++) if (GR.tiers[t].id === it.tier) tierName = GR.tiers[t].name;
+    var ex = (it.examples || []).slice(0, 3).map(function (e) {
+      return '<div class="ex-item"><div class="ex-ja">' + escapeHtml(e.ja) + ' <span class="ex-kn">(' + escapeHtml(e.kana || '') + ')</span></div>' +
+             (e.zh ? '<div class="ex-zh">' + escapeHtml(e.zh) + '</div>' : '') + '</div>';
+    }).join('');
+    return '<div class="gm-leaf" data-kana="' + escapeHtml(it.kana || it.reading || it.pattern) + '">' +
+             '<div class="gm-leaf-head"><span class="gm-pat">' + escapeHtml(it.pattern) + '</span>' +
+             '<span class="gm-tier">' + escapeHtml(tierName) + '</span></div>' +
+             '<div class="gm-read">' + escapeHtml(it.reading || '') + '</div>' +
+             '<div class="gm-mean">' + escapeHtml(it.mean) + '</div>' +
+             (bk ? '<div class="gm-book">出典：' + escapeHtml(bk) + '</div>' : '') +
+             (ex ? '<div class="gm-ex">' + ex + '</div>' : '') +
+           '</div>';
+  }
+
+  function renderGrammarTree() {
+    var map = $('grammarMap');
+    if (!map) return;
+    var tier = grammarStageState();
     var q = ($('grammarSearch') ? $('grammarSearch').value : '').trim().toLowerCase();
-    var out = GR.items.filter(function (it) {
-      if (lv && it.level !== lv) return false;
-      if (!q) return true;
-      return (it.pattern + ' ' + it.reading + ' ' + it.mean).toLowerCase().indexOf(q) >= 0;
-    });
-    var cap = 300;
-    var shown = out.slice(0, cap);
-    body.innerHTML = '';
-    if (!shown.length) { body.innerHTML = '<div class="list-empty">此阶梯暂无匹配的心诀</div>'; return; }
     var frag = document.createDocumentFragment();
-    shown.forEach(function (it) {
-      var lvName = '';
-      for (var i = 0; i < GR.levels.length; i++) if (GR.levels[i].id === it.level) lvName = GR.levels[i].name;
-      var bk = '';
-      for (var k = 0; k < GR.books.length; k++) if (GR.books[k].id === it.book) bk = GR.books[k].name;
-      var ex = (it.examples || []).slice(0, 2).map(function (e) {
-        return '<div class="ex-item"><div class="ex-ja">' + escapeHtml(e.ja) + ' <span class="ex-kn">(' + escapeHtml(e.kana || '') + ')</span></div>' +
-               (e.zh ? '<div class="ex-zh">' + escapeHtml(e.zh) + '</div>' : '') + '</div>';
-      }).join('');
-      var el = document.createElement('button');
-      el.className = 'list-item gram-item';
-      el.innerHTML =
-        '<div class="g-head"><span class="g-pat">' + escapeHtml(it.pattern) + '</span>' +
-        '<span class="g-lv">' + escapeHtml(lvName) + '</span></div>' +
-        '<div class="g-read">' + escapeHtml(it.reading || '') + (it.cat ? ' · ' + escapeHtml(it.cat) : '') + '</div>' +
-        '<div class="g-mean">' + escapeHtml(it.mean) + '</div>' +
-        (bk ? '<div class="g-book">出典：' + escapeHtml(bk) + '</div>' : '') +
-        (ex ? '<div class="g-ex">' + ex + '</div>' : '');
-      el.onclick = function () { speak(it.kana || it.reading || it.pattern); };
-      frag.appendChild(el);
+    var shownLeaves = 0;
+    var shownBranches = 0;
+    var shownTrunks = 0;
+    GR.trunks.forEach(function (T) {
+      // 计算该主干下满足筛选的叶子
+      var branches = [];
+      (T.branches || []).forEach(function (B) {
+        var items = (B._items || []).filter(function (it) {
+          if (tier && it.tier !== tier) return false;
+          if (!q) return true;
+          return (it.pattern + ' ' + it.reading + ' ' + it.mean).toLowerCase().indexOf(q) >= 0;
+        });
+        if (items.length) branches.push({ b: B, items: items });
+      });
+      if (!branches.length) return;
+      shownTrunks++;
+      var color = T.color || 'var(--accent)';
+      var trunkEl = document.createElement('div');
+      trunkEl.className = 'gm-trunk';
+      trunkEl.setAttribute('style', '--trunk-color:' + color);
+      var nLeaves = branches.reduce(function (s, x) { return s + x.items.length; }, 0);
+      trunkEl.innerHTML =
+        '<div class="gm-trunk-head" data-open="1">' +
+          '<span class="gm-trunk-icon">' + escapeHtml(T.icon || '◆') + '</span>' +
+          '<span class="gm-trunk-name">' + escapeHtml(T.name) + '</span>' +
+          '<span class="gm-trunk-count">' + nLeaves + ' 诀</span>' +
+          '<span class="gm-trunk-desc">' + escapeHtml(T.desc || '') + '</span>' +
+          '<span class="gm-caret">▾</span>' +
+        '</div>' +
+        '<div class="gm-trunk-body"></div>';
+      var bodyEl = trunkEl.querySelector('.gm-trunk-body');
+      branches.forEach(function (x) {
+        shownBranches++;
+        var brEl = document.createElement('div');
+        brEl.className = 'gm-branch';
+        brEl.innerHTML =
+          '<div class="gm-branch-head" data-open="1">' +
+            '<span class="gm-branch-name">' + escapeHtml(x.b.name) + '</span>' +
+            '<span class="gm-branch-desc">' + escapeHtml(x.b.desc || '') + '</span>' +
+            '<span class="gm-branch-count">' + x.items.length + '</span>' +
+            '<span class="gm-caret">▾</span>' +
+          '</div>' +
+          '<div class="gm-branch-body"></div>';
+        var bBody = brEl.querySelector('.gm-branch-body');
+        x.items.forEach(function (it) {
+          shownLeaves++;
+          var d = document.createElement('div');
+          d.innerHTML = leafHtml(it);
+          bBody.appendChild(d.firstChild);
+        });
+        bodyEl.appendChild(brEl);
+      });
+      frag.appendChild(trunkEl);
     });
-    body.appendChild(frag);
-    if (out.length > cap) {
-      var more = document.createElement('div');
-      more.className = 'list-empty';
-      more.textContent = '共 ' + out.length + ' 诀，只显示前 ' + cap + ' 条，用搜索缩小范围';
-      body.appendChild(more);
+
+    map.innerHTML = '';
+    if (!shownTrunks) {
+      map.innerHTML = '<div class="list-empty">没有匹配的心诀，换个关键词试试</div>';
+      return;
     }
+    map.appendChild(frag);
+
+    // 折叠交互：主干 / 分支 点击展开收起；叶子点击朗读
+    Array.prototype.forEach.call(map.querySelectorAll('.gm-trunk-head, .gm-branch-head'), function (h) {
+      h.onclick = function (e) {
+        if (e.target.closest && e.target.closest('.gm-leaf')) return;
+        var b = h.nextElementSibling;
+        var open = h.getAttribute('data-open') === '1';
+        h.setAttribute('data-open', open ? '0' : '1');
+        if (b) b.style.display = open ? 'none' : '';
+        var caret = h.querySelector('.gm-caret');
+        if (caret) caret.textContent = open ? '▸' : '▾';
+      };
+    });
+    Array.prototype.forEach.call(map.querySelectorAll('.gm-leaf'), function (lf) {
+      lf.onclick = function () { speak(lf.getAttribute('data-kana') || ''); };
+    });
   }
 
   if (document.readyState === 'loading') {

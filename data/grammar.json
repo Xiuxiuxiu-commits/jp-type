@@ -25,44 +25,616 @@
    "press": ""
   }
  ],
- "levels": [
+ "tiers": [
   {
-   "id": "n5",
-   "name": "N5 基础",
-   "order": 1
+   "id": "zhuji",
+   "name": "筑基",
+   "order": 1,
+   "note": "入门根基 · 日常必会"
   },
   {
-   "id": "n4",
-   "name": "N4 初阶",
-   "order": 2
+   "id": "ningqi",
+   "name": "凝气",
+   "order": 2,
+   "note": "进阶运化 · 表达更细"
   },
   {
-   "id": "n3",
-   "name": "N3 进阶",
-   "order": 3
+   "id": "huashen",
+   "name": "化神",
+   "order": 3,
+   "note": "登顶心法 · N1 高阶"
+  }
+ ],
+ "trunks": [
+  {
+   "id": "t_time",
+   "name": "时间的流转",
+   "icon": "⏳",
+   "color": "#7fd1b0",
+   "desc": "时态、体态、完成与情态——时间如何在句中流淌",
+   "branches": [
+    {
+     "id": "b_conj",
+     "name": "接续与时态",
+     "desc": "基本形、过去、否定、尚未",
+     "points": [
+      "n5-masu",
+      "n5-te",
+      "n5-ta",
+      "n5-nai",
+      "n5-nakatta",
+      "n4-tokoroda",
+      "n4-mada"
+     ]
+    },
+    {
+     "id": "b_aspect",
+     "name": "进行与状态",
+     "desc": "正在进行、结果状态、能力",
+     "points": [
+      "n5-teiru",
+      "n5-tearu",
+      "n5-kotoga",
+      "n4-kotogaaru",
+      "n3-koto-ga-dekiru"
+     ]
+    },
+    {
+     "id": "b_perfect",
+     "name": "完成·准备·存续",
+     "desc": "做完、预先准备、保持状态",
+     "points": [
+      "n5-ok",
+      "n5-simau",
+      "n4-teok",
+      "n3-teishimau",
+      "n3-teoku-prep",
+      "n2-teoku-n2",
+      "n2-teoku-n3"
+     ]
+    },
+    {
+     "id": "b_tend",
+     "name": "趋向移动",
+     "desc": "……下去 / ……过来",
+     "points": [
+      "n5-iku-kuru",
+      "n2-teiku",
+      "n2-tekuru"
+     ]
+    },
+    {
+     "id": "b_modal",
+     "name": "情态·义务",
+     "desc": "可以、禁止、必须、不得不",
+     "points": [
+      "n5-moii",
+      "n5-waikenai",
+      "n5-nakerebanaranai",
+      "n4-nchigai",
+      "n1-zaru",
+      "n1-beki",
+      "n1-zuniwa",
+      "n1-inai-de",
+      "n1-miso3"
+     ]
+    }
+   ],
+   "count": 31
   },
   {
-   "id": "n2",
-   "name": "N2 中阶",
-   "order": 4
+   "id": "t_cond",
+   "name": "条件的门径",
+   "icon": "🚪",
+   "color": "#9bd1a0",
+   "desc": "假设、条件、若然——说出“如果”的千百种姿态",
+   "branches": [
+    {
+     "id": "b_basic",
+     "name": "基本条件",
+     "desc": "ば / と / たら / なら",
+     "points": [
+      "n5-ba",
+      "n5-to",
+      "n5-tara",
+      "n5-nara"
+     ]
+    },
+    {
+     "id": "b_suppose",
+     "name": "假定与若然",
+     "desc": "即便、虽说、若如此",
+     "points": [
+      "n3-to-nitemo",
+      "n2-toie",
+      "n1-toite",
+      "n1-toiutemo",
+      "n1-itte",
+      "n1-toiutemo2",
+      "n1-toieba",
+      "n1-toie",
+      "n1-toiereba"
+     ]
+    }
+   ],
+   "count": 13
   },
   {
-   "id": "n1",
-   "name": "N1 高阶",
-   "order": 5
+   "id": "t_cause",
+   "name": "因果的因由",
+   "icon": "🌿",
+   "color": "#88c0d0",
+   "desc": "原因、理由、利弊——前因如何结出后果",
+   "branches": [
+    {
+     "id": "b_obj",
+     "name": "客观原因",
+     "desc": "因为（客观、礼貌）",
+     "points": [
+      "n5-node",
+      "n5-kara",
+      "n4-node-conf",
+      "n3-nakute",
+      "n3-node-soft",
+      "n1-node-ya",
+      "n1-node-ka",
+      "n1-node-ya2",
+      "n1-node-ya3"
+     ]
+    },
+    {
+     "id": "b_subj",
+     "name": "主观理由",
+     "desc": "因为（辩解、强调）",
+     "points": [
+      "n4-kuse",
+      "n3-kuseni",
+      "n3-mono",
+      "n3-monoda",
+      "n2-kuse-n2"
+     ]
+    },
+    {
+     "id": "b_procon",
+     "name": "利弊缘由",
+     "desc": "多亏 / 都怪",
+     "points": [
+      "n3-okagade",
+      "n3-sewa"
+     ]
+    }
+   ],
+   "count": 16
+  },
+  {
+   "id": "t_contrast",
+   "name": "逆流的转折",
+   "icon": "🍂",
+   "color": "#d8c79a",
+   "desc": "然而、虽然、即便——转折处的张力",
+   "branches": [
+    {
+     "id": "b_plain",
+     "name": "单纯逆接",
+     "desc": "但是、却、代替",
+     "points": [
+      "n3-nchigau-yo",
+      "n3-kawari",
+      "n2-node-ni",
+      "n2-nagara",
+      "n2-kawari",
+      "n1-mono-wo"
+     ]
+    },
+    {
+     "id": "b_concede",
+     "name": "让步与极限",
+     "desc": "即使…也、并非不…",
+     "points": [
+      "n5-exclam",
+      "n4-temoii",
+      "n3-node-demo",
+      "n2-teikanai",
+      "n1-miso",
+      "n1-node-niwa",
+      "n1-miso2",
+      "n1-miso4",
+      "n1-miso5"
+     ]
+    }
+   ],
+   "count": 15
+  },
+  {
+   "id": "t_mood",
+   "name": "心念的语气",
+   "icon": "🔮",
+   "color": "#c8a2c8",
+   "desc": "推测、传闻、样态、愿望——心之所向",
+   "branches": [
+    {
+     "id": "b_guess",
+     "name": "推测与传闻",
+     "desc": "好像、也许、听说",
+     "points": [
+      "n5-rashii",
+      "n5-soudesu",
+      "n4-hazu",
+      "n4-kamosirenai",
+      "n4-nchigainai",
+      "n4-souda-hearsay",
+      "n3-ka-douka",
+      "n2-ka-wa",
+      "n2-ppoi2"
+     ]
+    },
+    {
+     "id": "b_appear",
+     "name": "样态与比喻",
+     "desc": "看起来、像…一般",
+     "points": [
+      "n5-mitai",
+      "n2-ppan",
+      "n1-gotoki",
+      "n1-nbakari",
+      "n1-maka4",
+      "n1-ppan3",
+      "n1-ppan4",
+      "n1-ppan5"
+     ]
+    },
+    {
+     "id": "b_wish",
+     "name": "愿望与意向",
+     "desc": "想、打算、请、为了",
+     "points": [
+      "n5-tai",
+      "n5-nomitai",
+      "n5-garu",
+      "n4-tekure",
+      "n4-tsumori",
+      "n4-yotei",
+      "n4-naruhodo",
+      "n3-youni-naru",
+      "n3-tsumori-de",
+      "n3-tekudasai",
+      "n3-naritai",
+      "n1-beku",
+      "n1-yari"
+     ]
+    }
+   ],
+   "count": 30
+  },
+  {
+   "id": "t_give",
+   "name": "施与受",
+   "icon": "🤝",
+   "color": "#e0a96d",
+   "desc": "授受与敬语——谁为谁做",
+   "branches": [
+    {
+     "id": "b_basic",
+     "name": "基础授受",
+     "desc": "给我 / 我给 / 我请",
+     "points": [
+      "n5-kureru"
+     ]
+    },
+    {
+     "id": "b_hon",
+     "name": "敬语授受",
+     "desc": "自谦与尊敬的表达",
+     "points": [
+      "n4-teagemasu",
+      "n3-teage"
+     ]
+    }
+   ],
+   "count": 3
+  },
+  {
+   "id": "t_voice",
+   "name": "受制与驱使",
+   "icon": "⛓️",
+   "color": "#b08dab",
+   "desc": "被动、使役、使役被动",
+   "branches": [
+    {
+     "id": "b_pass",
+     "name": "被动",
+     "desc": "被…",
+     "points": [
+      "n5-passive"
+     ]
+    },
+    {
+     "id": "b_caus",
+     "name": "使役",
+     "desc": "让…做",
+     "points": [
+      "n5-causative"
+     ]
+    },
+    {
+     "id": "b_causpass",
+     "name": "使役被动",
+     "desc": "被迫…",
+     "points": [
+      "n3-causative-passive"
+     ]
+    }
+   ],
+   "count": 3
+  },
+  {
+   "id": "t_purpose",
+   "name": "行事之法",
+   "icon": "🎯",
+   "color": "#a3c9a8",
+   "desc": "目的、手段、依据、关联",
+   "branches": [
+    {
+     "id": "b_purp",
+     "name": "目的",
+     "desc": "为了…",
+     "points": [
+      "n5-youni",
+      "n5-niiku",
+      "n3-tame-ni"
+     ]
+    },
+    {
+     "id": "b_means",
+     "name": "手段与依据",
+     "desc": "用…、基于…",
+     "points": [
+      "n4-teform",
+      "n2-womotte",
+      "n2-ikande",
+      "n1-ikkan",
+      "n1-katagata",
+      "n1-ppan2"
+     ]
+    },
+    {
+     "id": "b_rel",
+     "name": "关联与对象",
+     "desc": "关于、对、伴随",
+     "points": [
+      "n2-toitukara",
+      "n2-tajyou",
+      "n2-node-oni",
+      "n2-awase"
+     ]
+    }
+   ],
+   "count": 13
+  },
+  {
+   "id": "t_nominal",
+   "name": "言辞化境",
+   "icon": "📜",
+   "color": "#c9b458",
+   "desc": "名词化、引用、说明、资格",
+   "branches": [
+    {
+     "id": "b_nom",
+     "name": "名词化",
+     "desc": "こと / の",
+     "points": [
+      "n4-no"
+     ]
+    },
+    {
+     "id": "b_quote",
+     "name": "引用与说明",
+     "desc": "说…、是…的",
+     "points": [
+      "n4-youni-iu",
+      "n4-kke",
+      "n4-ka",
+      "n3-koto-ni-suru",
+      "n3-no-desu",
+      "n2-koto-ni"
+     ]
+    },
+    {
+     "id": "b_status",
+     "name": "资格与状态",
+     "desc": "作为…、保持…",
+     "points": [
+      "n2-maka",
+      "n1-taru"
+     ]
+    }
+   ],
+   "count": 9
+  },
+  {
+   "id": "t_limit",
+   "name": "收束之力",
+   "icon": "🔒",
+   "color": "#d98c7a",
+   "desc": "限定、强调、列举、递进",
+   "branches": [
+    {
+     "id": "b_lim",
+     "name": "限定",
+     "desc": "只、仅、无非",
+     "points": [
+      "n4-dake",
+      "n4-shika",
+      "n3-kiri",
+      "n2-kagiri",
+      "n2-kagiride",
+      "n2-shika-nai",
+      "n2-shika-nai2",
+      "n1-maka9"
+     ]
+    },
+    {
+     "id": "b_emph",
+     "name": "强调",
+     "desc": "正是、连、哪怕",
+     "points": [
+      "n3-kara-ii",
+      "n2-sae",
+      "n2-koso",
+      "n2-mono-ka",
+      "n1-dani",
+      "n1-nominarazu",
+      "n1-sokonomu",
+      "n1-koso",
+      "n1-maka7",
+      "n1-koso2",
+      "n1-koso3"
+     ]
+    },
+    {
+     "id": "b_enum",
+     "name": "列举并列",
+     "desc": "又…又…、…等",
+     "points": [
+      "n5-tari-tari",
+      "n4-bakaride",
+      "n3-nado",
+      "n1-o-hajime",
+      "n1-maka3",
+      "n1-yara",
+      "n1-tari",
+      "n1-maka5",
+      "n1-maka8",
+      "n1-maka10"
+     ]
+    },
+    {
+     "id": "b_progneg",
+     "name": "递进与否定",
+     "desc": "别说…连…、一味",
+     "points": [
+      "n3-bakari-ill",
+      "n2-dokoro"
+     ]
+    }
+   ],
+   "count": 31
+  },
+  {
+   "id": "t_degree",
+   "name": "量之衡",
+   "icon": "⚖️",
+   "color": "#c0a0c0",
+   "desc": "程度、比较、结果、极致",
+   "branches": [
+    {
+     "id": "b_deg",
+     "name": "程度与倾向",
+     "desc": "容易、往往、带有…",
+     "points": [
+      "n4-bakari",
+      "n4-nounikui",
+      "n2-bakari",
+      "n2-gachi"
+     ]
+    },
+    {
+     "id": "b_comp",
+     "name": "比较与建议",
+     "desc": "最好、不如不",
+     "points": [
+      "n5-hougaii",
+      "n3-naihougaii"
+     ]
+    },
+    {
+     "id": "b_res",
+     "name": "结果归结",
+     "desc": "最后、经过…",
+     "points": [
+      "n2-node-res",
+      "n1-node-res2",
+      "n1-node-res3",
+      "n1-node-res4"
+     ]
+    },
+    {
+     "id": "b_extreme",
+     "name": "极致",
+     "desc": "…之极、…之至",
+     "points": [
+      "n1-makade",
+      "n1-maka2",
+      "n1-maka6"
+     ]
+    }
+   ],
+   "count": 13
+  },
+  {
+   "id": "t_timing",
+   "name": "机缘际会",
+   "icon": "🕰️",
+   "color": "#9aa7d8",
+   "desc": "契机、时点、期间、即刻",
+   "branches": [
+    {
+     "id": "b_chance",
+     "name": "契机与节点",
+     "desc": "以…为契机、当…时",
+     "points": [
+      "n2-tohan",
+      "n2-tohan2",
+      "n2-tohan3",
+      "n2-tohan4",
+      "n2-tohan5",
+      "n1-aatte",
+      "n1-atarashite",
+      "n1-tohan6",
+      "n1-tohan7",
+      "n1-tohan8",
+      "n1-tohan9",
+      "n1-tohan10",
+      "n1-tohan11",
+      "n1-tohan12"
+     ]
+    },
+    {
+     "id": "b_time",
+     "name": "期间与时点",
+     "desc": "趁…、在…期间",
+     "points": [
+      "n5-toki",
+      "n2-aida",
+      "n2-ouchi",
+      "n1-sobakara"
+     ]
+    },
+    {
+     "id": "b_instant",
+     "name": "即刻",
+     "desc": "刚…就…",
+     "points": [
+      "n1-hayai",
+      "n1-ka-to"
+     ]
+    }
+   ],
+   "count": 20
   }
  ],
  "items": [
   {
    "id": "n5-masu",
-   "level": "n5",
-   "cat": "敬体·断定",
    "pattern": "〜ます / 〜です",
    "reading": "ます / です",
    "kana": "ます / です",
    "mean": "动词/名词的礼貌体（敬体）",
    "book": "minna",
    "note": "ます接在动词ます形后",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "行きます",
@@ -78,14 +650,15 @@
   },
   {
    "id": "n5-te",
-   "level": "n5",
-   "cat": "接续·并列",
    "pattern": "〜て",
    "reading": "て",
    "kana": "て",
    "mean": "表示并列、先后顺序、手段等",
    "book": "minna",
    "note": "て形连接",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "本を読んで、友だちに会う",
@@ -96,14 +669,15 @@
   },
   {
    "id": "n5-ta",
-   "level": "n5",
-   "cat": "时态",
    "pattern": "〜た / 〜だった",
    "reading": "た / だった",
    "kana": "た / だった",
    "mean": "过去式（动词た形/名词だった）",
    "book": "minna",
    "note": "た形",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "食べた",
@@ -114,13 +688,14 @@
   },
   {
    "id": "n5-nai",
-   "level": "n5",
-   "cat": "否定",
    "pattern": "〜ない / 〜じゃない",
    "reading": "ない / じゃない",
    "kana": "ない / じゃない",
    "mean": "否定（动词ない形/名词じゃない）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "行かない",
@@ -136,13 +711,14 @@
   },
   {
    "id": "n5-tai",
-   "level": "n5",
-   "cat": "愿望",
    "pattern": "〜たい",
    "reading": "たい",
    "kana": "たい",
    "mean": "想做……（第一人称愿望）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "水が飲みたい",
@@ -153,13 +729,14 @@
   },
   {
    "id": "n5-nakatta",
-   "level": "n5",
-   "cat": "过去否定",
    "pattern": "〜なかった / 〜じゃなかった",
    "reading": "なかった / じゃなかった",
    "kana": "なかった / じゃなかった",
    "mean": "过去否定",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "行かなかった",
@@ -170,14 +747,15 @@
   },
   {
    "id": "n5-teiru",
-   "level": "n5",
-   "cat": "体态",
    "pattern": "〜ている",
    "reading": "ている",
    "kana": "ている",
    "mean": "动作正在进行；或结果状态",
    "book": "minna",
    "note": "接在动词て形后",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_aspect",
    "examples": [
     {
      "ja": "本を読んでいる",
@@ -193,13 +771,14 @@
   },
   {
    "id": "n5-tearu",
-   "level": "n5",
-   "cat": "体态",
    "pattern": "〜てある",
    "reading": "てある",
    "kana": "てある",
    "mean": "某物被保持着某种状态（他动词+てある）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_aspect",
    "examples": [
     {
      "ja": "壁に地図が貼ってある",
@@ -210,13 +789,14 @@
   },
   {
    "id": "n5-ok",
-   "level": "n5",
-   "cat": "准备",
    "pattern": "〜ておく",
    "reading": "ておく",
    "kana": "ておく",
    "mean": "预先做好……（准备）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "晩ご飯を作っておく",
@@ -227,13 +807,14 @@
   },
   {
    "id": "n5-simau",
-   "level": "n5",
-   "cat": "完了·遗憾",
    "pattern": "〜てしまう",
    "reading": "てしまう",
    "kana": "てしまう",
    "mean": "完成；或表达遗憾、后悔",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "宿題を忘れてしまった",
@@ -244,13 +825,14 @@
   },
   {
    "id": "n5-iku-kuru",
-   "level": "n5",
-   "cat": "趋向",
    "pattern": "〜ていく / 〜てくる",
    "reading": "ていく / てくる",
    "kana": "ていく / てくる",
    "mean": "……下去/……过来（空间或时间上的趋向）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_tend",
    "examples": [
     {
      "ja": "走っていく",
@@ -266,13 +848,14 @@
   },
   {
    "id": "n5-moii",
-   "level": "n5",
-   "cat": "许可",
    "pattern": "〜てもいい",
    "reading": "てもいい",
    "kana": "てもいい",
    "mean": "可以做……（许可）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "ここで写真を撮ってもいい",
@@ -283,13 +866,14 @@
   },
   {
    "id": "n5-waikenai",
-   "level": "n5",
-   "cat": "禁止",
    "pattern": "〜てはいけない",
    "reading": "てはいけない",
    "kana": "てはいけない",
    "mean": "不可以……（禁止）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "遅れてはいけない",
@@ -300,13 +884,14 @@
   },
   {
    "id": "n5-nakerebanaranai",
-   "level": "n5",
-   "cat": "义务",
    "pattern": "〜なければならない",
    "reading": "なければならない",
    "kana": "なければならない",
    "mean": "必须……",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "約束を守らなければならない",
@@ -317,13 +902,14 @@
   },
   {
    "id": "n5-nomitai",
-   "level": "n5",
-   "cat": "劝诱",
    "pattern": "〜ましょう / 〜ませんか",
    "reading": "ましょう / ませんか",
    "kana": "ましょう / ませんか",
    "mean": "一起……吧（劝诱）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "一緒に行きましょう",
@@ -334,13 +920,14 @@
   },
   {
    "id": "n5-ba",
-   "level": "n5",
-   "cat": "条件",
    "pattern": "〜ば",
    "reading": "ば",
    "kana": "ば",
    "mean": "如果……（ば形条件）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_cond",
+   "branch": "b_basic",
    "examples": [
     {
      "ja": "安ければ買う",
@@ -351,13 +938,14 @@
   },
   {
    "id": "n5-to",
-   "level": "n5",
-   "cat": "条件·恒常",
    "pattern": "〜と",
    "reading": "と",
    "kana": "と",
    "mean": "一……就……；必然结果",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_cond",
+   "branch": "b_basic",
    "examples": [
     {
      "ja": "このボタンを押すと、電源が入る",
@@ -368,13 +956,14 @@
   },
   {
    "id": "n5-tara",
-   "level": "n5",
-   "cat": "条件",
    "pattern": "〜たら",
    "reading": "たら",
    "kana": "たら",
    "mean": "如果……；……之后（たら形）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_cond",
+   "branch": "b_basic",
    "examples": [
     {
      "ja": "暇だったら、遊びに来て",
@@ -385,13 +974,14 @@
   },
   {
    "id": "n5-nara",
-   "level": "n5",
-   "cat": "条件",
    "pattern": "〜なら",
    "reading": "なら",
    "kana": "なら",
    "mean": "如果是……（承接对方话题）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_cond",
+   "branch": "b_basic",
    "examples": [
     {
      "ja": "日本語なら、私が教える",
@@ -402,13 +992,14 @@
   },
   {
    "id": "n5-node",
-   "level": "n5",
-   "cat": "原因",
    "pattern": "〜ので",
    "reading": "ので",
    "kana": "ので",
    "mean": "因为……（客观、礼貌原因）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "風邪を引いたので、休む",
@@ -419,13 +1010,14 @@
   },
   {
    "id": "n5-kara",
-   "level": "n5",
-   "cat": "原因",
    "pattern": "〜から",
    "reading": "から",
    "kana": "から",
    "mean": "因为……（主观原因，常用于句尾）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "忙しいから、行けない",
@@ -436,13 +1028,14 @@
   },
   {
    "id": "n5-toki",
-   "level": "n5",
-   "cat": "时间",
    "pattern": "〜とき",
    "reading": "とき",
    "kana": "とき",
    "mean": "……的时候",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_timing",
+   "branch": "b_time",
    "examples": [
     {
      "ja": "子どものとき、大阪に住んでいた",
@@ -453,13 +1046,14 @@
   },
   {
    "id": "n5-tari-tari",
-   "level": "n5",
-   "cat": "列举",
    "pattern": "〜たり〜たり",
    "reading": "たり〜たり",
    "kana": "たり〜たり",
    "mean": "又……又……；时而……时而……",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "休みの日は、本を読んだり、散歩したりする",
@@ -470,13 +1064,14 @@
   },
   {
    "id": "n5-youni",
-   "level": "n5",
-   "cat": "目的·变化",
    "pattern": "〜ように / 〜ようになる",
    "reading": "ように / ようになる",
    "kana": "ように / ようになる",
    "mean": "为了……；变得会……",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_purpose",
+   "branch": "b_purp",
    "examples": [
     {
      "ja": "日本語が話せるようになった",
@@ -487,13 +1082,14 @@
   },
   {
    "id": "n5-kotoga",
-   "level": "n5",
-   "cat": "能力·习惯",
    "pattern": "〜ことができる",
    "reading": "ことができる",
    "kana": "ことができる",
    "mean": "能够……（能力）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_aspect",
    "examples": [
     {
      "ja": "泳ぐことができる",
@@ -504,13 +1100,14 @@
   },
   {
    "id": "n5-niiku",
-   "level": "n5",
-   "cat": "移动目的",
    "pattern": "〜に行く / 〜に来る",
    "reading": "にいく / にくる",
    "kana": "にいく / にくる",
    "mean": "去/来做……（移动目的，接动词ます形去ます）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_purpose",
+   "branch": "b_purp",
    "examples": [
     {
      "ja": "映画を見に行く",
@@ -521,13 +1118,14 @@
   },
   {
    "id": "n5-garu",
-   "level": "n5",
-   "cat": "第三人称心理",
    "pattern": "〜がる",
    "reading": "がる",
    "kana": "がる",
    "mean": "（第三人称）表现出……的样子",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "子どもは新しいおもちゃをほしがっている",
@@ -538,13 +1136,14 @@
   },
   {
    "id": "n5-mitai",
-   "level": "n5",
-   "cat": "推测·比喻",
    "pattern": "〜みたい",
    "reading": "みたい",
    "kana": "みたい",
    "mean": "好像……；像……一样（推测/比喻）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "あの人は日本人みたい",
@@ -555,14 +1154,15 @@
   },
   {
    "id": "n5-rashii",
-   "level": "n5",
-   "cat": "推测·典型",
    "pattern": "〜らしい",
    "reading": "らしい",
    "kana": "らしい",
    "mean": "好像……；典型的……",
    "book": "minna",
    "note": "接名词/推断",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "今日は春らしい天気だ",
@@ -573,14 +1173,15 @@
   },
   {
    "id": "n5-soudesu",
-   "level": "n5",
-   "cat": "传闻·样态",
    "pattern": "〜そうだ（传闻）/ 〜そう（样态）",
    "reading": "そうだ / そう",
    "kana": "そうだ / そう",
    "mean": "听说……；看起来……",
    "book": "minna",
    "note": "传闻接普通体；样态接ます形去ます",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "雨が降るそうだ",
@@ -596,13 +1197,14 @@
   },
   {
    "id": "n5-hougaii",
-   "level": "n5",
-   "cat": "比较",
    "pattern": "〜ほうがいい",
    "reading": "ほうがいい",
    "kana": "ほうがいい",
    "mean": "最好……（建议）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_degree",
+   "branch": "b_comp",
    "examples": [
     {
      "ja": "早く寝たほうがいい",
@@ -613,13 +1215,14 @@
   },
   {
    "id": "n5-kureru",
-   "level": "n5",
-   "cat": "授受",
    "pattern": "〜てくれる / 〜てもらう / 〜てあげる",
    "reading": "てくれる / てもらう / てあげる",
    "kana": "てくれる / てもらう / てあげる",
    "mean": "别人给我（くれる）/ 我请别人做（もらう）/ 我给别人做（あげる）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_give",
+   "branch": "b_basic",
    "examples": [
     {
      "ja": "友だちが本を貸してくれた",
@@ -630,13 +1233,14 @@
   },
   {
    "id": "n5-passive",
-   "level": "n5",
-   "cat": "被动",
    "pattern": "〜れる / 〜られる（受身）",
    "reading": "れる / られる",
    "kana": "れる / られる",
    "mean": "被……（被动）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_voice",
+   "branch": "b_pass",
    "examples": [
     {
      "ja": "犬に手を噛まれた",
@@ -647,13 +1251,14 @@
   },
   {
    "id": "n5-causative",
-   "level": "n5",
-   "cat": "使役",
    "pattern": "〜せる / 〜させる（使役）",
    "reading": "せる / させる",
    "kana": "せる / させる",
    "mean": "让/使……做（使役）",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_voice",
+   "branch": "b_caus",
    "examples": [
     {
      "ja": "子どもに野菜を食べさせる",
@@ -664,13 +1269,14 @@
   },
   {
    "id": "n5-exclam",
-   "level": "n5",
-   "cat": "感叹·程度",
    "pattern": "〜ても / 疑问词+でも",
    "reading": "ても / でも",
    "kana": "ても / でも",
    "mean": "即使……也；无论……都",
    "book": "minna",
+   "tier": "zhuji",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "何度言っても分からない",
@@ -681,13 +1287,14 @@
   },
   {
    "id": "n4-teform",
-   "level": "n4",
-   "cat": "手段",
    "pattern": "〜てformで",
    "reading": "てformで",
    "kana": "てで",
    "mean": "用……方式（て形+で）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_purpose",
+   "branch": "b_means",
    "examples": [
     {
      "ja": "歩いて行く",
@@ -698,13 +1305,14 @@
   },
   {
    "id": "n4-bakari",
-   "level": "n4",
-   "cat": "限定·倾向",
    "pattern": "〜ばかり",
    "reading": "ばかり",
    "kana": "ばかり",
    "mean": "光是……；刚刚（〜たばかり）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_degree",
+   "branch": "b_deg",
    "examples": [
     {
      "ja": "游戏ばかりしている",
@@ -720,13 +1328,14 @@
   },
   {
    "id": "n4-hazu",
-   "level": "n4",
-   "cat": "预期",
    "pattern": "〜はず",
    "reading": "はず",
    "kana": "はず",
    "mean": "理应……；应该……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "彼は知っているはずだ",
@@ -737,13 +1346,14 @@
   },
   {
    "id": "n4-kamosirenai",
-   "level": "n4",
-   "cat": "推测",
    "pattern": "〜かもしれない",
    "reading": "かもしれない",
    "kana": "かもしれない",
    "mean": "也许……；可能……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "雨が降るかもしれない",
@@ -754,13 +1364,14 @@
   },
   {
    "id": "n4-nchigainai",
-   "level": "n4",
-   "cat": "确信",
    "pattern": "〜に違いない",
    "reading": "にちがいない",
    "kana": "にちがいない",
    "mean": "一定……（很有把握的推断）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "あの人は日本人に違いない",
@@ -771,13 +1382,14 @@
   },
   {
    "id": "n4-youni-iu",
-   "level": "n4",
-   "cat": "引用·命令",
    "pattern": "〜ように言う",
    "reading": "ようにいう",
    "kana": "ようにいう",
    "mean": "叫/让（某人）做……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_nominal",
+   "branch": "b_quote",
    "examples": [
     {
      "ja": "先生に宿題を忘れないように言われた",
@@ -788,13 +1400,14 @@
   },
   {
    "id": "n4-teagemasu",
-   "level": "n4",
-   "cat": "授受",
    "pattern": "〜てさしあげる / 〜てくださる",
    "reading": "てさしあげる / てくださる",
    "kana": "てさしあげる / てくださる",
    "mean": "（自谦）给上位者做 / （尊敬）上位者给我做",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_give",
+   "branch": "b_hon",
    "examples": [
     {
      "ja": "先生が説明してくださった",
@@ -805,13 +1418,14 @@
   },
   {
    "id": "n4-tokoroda",
-   "level": "n4",
-   "cat": "阶段",
    "pattern": "〜ところだ",
    "reading": "ところだ",
    "kana": "ところだ",
    "mean": "正要……/ 正在……/ 刚刚……（接不同体）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "今出かけるところだ",
@@ -822,13 +1436,14 @@
   },
   {
    "id": "n4-kotogaaru",
-   "level": "n4",
-   "cat": "有时",
    "pattern": "〜ことがある",
    "reading": "ことがある",
    "kana": "ことがある",
    "mean": "有时……（习惯）/ 曾经……过（过去）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_aspect",
    "examples": [
     {
      "ja": "たまに遅刻することがある",
@@ -839,13 +1454,14 @@
   },
   {
    "id": "n4-mada",
-   "level": "n4",
-   "cat": "未完",
    "pattern": "まだ〜ない",
    "reading": "まだ〜ない",
    "kana": "まだ〜ない",
    "mean": "还没……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_conj",
    "examples": [
     {
      "ja": "まだ终わっていない",
@@ -856,13 +1472,14 @@
   },
   {
    "id": "n4-dake",
-   "level": "n4",
-   "cat": "限定",
    "pattern": "〜だけ",
    "reading": "だけ",
    "kana": "だけ",
    "mean": "只……；仅……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "水だけ飲む",
@@ -873,13 +1490,14 @@
   },
   {
    "id": "n4-shika",
-   "level": "n4",
-   "cat": "否定限定",
    "pattern": "〜しか〜ない",
    "reading": "しか〜ない",
    "kana": "しか〜ない",
    "mean": "只……（后接否定）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "日本語しか話せない",
@@ -890,13 +1508,14 @@
   },
   {
    "id": "n4-bakaride",
-   "level": "n4",
-   "cat": "限定",
    "pattern": "〜ばかりでなく〜も",
    "reading": "ばかりでなく〜も",
    "kana": "ばかりでなく〜も",
    "mean": "不仅……而且……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "歌ばかりでなく、ダンスも上手だ",
@@ -907,13 +1526,14 @@
   },
   {
    "id": "n4-nounikui",
-   "level": "n4",
-   "cat": "难易",
    "pattern": "〜にくい / 〜やすい",
    "reading": "にくい / やすい",
    "kana": "にくい / やすい",
    "mean": "难……/ 容易……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_degree",
+   "branch": "b_deg",
    "examples": [
     {
      "ja": "このペンは書きやすい",
@@ -924,13 +1544,14 @@
   },
   {
    "id": "n4-souda-hearsay",
-   "level": "n4",
-   "cat": "传闻",
    "pattern": "〜そうだ（传闻）",
    "reading": "そうだ",
    "kana": "そうだ",
    "mean": "听说……（传闻，接普通体）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "明日は雪だそうだ",
@@ -941,13 +1562,14 @@
   },
   {
    "id": "n4-kke",
-   "level": "n4",
-   "cat": "回忆询问",
    "pattern": "〜っけ",
    "reading": "っけ",
    "kana": "っけ",
    "mean": "……来着？（回忆、确认）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_nominal",
+   "branch": "b_quote",
    "examples": [
     {
      "ja": "今日の予定は何だっけ",
@@ -958,13 +1580,14 @@
   },
   {
    "id": "n4-tekure",
-   "level": "n4",
-   "cat": "授受",
    "pattern": "〜てくれないか",
    "reading": "てくれないか",
    "kana": "てくれないか",
    "mean": "能不能给我做……（请求）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "窓を開けてくれないか",
@@ -975,13 +1598,14 @@
   },
   {
    "id": "n4-temoii",
-   "level": "n4",
-   "cat": "让步",
    "pattern": "疑问词+〜ても",
    "reading": "ても",
    "kana": "ても",
    "mean": "无论……都",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "誰が言っても信じない",
@@ -992,13 +1616,14 @@
   },
   {
    "id": "n4-node-conf",
-   "level": "n4",
-   "cat": "原因",
    "pattern": "〜し",
    "reading": "し",
    "kana": "し",
    "mean": "既……又……（并列理由）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "安いし、美味しいし、よく買う",
@@ -1009,13 +1634,14 @@
   },
   {
    "id": "n4-kuse",
-   "level": "n4",
-   "cat": "习惯",
    "pattern": "〜くせに",
    "reading": "くせに",
    "kana": "くせに",
    "mean": "明明……却……（含责难）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_cause",
+   "branch": "b_subj",
    "examples": [
     {
      "ja": "知っているくせに教えてくれない",
@@ -1026,13 +1652,14 @@
   },
   {
    "id": "n4-nchigai",
-   "level": "n4",
-   "cat": "误判",
    "pattern": "〜ちがう",
    "reading": "ちがう",
    "kana": "ちがう",
    "mean": "不对；不同",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "答えが違う",
@@ -1043,13 +1670,14 @@
   },
   {
    "id": "n4-tsumori",
-   "level": "n4",
-   "cat": "意图",
    "pattern": "〜つもり",
    "reading": "つもり",
    "kana": "つもり",
    "mean": "打算……；自以为……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "来年日本へ行くつもりだ",
@@ -1060,13 +1688,14 @@
   },
   {
    "id": "n4-yotei",
-   "level": "n4",
-   "cat": "预定",
    "pattern": "〜予定",
    "reading": "よてい",
    "kana": "よてい",
    "mean": "预定……；计划……",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "明日出張する予定だ",
@@ -1077,13 +1706,14 @@
   },
   {
    "id": "n4-naruhodo",
-   "level": "n4",
-   "cat": "变化",
    "pattern": "〜なる",
    "reading": "なる",
    "kana": "なる",
    "mean": "变成……（形容词く/に）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "夜がふけて、静かになった",
@@ -1094,13 +1724,14 @@
   },
   {
    "id": "n4-teok",
-   "level": "n4",
-   "cat": "存续",
    "pattern": "〜ておく（放置）",
    "reading": "ておく",
    "kana": "ておく",
    "mean": "保持……状态",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "窓を開けておく",
@@ -1111,13 +1742,14 @@
   },
   {
    "id": "n4-ka",
-   "level": "n4",
-   "cat": "疑问",
    "pattern": "〜か",
    "reading": "か",
    "kana": "か",
    "mean": "是否……；……吗",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_nominal",
+   "branch": "b_quote",
    "examples": [
     {
      "ja": "行くかどうか決めていない",
@@ -1128,13 +1760,14 @@
   },
   {
    "id": "n4-no",
-   "level": "n4",
-   "cat": "名词化",
    "pattern": "〜こと / 〜の（名词化）",
    "reading": "こと / の",
    "kana": "こと / の",
    "mean": "把句子名词化（こと偏书面，の偏口语）",
    "book": "shintan",
+   "tier": "zhuji",
+   "trunk": "t_nominal",
+   "branch": "b_nom",
    "examples": [
     {
      "ja": "秘密を守ることは大切だ",
@@ -1145,13 +1778,14 @@
   },
   {
    "id": "n3-teishimau",
-   "level": "n3",
-   "cat": "完了",
    "pattern": "〜てしまう（强调完结）",
    "reading": "てしまう",
    "kana": "てしまう",
    "mean": "彻底完成；无法挽回",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "全部食べてしまった",
@@ -1162,13 +1796,14 @@
   },
   {
    "id": "n3-nakute",
-   "level": "n3",
-   "cat": "原因否定",
    "pattern": "〜なくて",
    "reading": "なくて",
    "kana": "なくて",
    "mean": "不……（中顿、原因）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "お金がなくて、買えなかった",
@@ -1179,13 +1814,14 @@
   },
   {
    "id": "n3-naihougaii",
-   "level": "n3",
-   "cat": "建议",
    "pattern": "〜ないほうがいい",
    "reading": "ないほうがいい",
    "kana": "ないほうがいい",
    "mean": "最好不要……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_degree",
+   "branch": "b_comp",
    "examples": [
     {
      "ja": "無理をしないほうがいい",
@@ -1196,13 +1832,14 @@
   },
   {
    "id": "n3-youni-naru",
-   "level": "n3",
-   "cat": "能力变化",
    "pattern": "〜ようになる / 〜なくなる",
    "reading": "ようになる / なくなる",
    "kana": "ようになる / なくなる",
    "mean": "变得会/变得不会……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "一人で行けるようになった",
@@ -1213,13 +1850,14 @@
   },
   {
    "id": "n3-tsumori-de",
-   "level": "n3",
-   "cat": "意图",
    "pattern": "〜つもりで",
    "reading": "つもりで",
    "kana": "つもりで",
    "mean": "以……的打算",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "忘れたつもりでいた",
@@ -1230,13 +1868,14 @@
   },
   {
    "id": "n3-koto-ni-suru",
-   "level": "n3",
-   "cat": "决定",
    "pattern": "〜ことにする / 〜ことになる",
    "reading": "ことにする / ことになる",
    "kana": "ことにする / ことになる",
    "mean": "（主观）决定…… / （客观）决定……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_nominal",
+   "branch": "b_quote",
    "examples": [
     {
      "ja": "毎日歩くことにした",
@@ -1247,13 +1886,14 @@
   },
   {
    "id": "n3-tame-ni",
-   "level": "n3",
-   "cat": "目的",
    "pattern": "〜ために",
    "reading": "ために",
    "kana": "ために",
    "mean": "为了……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_purp",
    "examples": [
     {
      "ja": "健康のために、ジョギングをする",
@@ -1264,13 +1904,14 @@
   },
   {
    "id": "n3-node-soft",
-   "level": "n3",
-   "cat": "原因",
    "pattern": "〜もので / 〜んで",
    "reading": "もので / んで",
    "kana": "もので / んで",
    "mean": "因为……（口语化原因）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "rainのため、中止なんだ",
@@ -1281,13 +1922,14 @@
   },
   {
    "id": "n3-teage",
-   "level": "n3",
-   "cat": "授受",
    "pattern": "〜させてもらう / 〜させていただく",
    "reading": "させてもらう / させていただく",
    "kana": "させてもらう / させていただく",
    "mean": "承蒙允许我做……（自谦）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_give",
+   "branch": "b_hon",
    "examples": [
     {
      "ja": "休ませていただきます",
@@ -1298,13 +1940,14 @@
   },
   {
    "id": "n3-causative-passive",
-   "level": "n3",
-   "cat": "使役被动",
    "pattern": "〜させられる",
    "reading": "させられる",
    "kana": "させられる",
    "mean": "被迫做……（使役被动）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_voice",
+   "branch": "b_causpass",
    "examples": [
     {
      "ja": "嫌いな野菜を食べさせられた",
@@ -1315,13 +1958,14 @@
   },
   {
    "id": "n3-bakari-ill",
-   "level": "n3",
-   "cat": "负面倾向",
    "pattern": "〜ばかりだ",
    "reading": "ばかりだ",
    "kana": "ばかりだ",
    "mean": "一味……；越来越……（贬义倾向）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_progneg",
    "examples": [
     {
      "ja": "病気は悪化するばかりだ",
@@ -1332,13 +1976,14 @@
   },
   {
    "id": "n3-kiri",
-   "level": "n3",
-   "cat": "限止",
    "pattern": "〜きり",
    "reading": "きり",
    "kana": "きり",
    "mean": "只……（后常接否定，表\"仅此而已\"）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "彼とは一度会ったきりだ",
@@ -1349,13 +1994,14 @@
   },
   {
    "id": "n3-nado",
-   "level": "n3",
-   "cat": "列举",
    "pattern": "〜など",
    "reading": "など",
    "kana": "など",
    "mean": "……之类；等等",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "本やノートなどを買った",
@@ -1366,13 +2012,14 @@
   },
   {
    "id": "n3-kuseni",
-   "level": "n3",
-   "cat": "逆接",
    "pattern": "〜くせに",
    "reading": "くせに",
    "kana": "くせに",
    "mean": "明明……却……（强烈责难）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_subj",
    "examples": [
     {
      "ja": "学生のくせに、勉強しない",
@@ -1383,13 +2030,14 @@
   },
   {
    "id": "n3-to-nitemo",
-   "level": "n3",
-   "cat": "假定",
    "pattern": "〜としたら / 〜とすれば",
    "reading": "としたら / とすれば",
    "kana": "としたら / とすれば",
    "mean": "假如……的话",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "宝くじが当たったとしたら、どうする",
@@ -1400,13 +2048,14 @@
   },
   {
    "id": "n3-teoku-prep",
-   "level": "n3",
-   "cat": "准备",
    "pattern": "〜ておく（预先）",
    "reading": "ておく",
    "kana": "ておく",
    "mean": "事先做好……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "明日の準備をしておく",
@@ -1417,13 +2066,14 @@
   },
   {
    "id": "n3-ka-douka",
-   "level": "n3",
-   "cat": "疑问词",
    "pattern": "〜かどうか",
    "reading": "かどうか",
    "kana": "かどうか",
    "mean": "是否……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "行くかどうか知らない",
@@ -1434,13 +2084,14 @@
   },
   {
    "id": "n3-mono",
-   "level": "n3",
-   "cat": "理由",
    "pattern": "〜もの",
    "reading": "もの",
    "kana": "もの",
    "mean": "因为……嘛（辩解、强调理由）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_subj",
    "examples": [
     {
      "ja": "初めてだもの、分からない",
@@ -1451,13 +2102,14 @@
   },
   {
    "id": "n3-monoda",
-   "level": "n3",
-   "cat": "感慨",
    "pattern": "〜ものだ",
    "reading": "ものだ",
    "kana": "ものだ",
    "mean": "本来就该……；真是……（感慨）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_subj",
    "examples": [
     {
      "ja": "子どもは元気なものだ",
@@ -1468,13 +2120,14 @@
   },
   {
    "id": "n3-nchigau-yo",
-   "level": "n3",
-   "cat": "转折",
    "pattern": "〜が、〜けれども",
    "reading": "が / けれども",
    "kana": "が / けれども",
    "mean": "虽然……但是……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_plain",
    "examples": [
     {
      "ja": "行きたいが、時間がない",
@@ -1485,13 +2138,14 @@
   },
   {
    "id": "n3-node-demo",
-   "level": "n3",
-   "cat": "让步",
    "pattern": "〜ても、〜でも",
    "reading": "ても / でも",
    "kana": "ても / でも",
    "mean": "即使……也",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "雨が降っても行く",
@@ -1502,13 +2156,14 @@
   },
   {
    "id": "n3-koto-ga-dekiru",
-   "level": "n3",
-   "cat": "能力",
    "pattern": "〜ことができる（可能）",
    "reading": "ことができる",
    "kana": "ことができる",
    "mean": "会……；能……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_aspect",
    "examples": [
     {
      "ja": "漢字が読めるようになった",
@@ -1519,13 +2174,14 @@
   },
   {
    "id": "n3-tekudasai",
-   "level": "n3",
-   "cat": "请求",
    "pattern": "〜てください",
    "reading": "てください",
    "kana": "てください",
    "mean": "请做……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "静かにしてください",
@@ -1536,13 +2192,14 @@
   },
   {
    "id": "n3-naritai",
-   "level": "n3",
-   "cat": "变化愿望",
    "pattern": "〜になりたい",
    "reading": "になりたい",
    "kana": "になりたい",
    "mean": "想成为……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "医者になりたい",
@@ -1553,13 +2210,14 @@
   },
   {
    "id": "n3-no-desu",
-   "level": "n3",
-   "cat": "说明",
    "pattern": "〜んです / 〜のです",
    "reading": "んです / のです",
    "kana": "んです / のです",
    "mean": "（强调、解释说明）是……的",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_nominal",
+   "branch": "b_quote",
    "examples": [
     {
      "ja": "遅れたのは、電車が止まったんです",
@@ -1570,13 +2228,14 @@
   },
   {
    "id": "n3-kara-ii",
-   "level": "n3",
-   "cat": "许可",
    "pattern": "〜さえ〜ば",
    "reading": "さえ〜ば",
    "kana": "さえ〜ば",
    "mean": "只要……就……",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "お金さえあれば、買える",
@@ -1587,13 +2246,14 @@
   },
   {
    "id": "n3-okagade",
-   "level": "n3",
-   "cat": "原因（受益）",
    "pattern": "〜おかげで",
    "reading": "おかげで",
    "kana": "おかげで",
    "mean": "多亏……（好的原因）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_procon",
    "examples": [
     {
      "ja": "先生のおかげで、合格した",
@@ -1604,13 +2264,14 @@
   },
   {
    "id": "n3-sewa",
-   "level": "n3",
-   "cat": "原因（受害）",
    "pattern": "〜せいで / 〜せいか",
    "reading": "せいで / せいか",
    "kana": "せいで / せいか",
    "mean": "都怪……（不好的原因）",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_procon",
    "examples": [
     {
      "ja": "疲労のせいで、ミスした",
@@ -1621,13 +2282,14 @@
   },
   {
    "id": "n3-kawari",
-   "level": "n3",
-   "cat": "代替",
    "pattern": "〜かわりに",
    "reading": "かわりに",
    "kana": "かわりに",
    "mean": "代替……；作为交换",
    "book": "soumatome",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_plain",
    "examples": [
     {
      "ja": "私が行くかわりに、君は残って",
@@ -1638,13 +2300,14 @@
   },
   {
    "id": "n2-node-ni",
-   "level": "n2",
-   "cat": "逆接",
    "pattern": "〜ものの",
    "reading": "ものの",
    "kana": "ものの",
    "mean": "虽然……但是……（多用于书面）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_plain",
    "examples": [
     {
      "ja": "努力したものの、結果は出なかった",
@@ -1655,13 +2318,14 @@
   },
   {
    "id": "n2-dokoro",
-   "level": "n2",
-   "cat": "递进否定",
    "pattern": "〜どころか",
    "reading": "どころか",
    "kana": "どころか",
    "mean": "别说……连……都（根本不是/不如）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_progneg",
    "examples": [
     {
      "ja": "日本語どころか、英語も話せない",
@@ -1672,13 +2336,14 @@
   },
   {
    "id": "n2-bakari",
-   "level": "n2",
-   "cat": "倾向",
    "pattern": "〜っぽい",
    "reading": "っぽい",
    "kana": "っぽい",
    "mean": "带有……倾向；像……的",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_degree",
+   "branch": "b_deg",
    "examples": [
     {
      "ja": "忘れっぽい",
@@ -1689,13 +2354,14 @@
   },
   {
    "id": "n2-gachi",
-   "level": "n2",
-   "cat": "负面倾向",
    "pattern": "〜がち",
    "reading": "がち",
    "kana": "がち",
    "mean": "容易……；往往……（偏负面）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_degree",
+   "branch": "b_deg",
    "examples": [
     {
      "ja": "冬は病気しがちだ",
@@ -1706,13 +2372,14 @@
   },
   {
    "id": "n2-nagara",
-   "level": "n2",
-   "cat": "逆接",
    "pattern": "〜ながら（逆接）",
    "reading": "ながら",
    "kana": "ながら",
    "mean": "虽然……却……（ながら表逆接）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_plain",
    "examples": [
     {
      "ja": "知っていながら、教えなかった",
@@ -1723,13 +2390,14 @@
   },
   {
    "id": "n2-teikanai",
-   "level": "n2",
-   "cat": "让步",
    "pattern": "〜てもかまわない",
    "reading": "てもかまわない",
    "kana": "てもかまわない",
    "mean": "即使……也无妨",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "静かなら、ここで食べてもかまわない",
@@ -1740,13 +2408,14 @@
   },
   {
    "id": "n2-kagiri",
-   "level": "n2",
-   "cat": "限定条件",
    "pattern": "〜かぎり",
    "reading": "かぎり",
    "kana": "かぎり",
    "mean": "只要……就；在……范围内",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "気力があるかぎり、続ける",
@@ -1757,13 +2426,14 @@
   },
   {
    "id": "n2-kagiride",
-   "level": "n2",
-   "cat": "否定限定",
    "pattern": "〜にかぎって",
    "reading": "にかぎって",
    "kana": "にかぎって",
    "mean": "偏偏……；唯独……（不会/会）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "彼にかぎって、遅刻しない",
@@ -1774,13 +2444,14 @@
   },
   {
    "id": "n2-tohan",
-   "level": "n2",
-   "cat": "契机",
    "pattern": "〜をきっかけに",
    "reading": "をきっかけに",
    "kana": "をきっかけに",
    "mean": "以……为契机",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "留学をきっかけに、日本語を学んだ",
@@ -1791,13 +2462,14 @@
   },
   {
    "id": "n2-tohan2",
-   "level": "n2",
-   "cat": "契机",
    "pattern": "〜を皮切りに",
    "reading": "をかわきりに",
    "kana": "をかわきりに",
    "mean": "以……为开端",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "東京公演を皮切りに、全国ツアーを行う",
@@ -1808,13 +2480,14 @@
   },
   {
    "id": "n2-aida",
-   "level": "n2",
-   "cat": "期间",
    "pattern": "〜ている間に",
    "reading": "ているあいだに",
    "kana": "ているあいだに",
    "mean": "在……期间（趁……时）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_time",
    "examples": [
     {
      "ja": "留守の間に、泥棒が入った",
@@ -1825,13 +2498,14 @@
   },
   {
    "id": "n2-ouchi",
-   "level": "n2",
-   "cat": "期间",
    "pattern": "〜うちに",
    "reading": "うちに",
    "kana": "うちに",
    "mean": "趁……；在……之内",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_time",
    "examples": [
     {
      "ja": "若いうちに、多く経験したい",
@@ -1842,13 +2516,14 @@
   },
   {
    "id": "n2-sae",
-   "level": "n2",
-   "cat": "强调",
    "pattern": "〜さえ〜ば",
    "reading": "さえ〜ば",
    "kana": "さえ〜ば",
    "mean": "只要……就（强调最低条件）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "言葉さえ分かれば、暮らせる",
@@ -1859,13 +2534,14 @@
   },
   {
    "id": "n2-shika-nai",
-   "level": "n2",
-   "cat": "最低限",
    "pattern": "〜にすぎない",
    "reading": "にすぎない",
    "kana": "にすぎない",
    "mean": "只不过是……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "噂にすぎない",
@@ -1876,13 +2552,14 @@
   },
   {
    "id": "n2-ka-wa",
-   "level": "n2",
-   "cat": "部分否定",
    "pattern": "〜かどうか",
    "reading": "かどうか",
    "kana": "かどうか",
    "mean": "是否……（用于不确定）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "成功するかどうか、分からない",
@@ -1893,13 +2570,14 @@
   },
   {
    "id": "n2-toie",
-   "level": "n2",
-   "cat": "逆接让步",
    "pattern": "〜といえども",
    "reading": "といえども",
    "kana": "といえども",
    "mean": "即使……也（书面、正式）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "子どもといえども、責任がある",
@@ -1910,13 +2588,14 @@
   },
   {
    "id": "n2-womotte",
-   "level": "n2",
-   "cat": "手段·依据",
    "pattern": "〜をもって",
    "reading": "をもって",
    "kana": "をもって",
    "mean": "以……；凭借……（正式）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_means",
    "examples": [
     {
      "ja": "自信をもって、発表した",
@@ -1927,13 +2606,14 @@
   },
   {
    "id": "n2-ikande",
-   "level": "n2",
-   "cat": "依据",
    "pattern": "〜に基づいて",
    "reading": "にもとづいて",
    "kana": "にもとづいて",
    "mean": "基于……；根据……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_means",
    "examples": [
     {
      "ja": "事実に基づいて、話す",
@@ -1944,13 +2624,14 @@
   },
   {
    "id": "n2-toitukara",
-   "level": "n2",
-   "cat": "关联",
    "pattern": "〜に関して / 〜について",
    "reading": "について / に関して",
    "kana": "について / に関して",
    "mean": "关于……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_rel",
    "examples": [
     {
      "ja": "環境問題について、議論した",
@@ -1961,13 +2642,14 @@
   },
   {
    "id": "n2-tajyou",
-   "level": "n2",
-   "cat": "对立",
    "pattern": "〜に対して",
    "reading": "に対して",
    "kana": "に対して",
    "mean": "对……（对象）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_rel",
    "examples": [
     {
      "ja": "先生に対して、失礼な態度をとる",
@@ -1978,13 +2660,14 @@
   },
   {
    "id": "n2-node-oni",
-   "level": "n2",
-   "cat": "伴随",
    "pattern": "〜に伴って",
    "reading": "にともなって",
    "kana": "にともなって",
    "mean": "伴随……；随着……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_rel",
    "examples": [
     {
      "ja": "高齢化に伴って、問題が増えた",
@@ -1995,13 +2678,14 @@
   },
   {
    "id": "n2-awase",
-   "level": "n2",
-   "cat": "并列",
    "pattern": "〜に加えて",
    "reading": "にくわえて",
    "kana": "にくわえて",
    "mean": "加上……；而且……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_purpose",
+   "branch": "b_rel",
    "examples": [
     {
      "ja": "雪に加えて、風も強い",
@@ -2012,13 +2696,14 @@
   },
   {
    "id": "n2-kawari",
-   "level": "n2",
-   "cat": "代替·转折",
    "pattern": "〜かわりに（转折）",
    "reading": "かわりに",
    "kana": "かわりに",
    "mean": "虽然……但是（作为补偿/反面）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_contrast",
+   "branch": "b_plain",
    "examples": [
     {
      "ja": "安いかわりに、品質はいまいち",
@@ -2029,13 +2714,14 @@
   },
   {
    "id": "n2-ppoi2",
-   "level": "n2",
-   "cat": "样态",
    "pattern": "〜らしく",
    "reading": "らしく",
    "kana": "らしく",
    "mean": "像……的样子；典型的",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_guess",
    "examples": [
     {
      "ja": "春らしい陽気",
@@ -2046,13 +2732,14 @@
   },
   {
    "id": "n2-ppan",
-   "level": "n2",
-   "cat": "方式",
    "pattern": "〜ように（示例）",
    "reading": "ように",
    "kana": "ように",
    "mean": "像……那样",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "先生が言ったように、勉強する",
@@ -2063,13 +2750,14 @@
   },
   {
    "id": "n2-tohan3",
-   "level": "n2",
-   "cat": "契机",
    "pattern": "〜を契機に",
    "reading": "をけいきに",
    "kana": "をけいきに",
    "mean": "以……为契机",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "結婚を契機に、会社を辞めた",
@@ -2080,13 +2768,14 @@
   },
   {
    "id": "n2-teoku-n2",
-   "level": "n2",
-   "cat": "准备",
    "pattern": "〜ておく（持续准备）",
    "reading": "ておく",
    "kana": "ておく",
    "mean": "预先做好并保持",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "資料をコピーしておく",
@@ -2097,13 +2786,14 @@
   },
   {
    "id": "n2-maka",
-   "level": "n2",
-   "cat": "比喻",
    "pattern": "〜まま",
    "reading": "まま",
    "kana": "まま",
    "mean": "保持……状态",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_nominal",
+   "branch": "b_status",
    "examples": [
     {
      "ja": "靴のまま、上がって",
@@ -2114,13 +2804,14 @@
   },
   {
    "id": "n2-tohan4",
-   "level": "n2",
-   "cat": "契机",
    "pattern": "〜を機に",
    "reading": "をきに",
    "kana": "をきに",
    "mean": "借……之机",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "引越しを機に、断捨離した",
@@ -2131,13 +2822,14 @@
   },
   {
    "id": "n2-koso",
-   "level": "n2",
-   "cat": "强调",
    "pattern": "〜こそ",
    "reading": "こそ",
    "kana": "こそ",
    "mean": "正是……；才",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "これこそ、求めていた答えだ",
@@ -2148,13 +2840,14 @@
   },
   {
    "id": "n2-shika-nai2",
-   "level": "n2",
-   "cat": "仅此",
    "pattern": "〜しかない",
    "reading": "しかない",
    "kana": "しかない",
    "mean": "只能……；只有……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "待つしかない",
@@ -2165,13 +2858,14 @@
   },
   {
    "id": "n2-koto-ni",
-   "level": "n2",
-   "cat": "决定",
    "pattern": "〜ことになっている",
    "reading": "ことになっている",
    "kana": "ことになっている",
    "mean": "规定……；按惯例……",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_nominal",
+   "branch": "b_quote",
    "examples": [
     {
      "ja": "ここでは、禁煙することになっている",
@@ -2182,13 +2876,14 @@
   },
   {
    "id": "n2-mono-ka",
-   "level": "n2",
-   "cat": "强烈否定",
    "pattern": "〜ものか",
    "reading": "ものか",
    "kana": "ものか",
    "mean": "怎么会……！（强烈否定）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "あんな店、二度と行くものか",
@@ -2199,13 +2894,14 @@
   },
   {
    "id": "n2-teiku",
-   "level": "n2",
-   "cat": "趋向",
    "pattern": "〜ていく（変化・継続）",
    "reading": "ていく",
    "kana": "ていく",
    "mean": "……下去（变化/继续）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_tend",
    "examples": [
     {
      "ja": "習慣がなくなっていく",
@@ -2216,13 +2912,14 @@
   },
   {
    "id": "n2-tekuru",
-   "level": "n2",
-   "cat": "趋向",
    "pattern": "〜てくる（変化・開始）",
    "reading": "てくる",
    "kana": "てくる",
    "mean": "……起来（变化/开始）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_tend",
    "examples": [
     {
      "ja": "日本語が面白くなってきた",
@@ -2233,13 +2930,14 @@
   },
   {
    "id": "n2-node-res",
-   "level": "n2",
-   "cat": "结果",
    "pattern": "〜あげく",
    "reading": "あげく",
    "kana": "あげく",
    "mean": "最后……（多指负面结果）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_degree",
+   "branch": "b_res",
    "examples": [
     {
      "ja": "悩んだあげく、辞めた",
@@ -2250,13 +2948,14 @@
   },
   {
    "id": "n2-tohan5",
-   "level": "n2",
-   "cat": "契机",
    "pattern": "〜を境に",
    "reading": "をさかいに",
    "kana": "をさかいに",
    "mean": "以……为界",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "2020年を境に、方針を変えた",
@@ -2267,13 +2966,14 @@
   },
   {
    "id": "n2-kuse-n2",
-   "level": "n2",
-   "cat": "逆接",
    "pattern": "〜くせして",
    "reading": "くせして",
    "kana": "くせして",
    "mean": "明明……却……（口语责难）",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_cause",
+   "branch": "b_subj",
    "examples": [
     {
      "ja": "知ってるくせして、知らないふり",
@@ -2284,13 +2984,14 @@
   },
   {
    "id": "n2-teoku-n3",
-   "level": "n2",
-   "cat": "准备",
    "pattern": "〜ておく（放任）",
    "reading": "ておく",
    "kana": "ておく",
    "mean": "放置不管",
    "book": "lanbao",
+   "tier": "ningqi",
+   "trunk": "t_time",
+   "branch": "b_perfect",
    "examples": [
     {
      "ja": "そのままにしておく",
@@ -2301,13 +3002,14 @@
   },
   {
    "id": "n1-zaru",
-   "level": "n1",
-   "cat": "义务·必然",
    "pattern": "〜ざるを得ない",
    "reading": "ざるをえない",
    "kana": "ざるをえない",
    "mean": "不得不……；被迫……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "止むを得ず、延期した",
@@ -2318,13 +3020,14 @@
   },
   {
    "id": "n1-beki",
-   "level": "n1",
-   "cat": "义务·劝告",
    "pattern": "〜べき / 〜べきではない",
    "reading": "べき",
    "kana": "べき",
    "mean": "应该……；不应……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "約束は守るべきだ",
@@ -2335,13 +3038,14 @@
   },
   {
    "id": "n1-beku",
-   "level": "n1",
-   "cat": "目的",
    "pattern": "〜べく",
    "reading": "べく",
    "kana": "べく",
    "mean": "为了……（书面目的）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "勝つべく、練習した",
@@ -2352,13 +3056,14 @@
   },
   {
    "id": "n1-mono-wo",
-   "level": "n1",
-   "cat": "逆接",
    "pattern": "〜ものを",
    "reading": "ものを",
    "kana": "ものを",
    "mean": "明明……却（含遗憾、责备）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_contrast",
+   "branch": "b_plain",
    "examples": [
     {
      "ja": "言えばよいものを、黙っていた",
@@ -2369,13 +3074,14 @@
   },
   {
    "id": "n1-taru",
-   "level": "n1",
-   "cat": "资格·状态",
    "pattern": "〜たる",
    "reading": "たる",
    "kana": "たる",
    "mean": "作为……的；具有……资格的",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_nominal",
+   "branch": "b_status",
    "examples": [
     {
      "ja": "教育者たる者、公平でなければならない",
@@ -2386,13 +3092,14 @@
   },
   {
    "id": "n1-gotoki",
-   "level": "n1",
-   "cat": "比喻·例示",
    "pattern": "〜ごとき / 〜ごとく",
    "reading": "ごとき / ごとく",
    "kana": "ごとき / ごとく",
    "mean": "像……一样；如同……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "夢のごとく、消えた",
@@ -2403,13 +3110,14 @@
   },
   {
    "id": "n1-zuniwa",
-   "level": "n1",
-   "cat": "必然",
    "pattern": "〜ずにはすまない",
    "reading": "ずにはすまない",
    "kana": "ずにはすまない",
    "mean": "不……不行（社会/情理上必须）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "謝らずにはすまない",
@@ -2420,13 +3128,14 @@
   },
   {
    "id": "n1-inai-de",
-   "level": "n1",
-   "cat": "必然",
    "pattern": "〜ないではいられない",
    "reading": "ないではいられない",
    "kana": "ないではいられない",
    "mean": "忍不住……；不能不……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "笑わないではいられなかった",
@@ -2437,13 +3146,14 @@
   },
   {
    "id": "n1-nbakari",
-   "level": "n1",
-   "cat": "样态·限度",
    "pattern": "〜んばかり",
    "reading": "んばかり",
    "kana": "んばかり",
    "mean": "简直要……；眼看就要……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "飛び上がらんばかりに、喜んだ",
@@ -2454,13 +3164,14 @@
   },
   {
    "id": "n1-sobakara",
-   "level": "n1",
-   "cat": "即刻",
    "pattern": "〜そばから",
    "reading": "そばから",
    "kana": "そばから",
    "mean": "刚……就……（常含徒劳）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_time",
    "examples": [
     {
      "ja": "教えるそばから、忘れる",
@@ -2471,13 +3182,14 @@
   },
   {
    "id": "n1-dani",
-   "level": "n1",
-   "cat": "否定强调",
    "pattern": "〜だに",
    "reading": "だに",
    "kana": "だに",
    "mean": "连……都（与否定呼应，表\"甚至\"）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "夢にだに見ない",
@@ -2488,13 +3200,14 @@
   },
   {
    "id": "n1-nominarazu",
-   "level": "n1",
-   "cat": "递进",
    "pattern": "〜のみならず",
    "reading": "のみならず",
    "kana": "のみならず",
    "mean": "不仅……而且……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "日本のみならず、海外でも人気",
@@ -2505,13 +3218,14 @@
   },
   {
    "id": "n1-ikkan",
-   "level": "n1",
-   "cat": "依据",
    "pattern": "〜いかん",
    "reading": "いかん",
    "kana": "いかん",
    "mean": "根据……；取决于……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_purpose",
+   "branch": "b_means",
    "examples": [
     {
      "ja": "結果いかんでは、方針を見直す",
@@ -2522,13 +3236,14 @@
   },
   {
    "id": "n1-o-hajime",
-   "level": "n1",
-   "cat": "列举",
    "pattern": "〜をはじめ（として）",
    "reading": "をはじめ",
    "kana": "をはじめ",
    "mean": "以……为首；……以及……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "東京をはじめ、大都市で開催",
@@ -2539,13 +3254,14 @@
   },
   {
    "id": "n1-aatte",
-   "level": "n1",
-   "cat": "原因·契机",
    "pattern": "〜とあって",
    "reading": "とあって",
    "kana": "とあって",
    "mean": "因为……（特殊的理由）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "休日とあって、混雑している",
@@ -2556,13 +3272,14 @@
   },
   {
    "id": "n1-atarashite",
-   "level": "n1",
-   "cat": "场合",
    "pattern": "〜にあたって / 〜にあたり",
    "reading": "にあたって",
    "kana": "にあたって",
    "mean": "在……之际；当……时",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "卒業にあたって、感謝を述べる",
@@ -2573,13 +3290,14 @@
   },
   {
    "id": "n1-katagata",
-   "level": "n1",
-   "cat": "兼顾",
    "pattern": "〜かたがた",
    "reading": "かたがた",
    "kana": "かたがた",
    "mean": "顺便……；借……之便",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_purpose",
+   "branch": "b_means",
    "examples": [
     {
      "ja": "散歩かたがた、買い物をする",
@@ -2590,13 +3308,14 @@
   },
   {
    "id": "n1-hayai",
-   "level": "n1",
-   "cat": "即刻",
    "pattern": "〜が早いか",
    "reading": "がはやいか",
    "kana": "がはやいか",
    "mean": "刚……就（几乎同时）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_instant",
    "examples": [
     {
      "ja": "ベルが鳴るが早いか、飛び出した",
@@ -2607,13 +3326,14 @@
   },
   {
    "id": "n1-sokonomu",
-   "level": "n1",
-   "cat": "否定强调",
    "pattern": "〜そもそも",
    "reading": "そもそも",
    "kana": "そもそも",
    "mean": "根本……；究竟（用于质疑前提）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "そもそも、その話は本当か",
@@ -2624,13 +3344,14 @@
   },
   {
    "id": "n1-toite",
-   "level": "n1",
-   "cat": "逆接让步",
    "pattern": "〜とはいえ",
    "reading": "とはいえ",
    "kana": "とはいえ",
    "mean": "虽说……但是……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "春とはいえ、寒い",
@@ -2641,13 +3362,14 @@
   },
   {
    "id": "n1-toiutemo",
-   "level": "n1",
-   "cat": "逆接让步",
    "pattern": "〜といっても",
    "reading": "といっても",
    "kana": "といっても",
    "mean": "虽说……（也……）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "独身といっても、子どもがいる",
@@ -2658,13 +3380,14 @@
   },
   {
    "id": "n1-itte",
-   "level": "n1",
-   "cat": "让步",
    "pattern": "〜としたところで",
    "reading": "としたところで",
    "kana": "としたところで",
    "mean": "即使……也（用于人）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "彼としたところで、同じだ",
@@ -2675,13 +3398,14 @@
   },
   {
    "id": "n1-toiutemo2",
-   "level": "n1",
-   "cat": "条件",
    "pattern": "〜とあれば",
    "reading": "とあれば",
    "kana": "とあれば",
    "mean": "如果……（出于必要/理由）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "必要とあれば、行く",
@@ -2692,13 +3416,14 @@
   },
   {
    "id": "n1-ka-to",
-   "level": "n1",
-   "cat": "选择",
    "pattern": "〜か〜ないかのうちに",
    "reading": "か〜ないかのうちに",
    "kana": "か〜ないかのうちに",
    "mean": "刚一……就……（几乎同时）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_instant",
    "examples": [
     {
      "ja": "着くか着かないかのうちに、雨が降った",
@@ -2709,13 +3434,14 @@
   },
   {
    "id": "n1-toieba",
-   "level": "n1",
-   "cat": "话题",
    "pattern": "〜といえば",
    "reading": "といえば",
    "kana": "といえば",
    "mean": "说起……；提到……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "京都といえば、紅葉が有名",
@@ -2726,13 +3452,14 @@
   },
   {
    "id": "n1-makade",
-   "level": "n1",
-   "cat": "极限",
    "pattern": "〜極み",
    "reading": "きわみ",
    "kana": "きわみ",
    "mean": "……之极；极其……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_degree",
+   "branch": "b_extreme",
    "examples": [
     {
      "ja": "感激の極み",
@@ -2743,13 +3470,14 @@
   },
   {
    "id": "n1-maka2",
-   "level": "n1",
-   "cat": "比喻极端",
    "pattern": "〜の至り",
    "reading": "のいたり",
    "kana": "のいたり",
    "mean": "……之至（形容达到极点）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_degree",
+   "branch": "b_extreme",
    "examples": [
     {
      "ja": "光栄の至り",
@@ -2760,13 +3488,14 @@
   },
   {
    "id": "n1-maka3",
-   "level": "n1",
-   "cat": "复数强调",
    "pattern": "〜も〜ば〜も",
    "reading": "も〜ば〜も",
    "kana": "も〜ば〜も",
    "mean": "既……又……；……也好……也好",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "酒も飲めば、歌も歌う",
@@ -2777,13 +3506,14 @@
   },
   {
    "id": "n1-yara",
-   "level": "n1",
-   "cat": "列举不定",
    "pattern": "〜やら〜やら",
    "reading": "やら〜やら",
    "kana": "やら〜やら",
    "mean": "又……又……（列举，含混乱）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "忙しいやら、疲れるやらで、大変",
@@ -2794,13 +3524,14 @@
   },
   {
    "id": "n1-tari",
-   "level": "n1",
-   "cat": "例示",
    "pattern": "〜なり〜なり",
    "reading": "なり〜なり",
    "kana": "なり〜なり",
    "mean": "……也好……也好（任选其一）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "電話なり、メールなりで連絡",
@@ -2811,13 +3542,14 @@
   },
   {
    "id": "n1-toie",
-   "level": "n1",
-   "cat": "逆接",
    "pattern": "〜とて",
    "reading": "とて",
    "kana": "とて",
    "mean": "即使……也（书面）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "子どもとて、分かる",
@@ -2828,13 +3560,14 @@
   },
   {
    "id": "n1-node-ya",
-   "level": "n1",
-   "cat": "原因·理由",
    "pattern": "〜ゆえ（に）",
    "reading": "ゆえ",
    "kana": "ゆえ",
    "mean": "因为……（书面、正式）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "不公平ゆえ、反対する",
@@ -2845,13 +3578,14 @@
   },
   {
    "id": "n1-miso",
-   "level": "n1",
-   "cat": "让步极限",
    "pattern": "〜ないまでも",
    "reading": "ないまでも",
    "kana": "ないまでも",
    "mean": "即使不……也（至少……）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "賛成しないまでも、反対もしない",
@@ -2862,13 +3596,14 @@
   },
   {
    "id": "n1-node-niwa",
-   "level": "n1",
-   "cat": "逆接",
    "pattern": "〜なくはない",
    "reading": "なくはない",
    "kana": "なくはない",
    "mean": "并非不……；也不是不……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "行きたくなくはない",
@@ -2879,13 +3614,14 @@
   },
   {
    "id": "n1-miso2",
-   "level": "n1",
-   "cat": "限止",
    "pattern": "〜ないものでもない",
    "reading": "ないものでもない",
    "kana": "ないものでもない",
    "mean": "也不是不……（有某种可能）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "条件によっては、考えないものでもない",
@@ -2896,13 +3632,14 @@
   },
   {
    "id": "n1-yari",
-   "level": "n1",
-   "cat": "目的",
    "pattern": "〜んがため（に）",
    "reading": "んがため",
    "kana": "んがため",
    "mean": "为了……（强烈书面目的）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_wish",
    "examples": [
     {
      "ja": "成功せんがため、努力した",
@@ -2913,13 +3650,14 @@
   },
   {
    "id": "n1-toiereba",
-   "level": "n1",
-   "cat": "话题",
    "pattern": "〜といえども",
    "reading": "といえども",
    "kana": "といえども",
    "mean": "即使称其为……也",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cond",
+   "branch": "b_suppose",
    "examples": [
     {
      "ja": "プロといえども、ミスはある",
@@ -2930,13 +3668,14 @@
   },
   {
    "id": "n1-koso",
-   "level": "n1",
-   "cat": "强调",
    "pattern": "〜からこそ",
    "reading": "からこそ",
    "kana": "からこそ",
    "mean": "正因为……才……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "君がいるからこそ、頑張れる",
@@ -2947,13 +3686,14 @@
   },
   {
    "id": "n1-ppan2",
-   "level": "n1",
-   "cat": "方式",
    "pattern": "〜ずに（は）",
    "reading": "ずに",
    "kana": "ずに",
    "mean": "不……而……（书面否定伴随）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_purpose",
+   "branch": "b_means",
    "examples": [
     {
      "ja": "準備せずに、出かけた",
@@ -2964,13 +3704,14 @@
   },
   {
    "id": "n1-maka4",
-   "level": "n1",
-   "cat": "比喻",
    "pattern": "〜かのよう",
    "reading": "かのよう",
    "kana": "かのよう",
    "mean": "好像……似的",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "何も知らないかのよう",
@@ -2981,13 +3722,14 @@
   },
   {
    "id": "n1-tohan6",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜をもって（结束）",
    "reading": "をもって",
    "kana": "をもって",
    "mean": "以……（结束、起始，正式）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "本日をもって、終了する",
@@ -2998,13 +3740,14 @@
   },
   {
    "id": "n1-node-ka",
-   "level": "n1",
-   "cat": "原因疑问",
    "pattern": "〜こととて",
    "reading": "こととて",
    "kana": "こととて",
    "mean": "因为……（书面理由）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "慣れぬこととて、失敗した",
@@ -3015,13 +3758,14 @@
   },
   {
    "id": "n1-miso3",
-   "level": "n1",
-   "cat": "限止",
    "pattern": "〜ないではおかない",
    "reading": "ないではおかない",
    "kana": "ないではおかない",
    "mean": "必然会使……（不由得）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_time",
+   "branch": "b_modal",
    "examples": [
     {
      "ja": "笑わせないではおかない",
@@ -3032,13 +3776,14 @@
   },
   {
    "id": "n1-tohan7",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜を限りに",
    "reading": "をかぎりに",
    "kana": "をかぎりに",
    "mean": "以……为限；到……为止",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "今大会を限りに、引退する",
@@ -3049,13 +3794,14 @@
   },
   {
    "id": "n1-maka5",
-   "level": "n1",
-   "cat": "并列",
    "pattern": "〜といい〜といい",
    "reading": "といい〜といい",
    "kana": "といい〜といい",
    "mean": "……也好……也好（都）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "料理といい、接客といい、最高",
@@ -3066,13 +3812,14 @@
   },
   {
    "id": "n1-node-res2",
-   "level": "n1",
-   "cat": "结果",
    "pattern": "〜あげく（の果て）",
    "reading": "あげく",
    "kana": "あげく",
    "mean": "最后……（负面结果，同N2强化）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_degree",
+   "branch": "b_res",
    "examples": [
     {
      "ja": "長期間の治療のあげく、回復",
@@ -3083,13 +3830,14 @@
   },
   {
    "id": "n1-ppan3",
-   "level": "n1",
-   "cat": "比喻",
    "pattern": "〜かのごとく",
    "reading": "かのごとく",
    "kana": "かのごとく",
    "mean": "如同……一般",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "自分かのごとく、助けた",
@@ -3100,13 +3848,14 @@
   },
   {
    "id": "n1-tohan8",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜を皮切りとして",
    "reading": "をかわきりとして",
    "kana": "をかわきりとして",
    "mean": "以……为开端（正式）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "東京を皮切りとして、公演",
@@ -3117,13 +3866,14 @@
   },
   {
    "id": "n1-maka6",
-   "level": "n1",
-   "cat": "比喻极端",
    "pattern": "〜の極み",
    "reading": "のきわみ",
    "kana": "のきわみ",
    "mean": "……的极点（同極み）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_degree",
+   "branch": "b_extreme",
    "examples": [
     {
      "ja": "名誉の極み",
@@ -3134,13 +3884,14 @@
   },
   {
    "id": "n1-node-ya2",
-   "level": "n1",
-   "cat": "原因",
    "pattern": "〜ゆえの",
    "reading": "ゆえの",
    "kana": "ゆえの",
    "mean": "……之故的（连体修饰）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "貧しさゆえの悲劇",
@@ -3151,13 +3902,14 @@
   },
   {
    "id": "n1-miso4",
-   "level": "n1",
-   "cat": "限止",
    "pattern": "〜ないことはない",
    "reading": "ないことはない",
    "kana": "ないことはない",
    "mean": "也不是不……（有某种可能）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "行けないことはない",
@@ -3168,13 +3920,14 @@
   },
   {
    "id": "n1-tohan9",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜を機にして",
    "reading": "をきにして",
    "kana": "をきにして",
    "mean": "以……为契机（同を機に）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "独立を機にして、新生活",
@@ -3185,13 +3938,14 @@
   },
   {
    "id": "n1-maka7",
-   "level": "n1",
-   "cat": "强调",
    "pattern": "〜もさることながら",
    "reading": "もさることながら",
    "kana": "もさることながら",
    "mean": "……固然……更……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "味もさることながら、見た目も",
@@ -3202,13 +3956,14 @@
   },
   {
    "id": "n1-node-res3",
-   "level": "n1",
-   "cat": "结果",
    "pattern": "〜末（に）",
    "reading": "すえ",
    "kana": "すえ",
    "mean": "经过……最后",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_degree",
+   "branch": "b_res",
    "examples": [
     {
      "ja": "検討した末、採用した",
@@ -3219,13 +3974,14 @@
   },
   {
    "id": "n1-ppan4",
-   "level": "n1",
-   "cat": "比喻",
    "pattern": "〜かのような",
    "reading": "かのような",
    "kana": "かのような",
    "mean": "像……一样的（连体）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "夢かのような体験",
@@ -3236,13 +3992,14 @@
   },
   {
    "id": "n1-tohan10",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜を契機として",
    "reading": "をけいきとして",
    "kana": "をけいきとして",
    "mean": "以……为契机（正式）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "改革を契機として、成長",
@@ -3253,13 +4010,14 @@
   },
   {
    "id": "n1-maka8",
-   "level": "n1",
-   "cat": "列举",
    "pattern": "〜といい〜といい",
    "reading": "といい〜といい",
    "kana": "といい〜といい",
    "mean": "……也好……也好（强调全部）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "色といい、形といい、完璧",
@@ -3270,13 +4028,14 @@
   },
   {
    "id": "n1-koso2",
-   "level": "n1",
-   "cat": "强调",
    "pattern": "〜からこそ〜のだ",
    "reading": "からこそ〜のだ",
    "kana": "からこそ〜のだ",
    "mean": "正因为……才……（强调原因）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "好きだからこそ、厳しく言う",
@@ -3287,13 +4046,14 @@
   },
   {
    "id": "n1-miso5",
-   "level": "n1",
-   "cat": "限止",
    "pattern": "〜ないまでも",
    "reading": "ないまでも",
    "kana": "ないまでも",
    "mean": "即使不……也（至少）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_contrast",
+   "branch": "b_concede",
    "examples": [
     {
      "ja": "全額でなくとも、一部払う",
@@ -3304,13 +4064,14 @@
   },
   {
    "id": "n1-node-ya3",
-   "level": "n1",
-   "cat": "原因",
    "pattern": "〜がゆえに",
    "reading": "がゆえに",
    "kana": "がゆえに",
    "mean": "因为……（が接在体言/形容动词）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_cause",
+   "branch": "b_obj",
    "examples": [
     {
      "ja": "古いがゆえに、価値がある",
@@ -3321,13 +4082,14 @@
   },
   {
    "id": "n1-tohan11",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜を境として",
    "reading": "をさかいとして",
    "kana": "をさかいとして",
    "mean": "以……为界（正式）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "事件を境として、方針転換",
@@ -3338,13 +4100,14 @@
   },
   {
    "id": "n1-maka9",
-   "level": "n1",
-   "cat": "强调",
    "pattern": "〜はおろか",
    "reading": "はおろか",
    "kana": "はおろか",
    "mean": "别说……连……都（同どころか正式）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_lim",
    "examples": [
     {
      "ja": "漢字はおろか、ひらがなも",
@@ -3355,13 +4118,14 @@
   },
   {
    "id": "n1-node-res4",
-   "level": "n1",
-   "cat": "结果",
    "pattern": "〜あげくの果て",
    "reading": "あげくのはて",
    "kana": "あげくのはて",
    "mean": "最后……（更强调负面）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_degree",
+   "branch": "b_res",
    "examples": [
     {
      "ja": "迷ったあげくの果て、決断",
@@ -3372,13 +4136,14 @@
   },
   {
    "id": "n1-ppan5",
-   "level": "n1",
-   "cat": "比喻",
    "pattern": "〜が如く",
    "reading": "がごとく",
    "kana": "がごとく",
    "mean": "如……般（书面比喻）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_mood",
+   "branch": "b_appear",
    "examples": [
     {
      "ja": "風が如く、駆け抜けた",
@@ -3389,13 +4154,14 @@
   },
   {
    "id": "n1-tohan12",
-   "level": "n1",
-   "cat": "契机",
    "pattern": "〜をもちまして",
    "reading": "をもちまして",
    "kana": "をもちまして",
    "mean": "以……（郑重起始/结束）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_timing",
+   "branch": "b_chance",
    "examples": [
     {
      "ja": "これをもちまして、閉会",
@@ -3406,13 +4172,14 @@
   },
   {
    "id": "n1-maka10",
-   "level": "n1",
-   "cat": "并列",
    "pattern": "〜にしろ〜にしろ",
    "reading": "にしろ〜にしろ",
    "kana": "にしろ〜にしろ",
    "mean": "无论……还是……",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_enum",
    "examples": [
     {
      "ja": "雨にしろ、雪にしろ、行く",
@@ -3423,13 +4190,14 @@
   },
   {
    "id": "n1-koso3",
-   "level": "n1",
-   "cat": "强调",
    "pattern": "〜こそ〜れ",
    "reading": "こそ〜れ",
    "kana": "こそ〜れ",
    "mean": "正是……才（强调，后接ば/ても等）",
    "book": "lanbao",
+   "tier": "huashen",
+   "trunk": "t_limit",
+   "branch": "b_emph",
    "examples": [
     {
      "ja": "これこそが、本物",
