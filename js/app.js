@@ -859,15 +859,13 @@
     buildTabs();
     renderLoading();
     loadRealm(S.level)
-      .then(function () { buildTabs(); startRound(); })
+      .then(function () { buildTabs(); startRound(); prefetchRest(); })
       .catch(function (e) {
         $('wordLine').textContent = '数据加载失败';
         $('readingLine').textContent = String(e.message || e);
       });
     loadGrammar().catch(function (e) { /* 语法页打开时再提示 */ });
     loadScenes().catch(function (e) { /* 场景页打开时再提示 */ });
-    // 预取全部五卷，供词表境界切换即时展示
-    ['n5', 'n4', 'n3', 'n2', 'n1'].forEach(function (lv) { loadLevel(lv).catch(function () {}); });
     $('versionNote').textContent = 'N1修道之路 · 词库 kotoba-local (CC BY-NC 4.0) · 离线可用';
     bind();
     bindIntro();
@@ -875,6 +873,18 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js').catch(function () {});
     }
+  }
+
+  // 首屏就绪后再悄悄预取其余词卷（不阻塞开始修行）
+  function prefetchRest() {
+    var need = REALM_VOLS.all.filter(function (lv) { return !cache[lv]; });
+    var i = 0;
+    function step() {
+      if (i >= need.length) return;
+      var lv = need[i++];
+      loadLevel(lv).then(step).catch(function () { step(); });
+    }
+    setTimeout(step, 1200);
   }
 
   // ---------------------------------------------------------------- 开场动画
