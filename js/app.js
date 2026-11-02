@@ -694,11 +694,39 @@
   }
 
   // ---------------------------------------------------------------- 词表（页面版）
+  var WORD_REALM = { all: ['n5', 'n4', 'n3', 'n2', 'n1'], zhuji: ['n5', 'n4'], ningqi: ['n3', 'n2'], huashen: ['n1'] };
+  var wordRealm = 'all';
   function openList() {
     $('listFocus').value = (S.filter === 'star' ? '3' : S.filter === 'star2' ? '2' : '0');
     $('listSearch').value = '';
-    renderList();
+    if ($('wordRealmBar')) {
+      Array.prototype.forEach.call($('wordRealmBar').querySelectorAll('.realm-chip'), function (b) {
+        b.onclick = function () {
+          Array.prototype.forEach.call($('wordRealmBar').querySelectorAll('.realm-chip'), function (x) { x.classList.toggle('on', x === b); });
+          wordRealm = b.getAttribute('data-realm');
+          ensureRealmLoaded().then(renderList);
+        };
+      });
+    }
+    ensureRealmLoaded().then(renderList).catch(function () {
+      var body = $('listBody');
+      if (body) body.innerHTML = '<div class="list-empty">词库加载失败</div>';
+    });
     setTimeout(function () { if ($('listBody')) $('listBody').scrollTop = 0; }, 0);
+  }
+
+  // 确保当前境界所需词卷都已就绪
+  function ensureRealmLoaded() {
+    var levels = WORD_REALM[wordRealm] || WORD_REALM.all;
+    return Promise.all(levels.map(function (lv) { return loadLevel(lv); }));
+  }
+
+  // 词卷 → 境界名
+  function wordRealmOf(lv) {
+    if (lv === 'n1') return '化神';
+    if (lv === 'n2' || lv === 'n3') return '凝气';
+    if (lv === 'n4' || lv === 'n5') return '筑基';
+    return '';
   }
 
   // ---------------------------------------------------------------- 进度页
@@ -729,7 +757,9 @@
   }
 
   function renderList() {
-    var list = cache[S.level] || [];
+    var levels = WORD_REALM[wordRealm] || WORD_REALM.all;
+    var list = [];
+    levels.forEach(function (lv) { (cache[lv] || []).forEach(function (w) { list.push(w); }); });
     var q = ($('listSearch').value || '').trim().toLowerCase();
     var fv = +($('listFocus').value || 0);
     var body = $('listBody');
@@ -751,8 +781,10 @@
       b.className = 'list-item';
       var star = w.focus === 3 ? '<span class="lstar">★</span>'
                : w.focus === 2 ? '<span class="lstar" style="opacity:.6">☆</span>' : '';
+      var rn = wordRealmOf(w.lv);
       b.innerHTML = '<span class="lw">' + escapeHtml(w.word) + '</span>' +
                     '<span class="lr">' + escapeHtml(w.reading) + '</span>' + star +
+                    '<span class="lrealm">' + escapeHtml(rn) + '</span>' +
                     '<div class="lm">' + escapeHtml(w.meaning) + '</div>';
       b.onclick = function () {
         S.mode = 'study';
@@ -788,6 +820,9 @@
         $('readingLine').textContent = String(e.message || e);
       });
     loadGrammar().catch(function (e) { /* 语法页打开时再提示 */ });
+    loadScenes().catch(function (e) { /* 场景页打开时再提示 */ });
+    // 预取全部五卷，供词表境界切换即时展示
+    ['n5', 'n4', 'n3', 'n2', 'n1'].forEach(function (lv) { loadLevel(lv).catch(function () {}); });
     $('versionNote').textContent = 'N1修道之路 · 词库 kotoba-local (CC BY-NC 4.0) · 离线可用';
     bind();
     bindIntro();
@@ -812,7 +847,11 @@
     });
     // 自动进入（如用户已看过动画）
     try {
-      if (localStorage.getItem('n1way:seenIntro')) close();
+      if (localStorage.getItem('n1way:seenIntro') || /[?&]noIntro=1/.test(location.search)) {
+        intro.classList.add('leave');
+        intro.hidden = true;
+        intro.style.display = 'none';
+      }
     } catch (e) {}
     enter.addEventListener('click', function () {
       try { localStorage.setItem('n1way:seenIntro', '1'); } catch (e) {}
@@ -831,7 +870,7 @@
     });
     if (name === 'words') { openList(); }
     if (name === 'progress') { renderProgress(); }
-    if (name === 'grammar') { renderGrammarStage(); renderGrammarTree(); }
+    if (name === 'grammar') { renderGrammarChannel(); }
   }
   function bindPages() {
     Array.prototype.forEach.call(document.querySelectorAll('.nav-item'), function (b) {
@@ -841,12 +880,51 @@
       showPage('practice');
       $('btnSettings').click();
     };
-    // 语法页：搜索 + 三阶筛选
+    // 语法页：渠道切换 + 各渠道交互
+    if ($('gramChannels')) {
+      Array.prototype.forEach.call($('gramChannels').querySelectorAll('.gch'), function (c) {
+        c.onclick = function () {
+          Array.prototype.forEach.call($('gramChannels').querySelectorAll('.gch'), function (x) { x.classList.toggle('on', x === c); });
+          renderGrammarChannel();
+        };
+      });
+    }
     if ($('grammarSearch')) $('grammarSearch').addEventListener('input', function () { renderGrammarTree(); });
+
+    // 深链：#语法页?ch=realm 之类，便于分享与验证
+    try {
+      var m = /[?&]page=([a-z]+)/.exec(location.search + location.hash);
+      var chm = /[?&]ch=(use|realm|scene)/.exec(location.search + location.hash);
+      var rm = /[?&]realm=(all|zhuji|ningqi|huashen)/.exec(location.search + location.hash);
+      var trm = /[?&]trunk=([a-z_]+)/.exec(location.search + location.hash);
+      var brm = /[?&]branch=([a-z_]+)/.exec(location.search + location.hash);
+      var tirm = /[?&]tier=(all|zhuji|ningqi|huashen)/.exec(location.search + location.hash);
+      var fmm = /[?&]fam=([a-z_]+)/.exec(location.search + location.hash);
+      if (rm && $('wordRealmBar')) {
+        var wb = $('wordRealmBar').querySelector('.realm-chip[data-realm="' + rm[1] + '"]');
+        if (wb) { Array.prototype.forEach.call($('wordRealmBar').querySelectorAll('.realm-chip'), function (x) { x.classList.toggle('on', x === wb); }); wordRealm = rm[1]; }
+      }
+      if (m && PAGES.indexOf(m[1]) >= 0) {
+        showPage(m[1]);
+        if (m[1] === 'grammar' && chm && $('gramChannels')) {
+          var btn = $('gramChannels').querySelector('.gch[data-ch="' + chm[1] + '"]');
+          if (btn) { btn.click(); }
+          // 下钻深链：tier / trunk / branch / fam
+          var patched = false;
+          if (tirm && tirm[1] !== 'all') { realmTier = tirm[1]; grammarTier = tirm[1]; patched = true; }
+          if (trm) { usePath.trunk = trm[1]; realmPath.trunk = trm[1]; patched = true; }
+          if (brm) { usePath.branch = brm[1]; realmPath.branch = brm[1]; patched = true; }
+          if (fmm) { sceneFamily = fmm[1]; patched = true; }
+          if (patched) renderGrammarChannel();
+        }
+        if (m[1] === 'words' && rm) { ensureRealmLoaded().then(renderList); }
+      }
+    } catch (e) {}
   }
 
   // ---------------------------------------------------------------- 语法（句法心诀）
   var GR = { books: [], tiers: [], trunks: [], items: [], byId: {} };
+  var GS = { families: [] }; // 场景多义
   var grammarTier = null; // 当前选中的修道三阶（null = 全部）
   function loadGrammar() {
     if (GR.items.length) return Promise.resolve(GR);
@@ -871,13 +949,241 @@
           total += B._items.length;
         });
         T._count = total;
+        T._items = (T.branches || []).reduce(function (a, B) { return a.concat(B._items || []); }, []);
       });
       return GR;
     });
   }
+  function loadScenes() {
+    if (GS.families.length) return Promise.resolve(GS);
+    return fetch('data/scenes.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('场景数据加载失败'); return r.json(); })
+      .then(function (j) { GS.families = j.families || []; return GS; });
+  }
 
   function grammarStageState() {
     return grammarTier; // null = 全部
+  }
+
+  // 渠道分发：作用脉络 / 境界修行 / 场景多义
+  function renderGrammarChannel() {
+    var ch = 'use';
+    var onBtn = $('gramChannels') && $('gramChannels').querySelector('.gch.on');
+    if (onBtn) ch = onBtn.getAttribute('data-ch');
+    ['use', 'realm', 'scene'].forEach(function (c) {
+      var v = $('gram' + (c === 'use' ? 'Use' : c === 'realm' ? 'Realm' : 'Scene'));
+      if (v) v.hidden = (c !== ch);
+    });
+    if (ch === 'use') {
+      loadGrammar().then(function () { renderGrammarStage(); renderGrammarTree(); })
+        .catch(function (e) { var m = $('grammarMap'); if (m) m.innerHTML = '<div class="list-empty">语法数据加载失败: ' + escapeHtml(String(e && e.message || e)) + '</div>'; });
+    } else if (ch === 'realm') {
+      loadGrammar().then(renderGrammarRealm)
+        .catch(function (e) { var m = $('grammarRealmMap'); if (m) m.innerHTML = '<div class="list-empty">语法数据加载失败: ' + escapeHtml(String(e && e.message || e)) + '</div>'; });
+    } else if (ch === 'scene') {
+      Promise.all([loadGrammar(), loadScenes()]).then(function () { renderGrammarScene(); })
+        .catch(function (e) { var m = $('grammarSceneMap'); if (m) m.innerHTML = '<div class="list-empty">场景数据加载失败: ' + escapeHtml(String(e && e.message || e)) + '</div>'; });
+    }
+  }
+
+  // ================= 通用：面包屑 / 卡片网格 / 叶子网格 =================
+  function crumbBar(parts) {
+    var html = '<div class="gm-crumb">';
+    parts.forEach(function (p, i) {
+      if (i) html += '<span class="gm-crumb-sep">›</span>';
+      html += '<span class="gm-crumb-item' + (p.on ? ' on' : '') + '"' +
+              (p.go ? ' data-go="' + i + '"' : '') + '>' + escapeHtml(p.label) + '</span>';
+    });
+    return html + '</div>';
+  }
+  function bindCrumbs(map, parts) {
+    Array.prototype.forEach.call(map.querySelectorAll('.gm-crumb-item[data-go]'), function (el) {
+      el.onclick = function () {
+        var p = parts[+el.getAttribute('data-go')];
+        if (p && p.go) p.go();
+      };
+    });
+  }
+  function tilesHtml(list) {
+    return '<div class="gm-tile-grid">' + list.map(function (t) {
+      return '<div class="gm-tile" style="--tile-color:' + (t.color || 'var(--accent)') + '">' +
+               '<span class="gm-tile-arrow">›</span>' +
+               '<span class="gm-tile-icon">' + escapeHtml(t.icon || '◆') + '</span>' +
+               '<span class="gm-tile-title">' + escapeHtml(t.title) + '</span>' +
+               (t.desc ? '<span class="gm-tile-desc">' + escapeHtml(t.desc) + '</span>' : '') +
+               '<span class="gm-tile-count">' + escapeHtml(t.count || '') + '</span>' +
+             '</div>';
+    }).join('') + '</div>';
+  }
+  function bindTiles(map, list) {
+    Array.prototype.forEach.call(map.querySelectorAll('.gm-tile'), function (el, i) {
+      if (list[i] && list[i].go) el.onclick = list[i].go;
+    });
+  }
+  function leavesHtml(items) {
+    return '<div class="gm-leaf-grid">' + items.map(leafHtml).join('') + '</div>';
+  }
+  function bindLeaves(root) {
+    Array.prototype.forEach.call(root.querySelectorAll('.gm-leaf'), function (lf) {
+      lf.onclick = function () { speak(lf.getAttribute('data-kana') || ''); };
+    });
+  }
+  function tierOf(id) {
+    return GR.tiers.filter(function (t) { return t.id === id; })[0] || null;
+  }
+
+  // ================= 渠道二：境界修行（下钻） =================
+  var realmTier = null;                                  // null = 三阶总览
+  var realmPath = { trunk: null, branch: null };
+  function renderGrammarRealm() {
+    var map = $('grammarRealmMap');
+    var bar = $('gramRealmBar');
+    if (!map) return;
+    if (!GR.items.length) {
+      map.innerHTML = '<div class="list-empty">心诀加载中…</div>';
+      loadGrammar().then(renderGrammarRealm);
+      return;
+    }
+    if (bar) {
+      var html = '<button class="realm-chip' + (realmTier === null ? ' on' : '') + '" data-tier="all">三阶总览<small>' + GR.items.length + ' 诀</small></button>';
+      html += GR.tiers.map(function (T) {
+        var n = GR.items.filter(function (it) { return it.tier === T.id; }).length;
+        return '<button class="realm-chip' + (realmTier === T.id ? ' on' : '') + '" data-tier="' + T.id + '">' +
+               T.name + '<small>' + n + ' 诀</small></button>';
+      }).join('');
+      bar.innerHTML = html;
+      Array.prototype.forEach.call(bar.querySelectorAll('.realm-chip'), function (b) {
+        b.onclick = function () {
+          var v = b.getAttribute('data-tier');
+          realmTier = (v === 'all') ? null : v;
+          realmPath = { trunk: null, branch: null };
+          renderGrammarRealm();
+        };
+      });
+    }
+
+    var tierFilter = function (it) { return !realmTier || it.tier === realmTier; };
+    map.innerHTML = '';
+
+    // 一级：三阶总览 → 三个境界卡片
+    if (!realmTier) {
+      var tierTiles = GR.tiers.map(function (T) {
+        var n = GR.items.filter(function (it) { return it.tier === T.id; }).length;
+        return { icon: '✦', title: T.name, desc: T.note || '', color: 'var(--accent)',
+                 count: n + ' 诀 · ' + GR.trunks.filter(function (tk) {
+                   return GR.items.some(function (it) { return it.tier === T.id && it.trunk === tk.id; });
+                 }).length + ' 域',
+                 go: function () { realmTier = T.id; realmPath = { trunk: null, branch: null }; renderGrammarRealm(); } };
+      });
+      map.innerHTML = crumbBar([{ label: '三阶总览', on: true }, { label: '择境而入' }]) + tilesHtml(tierTiles);
+      bindTiles(map, tierTiles);
+      return;
+    }
+
+    var T = tierOf(realmTier);
+
+    // 二级：该境下的主干卡片
+    if (!realmPath.trunk) {
+      var trunkTiles = GR.trunks.map(function (tk) {
+        var items = (tk._items || []).filter(tierFilter);
+        if (!items.length) return null;
+        return { icon: tk.icon, title: tk.name, desc: tk.desc, color: tk.color,
+                 count: items.length + ' 诀',
+                 go: function () { realmPath.trunk = tk.id; renderGrammarRealm(); } };
+      }).filter(Boolean);
+      map.innerHTML = crumbBar([
+        { label: '三阶总览', go: function () { realmTier = null; realmPath = { trunk: null, branch: null }; renderGrammarRealm(); } },
+        { label: T ? T.name : '', on: true },
+        { label: trunkTiles.length + ' 域' }
+      ]) + (trunkTiles.length ? tilesHtml(trunkTiles) : '<div class="list-empty">该境暂无心诀</div>');
+      bindTiles(map, trunkTiles);
+      bindCrumbs(map, [{ go: function () { realmTier = null; realmPath = { trunk: null, branch: null }; renderGrammarRealm(); } }]);
+      return;
+    }
+
+    var tk2 = GR.trunks.filter(function (x) { return x.id === realmPath.trunk; })[0];
+
+    // 三级：该主干下的分支卡片
+    if (!realmPath.branch) {
+      var brTiles = ((tk2 && tk2.branches) || []).map(function (B) {
+        var items = (B._items || []).filter(tierFilter);
+        if (!items.length) return null;
+        return { icon: '▸', title: B.name, desc: B.desc, color: tk2.color,
+                 count: items.length + ' 诀',
+                 go: function () { realmPath.branch = B.id; renderGrammarRealm(); } };
+      }).filter(Boolean);
+      map.innerHTML = crumbBar([
+        { label: '三阶总览', go: function () { realmTier = null; realmPath = { trunk: null, branch: null }; renderGrammarRealm(); } },
+        { label: T ? T.name : '', go: function () { realmPath.trunk = null; renderGrammarRealm(); } },
+        { label: tk2 ? tk2.icon + ' ' + tk2.name : '', on: true },
+        { label: brTiles.length + ' 脉' }
+      ]) + (brTiles.length ? tilesHtml(brTiles) : '<div class="list-empty">该境此域暂无心诀</div>');
+      bindTiles(map, brTiles);
+      return;
+    }
+
+    // 四级：语法点
+    var br2 = ((tk2 && tk2.branches) || []).filter(function (x) { return x.id === realmPath.branch; })[0];
+    var leaves = ((br2 && br2._items) || []).filter(tierFilter);
+    map.innerHTML = crumbBar([
+      { label: T ? T.name : '', go: function () { realmPath = { trunk: null, branch: null }; renderGrammarRealm(); } },
+      { label: tk2 ? tk2.icon + ' ' + tk2.name : '', go: function () { realmPath.branch = null; renderGrammarRealm(); } },
+      { label: br2 ? br2.name : '分支', on: true },
+      { label: leaves.length + ' 诀' }
+    ]) + (leaves.length ? leavesHtml(leaves) : '<div class="list-empty">此脉暂无该阶心诀</div>');
+    bindLeaves(map);
+    bindCrumbs(map, [
+      null,
+      { go: function () { realmPath = { trunk: null, branch: null }; renderGrammarRealm(); } },
+      { go: function () { realmPath.branch = null; renderGrammarRealm(); } }
+    ]);
+  }
+
+  // ================= 渠道三：场景多义（下钻） =================
+  var sceneFamily = null;
+  function renderGrammarScene() {
+    var map = $('grammarSceneMap');
+    if (!map) return;
+    if (!GR.items.length || !GS.families.length) {
+      map.innerHTML = '<div class="list-empty">场景数据加载中…</div>';
+      Promise.all([loadGrammar(), loadScenes()]).then(renderGrammarScene);
+      return;
+    }
+    map.innerHTML = '';
+
+    // 一级：场景家族卡片
+    if (!sceneFamily) {
+      var famTiles = GS.families.map(function (f) {
+        var ids = [];
+        f.scenes.forEach(function (sc) { (sc.ids || []).forEach(function (id) { if (GR.byId[id]) ids.push(id); }); });
+        return { icon: '❖', title: f.name, desc: f.desc, color: 'var(--accent)',
+                 count: f.scenes.length + ' 境 · ' + ids.length + ' 诀',
+                 go: function () { sceneFamily = f.id; renderGrammarScene(); } };
+      });
+      map.innerHTML = crumbBar([{ label: '一形多义', on: true }, { label: famTiles.length + ' 族' }]) + tilesHtml(famTiles);
+      bindTiles(map, famTiles);
+      return;
+    }
+
+    // 二级：该家族下的场景分镜
+    var f = GS.families.filter(function (x) { return x.id === sceneFamily; })[0];
+    if (!f) { sceneFamily = null; renderGrammarScene(); return; }
+    var blocks = f.scenes.map(function (sc) {
+      var ls = (sc.ids || []).map(function (id) { return GR.byId[id]; }).filter(Boolean);
+      var ex = sc.example ? '<div class="gm-scn-ex"><div class="ex-ja">' + escapeHtml(sc.example.ja) +
+        ' <span class="ex-kn">(' + escapeHtml(sc.example.kana || '') + ')</span></div>' +
+        (sc.example.zh ? '<div class="ex-zh">' + escapeHtml(sc.example.zh) + '</div>' : '') + '</div>' : '';
+      return '<div class="gm-scn"><div class="gm-scn-head">▸ ' + escapeHtml(sc.scene) + '</div>' +
+               (sc.note ? '<div class="gm-scn-note">' + escapeHtml(sc.note) + '</div>' : '') +
+               '<div class="gm-scn-body">' + ls.map(leafHtml).join('') + '</div>' + ex + '</div>';
+    }).join('');
+    map.innerHTML = crumbBar([
+      { label: '一形多义', go: function () { sceneFamily = null; renderGrammarScene(); } },
+      { label: f.name, on: true },
+      { label: f.scenes.length + ' 境' }
+    ]) + '<div class="gm-sec-title">' + escapeHtml(f.desc || '') + '</div>' + blocks;
+    bindLeaves(map);
+    bindCrumbs(map, [{}, { go: function () { sceneFamily = null; renderGrammarScene(); } }]);
   }
 
   function renderGrammarStage() {
@@ -923,93 +1229,87 @@
            '</div>';
   }
 
+  // ================= 渠道一：作用脉络（下钻） =================
+  var usePath = { trunk: null, branch: null };
   function renderGrammarTree() {
     var map = $('grammarMap');
     if (!map) return;
-    var tier = grammarStageState();
-    var q = ($('grammarSearch') ? $('grammarSearch').value : '').trim().toLowerCase();
-    var frag = document.createDocumentFragment();
-    var shownLeaves = 0;
-    var shownBranches = 0;
-    var shownTrunks = 0;
-    GR.trunks.forEach(function (T) {
-      // 计算该主干下满足筛选的叶子
-      var branches = [];
-      (T.branches || []).forEach(function (B) {
-        var items = (B._items || []).filter(function (it) {
-          if (tier && it.tier !== tier) return false;
-          if (!q) return true;
-          return (it.pattern + ' ' + it.reading + ' ' + it.mean).toLowerCase().indexOf(q) >= 0;
-        });
-        if (items.length) branches.push({ b: B, items: items });
-      });
-      if (!branches.length) return;
-      shownTrunks++;
-      var color = T.color || 'var(--accent)';
-      var trunkEl = document.createElement('div');
-      trunkEl.className = 'gm-trunk';
-      trunkEl.setAttribute('style', '--trunk-color:' + color);
-      var nLeaves = branches.reduce(function (s, x) { return s + x.items.length; }, 0);
-      trunkEl.innerHTML =
-        '<div class="gm-trunk-head" data-open="1">' +
-          '<span class="gm-trunk-icon">' + escapeHtml(T.icon || '◆') + '</span>' +
-          '<span class="gm-trunk-name">' + escapeHtml(T.name) + '</span>' +
-          '<span class="gm-trunk-count">' + nLeaves + ' 诀</span>' +
-          '<span class="gm-trunk-desc">' + escapeHtml(T.desc || '') + '</span>' +
-          '<span class="gm-caret">▾</span>' +
-        '</div>' +
-        '<div class="gm-trunk-body"></div>';
-      var bodyEl = trunkEl.querySelector('.gm-trunk-body');
-      branches.forEach(function (x) {
-        shownBranches++;
-        var brEl = document.createElement('div');
-        brEl.className = 'gm-branch';
-        brEl.innerHTML =
-          '<div class="gm-branch-head" data-open="1">' +
-            '<span class="gm-branch-name">' + escapeHtml(x.b.name) + '</span>' +
-            '<span class="gm-branch-desc">' + escapeHtml(x.b.desc || '') + '</span>' +
-            '<span class="gm-branch-count">' + x.items.length + '</span>' +
-            '<span class="gm-caret">▾</span>' +
-          '</div>' +
-          '<div class="gm-branch-body"></div>';
-        var bBody = brEl.querySelector('.gm-branch-body');
-        x.items.forEach(function (it) {
-          shownLeaves++;
-          var d = document.createElement('div');
-          d.innerHTML = leafHtml(it);
-          bBody.appendChild(d.firstChild);
-        });
-        bodyEl.appendChild(brEl);
-      });
-      frag.appendChild(trunkEl);
-    });
-
-    map.innerHTML = '';
-    if (!shownTrunks) {
-      map.innerHTML = '<div class="list-empty">没有匹配的心诀，换个关键词试试</div>';
+    if (!GR.items.length) {
+      map.innerHTML = '<div class="list-empty">心诀加载中…</div>';
+      loadGrammar().then(function () { renderGrammarStage(); renderGrammarTree(); });
       return;
     }
-    map.appendChild(frag);
+    var tier = grammarStageState();
+    var q = ($('grammarSearch') ? $('grammarSearch').value : '').trim().toLowerCase();
+    var pass = function (it) {
+      if (tier && it.tier !== tier) return false;
+      if (!q) return true;
+      return (it.pattern + ' ' + (it.reading || '') + ' ' + it.mean).toLowerCase().indexOf(q) >= 0;
+    };
+    map.innerHTML = '';
 
-    // 折叠交互：主干 / 分支 点击展开收起；叶子点击朗读
-    Array.prototype.forEach.call(map.querySelectorAll('.gm-trunk-head, .gm-branch-head'), function (h) {
-      h.onclick = function (e) {
-        if (e.target.closest && e.target.closest('.gm-leaf')) return;
-        var b = h.nextElementSibling;
-        var open = h.getAttribute('data-open') === '1';
-        h.setAttribute('data-open', open ? '0' : '1');
-        if (b) b.style.display = open ? 'none' : '';
-        var caret = h.querySelector('.gm-caret');
-        if (caret) caret.textContent = open ? '▸' : '▾';
-      };
-    });
-    Array.prototype.forEach.call(map.querySelectorAll('.gm-leaf'), function (lf) {
-      lf.onclick = function () { speak(lf.getAttribute('data-kana') || ''); };
-    });
+    // 搜索时：直接平铺命中结果
+    if (q) {
+      var hits = GR.items.filter(pass);
+      map.innerHTML = crumbBar([{ label: '检索「' + q + '」', on: true }, { label: hits.length + ' 诀' }]) +
+        (hits.length ? leavesHtml(hits) : '<div class="list-empty">没有匹配的心诀，换个关键词试试</div>');
+      bindLeaves(map);
+      return;
+    }
+
+    // 一级：十二主干
+    if (!usePath.trunk) {
+      var trunkTiles = GR.trunks.map(function (tk) {
+        var n = (tk._items || []).filter(function (it) { return !tier || it.tier === tier; }).length;
+        if (!n) return null;
+        return { icon: tk.icon, title: tk.name, desc: tk.desc, color: tk.color, count: n + ' 诀',
+                 go: function () { usePath.trunk = tk.id; renderGrammarTree(); } };
+      }).filter(Boolean);
+      map.innerHTML = crumbBar([{ label: '作用脉络', on: true }, { label: trunkTiles.length + ' 域' }]) +
+        (trunkTiles.length ? tilesHtml(trunkTiles) : '<div class="list-empty">该阶暂无心诀</div>');
+      bindTiles(map, trunkTiles);
+      return;
+    }
+
+    var T = GR.trunks.filter(function (x) { return x.id === usePath.trunk; })[0];
+    if (!T) { usePath.trunk = null; renderGrammarTree(); return; }
+
+    // 二级：该主干下各分支
+    if (!usePath.branch) {
+      var brTiles = (T.branches || []).map(function (B) {
+        var items = (B._items || []).filter(pass);
+        if (!items.length) return null;
+        return { icon: '▸', title: B.name, desc: B.desc, color: T.color, count: items.length + ' 诀',
+                 go: function () { usePath.branch = B.id; renderGrammarTree(); } };
+      }).filter(Boolean);
+      map.innerHTML = crumbBar([
+        { label: '作用脉络', go: function () { usePath = { trunk: null, branch: null }; renderGrammarTree(); } },
+        { label: T.icon + ' ' + T.name, on: true },
+        { label: brTiles.length + ' 脉' }
+      ]) + '<div class="gm-sec-title">' + escapeHtml(T.desc || '') + '</div>' +
+        (brTiles.length ? tilesHtml(brTiles) : '<div class="list-empty">此域暂无匹配心诀</div>');
+      bindTiles(map, brTiles);
+      bindCrumbs(map, [{ go: function () { usePath = { trunk: null, branch: null }; renderGrammarTree(); } }]);
+      return;
+    }
+
+    // 三级：语法点
+    var B2 = (T.branches || []).filter(function (x) { return x.id === usePath.branch; })[0];
+    var leaves = ((B2 && B2._items) || []).filter(pass);
+    map.innerHTML = crumbBar([
+      { label: '作用脉络', go: function () { usePath = { trunk: null, branch: null }; renderGrammarTree(); } },
+      { label: T.icon + ' ' + T.name, go: function () { usePath.branch = null; renderGrammarTree(); } },
+      { label: B2 ? B2.name : '分支', on: true },
+      { label: leaves.length + ' 诀' }
+    ]) + (leaves.length ? leavesHtml(leaves) : '<div class="list-empty">此脉暂无匹配心诀</div>');
+    bindLeaves(map);
+    bindCrumbs(map, [
+      { go: function () { usePath = { trunk: null, branch: null }; renderGrammarTree(); } },
+      { go: function () { usePath.branch = null; renderGrammarTree(); } }
+    ]);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+  if (document.readyState === 'loading') {    document.addEventListener('DOMContentLoaded', boot);
   } else {
     boot();
   }

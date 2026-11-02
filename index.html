@@ -112,6 +112,12 @@
     <!-- ===================== 词表页 ===================== -->
     <section class="page page-words" id="pageWords" hidden>
       <div class="section-head page-title">词 库 经 卷</div>
+      <nav class="gram-realm-bar" id="wordRealmBar">
+        <button class="realm-chip on" data-realm="all">全部经卷<small>五卷</small></button>
+        <button class="realm-chip" data-realm="zhuji">筑基<small>入门根基</small></button>
+        <button class="realm-chip" data-realm="ningqi">凝气<small>进阶运化</small></button>
+        <button class="realm-chip" data-realm="huashen">化神<small>登顶心法</small></button>
+      </nav>
       <div class="list-tools">
         <input id="listSearch" type="search" placeholder="搜词形 / 读音 / 中文释义" autocomplete="off">
         <select id="listFocus">
@@ -126,11 +132,32 @@
     <!-- ===================== 语法页 ===================== -->
     <section class="page page-grammar" id="pageGrammar" hidden>
       <div class="section-head page-title">句 法 心 诀 · 修道思维导图</div>
-      <div class="grammar-stage" id="grammarStage"></div>
-      <div class="list-tools grammar-tools">
-        <input id="grammarSearch" type="search" placeholder="搜句型 / 读音 / 中文" autocomplete="off">
+      <!-- 渠道切换 -->
+      <nav class="gram-channels" id="gramChannels">
+        <button class="gch on" data-ch="use">作用脉络</button>
+        <button class="gch" data-ch="realm">境界修行</button>
+        <button class="gch" data-ch="scene">场景多义</button>
+      </nav>
+
+      <!-- 渠道一：作用脉络（按功能域 12 主干） -->
+      <div class="gram-view" id="gramUse" data-ch="use">
+        <div class="grammar-stage" id="grammarStage"></div>
+        <div class="list-tools grammar-tools">
+          <input id="grammarSearch" type="search" placeholder="搜句型 / 读音 / 中文" autocomplete="off">
+        </div>
+        <div class="gram-map" id="grammarMap"></div>
       </div>
-      <div class="gram-map" id="grammarMap"></div>
+
+      <!-- 渠道二：境界修行（筑基/凝气/化神，每境分类展开） -->
+      <div class="gram-view" id="gramRealm" data-ch="realm" hidden>
+        <div class="gram-realm-bar" id="gramRealmBar"></div>
+        <div class="gram-map" id="grammarRealmMap"></div>
+      </div>
+
+      <!-- 渠道三：场景多义（一语法多场景思维导图） -->
+      <div class="gram-view" id="gramScene" data-ch="scene" hidden>
+        <div class="gram-map" id="grammarSceneMap"></div>
+      </div>
     </section>
 
     <!-- ===================== 进度页 ===================== -->
