@@ -1,5 +1,5 @@
 /* sw.js - offline cache: app shell + word banks */
-const VERSION = 'jptype-v5';
+const VERSION = 'jptype-v6';
 const SHELL = [
   './',
   './index.html',
@@ -13,13 +13,10 @@ const SHELL = [
 const DATA = ['./data/n1.json', './data/n2.json', './data/n3.json', './data/n4.json', './data/n5.json'];
 
 self.addEventListener('install', (e) => {
+  // 只预缓存应用外壳；词库体积大，改为访问时按需缓存，避免首屏被安装抢占带宽
   e.waitUntil(
     caches.open(VERSION).then(async (c) => {
       await c.addAll(SHELL).catch(() => {});
-      // word banks are large: add one by one, a failure must not block install
-      for (const u of DATA) {
-        try { await c.add(u); } catch (err) {}
-      }
       self.skipWaiting();
     })
   );
