@@ -5,13 +5,21 @@
   var K = window.Kana;
 
   // ---------------------------------------------------------------- 常量
+  // 境界 → 词卷（不再暴露 N 分级）
+  var REALM_VOLS = {
+    all: ['n5', 'n4', 'n3', 'n2', 'n1'],
+    zhuji: ['n5', 'n4'],
+    ningqi: ['n3', 'n2'],
+    huashen: ['n1']
+  };
+  var REALM_NAME = { all: '全境', zhuji: '筑基', ningqi: '凝气', huashen: '化神' };
+  var REALM_TIP = { all: '五卷合参', zhuji: '入门根基', ningqi: '进阶运化', huashen: '登顶心法' };
+
   var LEVELS = [
-    { id: 'n1', label: 'N1', sub: '4044' },
-    { id: 'n12', label: 'N1+N2', sub: '7257' },
-    { id: 'n2', label: 'N2', sub: '3213' },
-    { id: 'n3', label: 'N3', sub: '1814' },
-    { id: 'n4', label: 'N4', sub: '756' },
-    { id: 'n5', label: 'N5', sub: '805' }
+    { id: 'all', label: '全境', sub: '10632' },
+    { id: 'zhuji', label: '筑基', sub: '1561' },
+    { id: 'ningqi', label: '凝气', sub: '5027' },
+    { id: 'huashen', label: '化神', sub: '4044' }
   ];
 
   var MODES = [
@@ -35,7 +43,7 @@
 
   // ---------------------------------------------------------------- 状态
   var S = {
-    level: 'n1',
+    level: 'all',
     mode: 'copy',
     filter: 'all',
     round: [],
@@ -132,8 +140,36 @@
     return p.then(function (list) { cache[lv] = list; return list; });
   }
 
+  // 按境界取词卷集合（不再有 n12 这种 N 号合并池）
+  function volsOf(realm) { return REALM_VOLS[realm] || REALM_VOLS.all; }
+
+  // 该境界所有词卷已就绪后，合并成一个大词池
+  function loadRealm(realm) {
+    var vols = volsOf(realm);
+    return Promise.all(vols.map(function (v) { return loadLevel(v); }))
+      .then(function (arr) {
+        var out = [];
+        arr.forEach(function (l) { out = out.concat(l); });
+        cache[realm] = out;
+        return out;
+      });
+  }
+
+  // 取当前境界的词池（同步；未就绪返回 []）
+  function realmList(realm) {
+    realm = realm || S.level;
+    if (cache[realm] && realm !== 'n12') return cache[realm];
+    var vols = volsOf(realm);
+    var ok = true, out = [];
+    vols.forEach(function (v) {
+      if (!cache[v]) ok = false;
+      else out = out.concat(cache[v]);
+    });
+    return ok ? out : [];
+  }
+
   function pool() {
-    var list = cache[S.level] || [];
+    var list = realmList(S.level);
     var f = S.filter;
     return list.filter(function (w) {
       if (f === 'star') return w.focus === 3;
@@ -148,8 +184,8 @@
   }
 
   function countFor(fid) {
-    var list = cache[S.level];
-    if (!list) return null;
+    var list = realmList(S.level);
+    if (!list.length) return null;
     if (fid === 'all') return list.length;
     if (fid === 'star') return list.filter(function (w) { return w.focus === 3; }).length;
     if (fid === 'star2') return list.filter(function (w) { return w.focus >= 2; }).length;
@@ -234,7 +270,7 @@
     S.level = lv;
     buildTabs();
     renderLoading();
-    loadLevel(lv).then(function () { buildTabs(); startRound(); }).catch(function (e) {
+    loadRealm(lv).then(function () { buildTabs(); startRound(); }).catch(function (e) {
       toast('数据加载失败：' + e.message);
     });
   }
@@ -278,16 +314,23 @@
   }
 
   // ---------------------------------------------------------------- 摸底测试
-  var DIAG_LEVELS = ['n5', 'n4', 'n3', 'n2', 'n1'];
-  var DIAG_PER = 5;
+  var DIAG_REALMS = ['zhuji', 'ningqi', 'huashen'];
+  var DIAG_PER = 6;
 
   function startDiag() {
     S.diag = true;
     S.mode = 'copy';
     $('btnDiag').hidden = true;
-    Promise.all(DIAG_LEVELS.map(fetchLevel)).then(function (arr) {
+    var jobs = DIAG_REALMS.map(function (rm) {
+      return Promise.all(volsOf(rm).map(fetchLevel)).then(function (arr) {
+        var list = [];
+        arr.forEach(function (l) { list = list.concat(l); });
+        return list;
+      });
+    });
+    Promise.all(jobs).then(function (groups) {
       var round = [];
-      arr.forEach(function (list, i) {
+      groups.forEach(function (list) {
         var stars = list.filter(function (w) { return w.focus >= 2; });
         var src = stars.length >= DIAG_PER ? stars : list;
         round = round.concat(shuffle(src.slice()).slice(0, DIAG_PER));
@@ -305,32 +348,33 @@
     var r = S.diagRight || {};
     var lines = [];
     var passed = null;
-    DIAG_LEVELS.forEach(function (lv) {
-      var c = r[lv] || { right: 0, total: 0 };
+    DIAG_REALMS.forEach(function (rm) {
+      var c = r[rm] || { right: 0, total: 0 };
       var acc = c.total ? Math.round(c.right / c.total * 100) : 0;
-      lines.push(lv.toUpperCase() + ' ' + c.right + '/' + c.total + ' (' + acc + '%)');
-      if (c.total && acc >= 60) passed = lv;
+      lines.push(REALM_NAME[rm] + ' ' + c.right + '/' + c.total + ' (' + acc + '%)');
+      if (c.total && acc >= 60) passed = rm;
     });
     var start;
     if (!passed) {
-      start = 'n5';
+      start = 'zhuji';
     } else {
-      var idx = DIAG_LEVELS.indexOf(passed);
-      start = DIAG_LEVELS[Math.min(idx + 1, DIAG_LEVELS.length - 1)];
+      var idx = DIAG_REALMS.indexOf(passed);
+      start = DIAG_REALMS[Math.min(idx + 1, DIAG_REALMS.length - 1)];
     }
+    var startName = REALM_NAME[start];
     var overall = S.round.length ? Math.round(S.done / S.round.length * 100) : 0;
     $('wordLine').textContent = '摸底完成 · ' + overall + '%';
     $('readingLine').textContent = lines.join(' · ');
-    $('meaningLine').textContent = '建议起点：' + start.toUpperCase() + '（★+ 重点/次重点）';
+    $('meaningLine').textContent = '建议起点：' + startName + '（' + REALM_TIP[start] + '）';
     $('metaLine').textContent = '';
     $('badges').innerHTML = '';
     $('cells').innerHTML = '';
     $('options').innerHTML = '';
     $('feedback').innerHTML = passed
-      ? '从 <b>' + start.toUpperCase() + '</b> 开始，用「★+ 重点/次重点」筛选先过一遍高频词。'
-      : '基础还不稳，从 <b>N5</b> 过一遍读音和假名手感，再往上走。';
+      ? '从 <b>' + startName + '</b> 境开始，用「★+ 重点/次重点」筛选先过一遍高频词。'
+      : '根基还不稳，从 <b>筑基</b> 过一遍读音和假名手感，再往上走。';
     $('inputRow').style.display = 'none';
-    $('btnNext').textContent = '去 ' + start.toUpperCase() + ' 开始';
+    $('btnNext').textContent = '入 ' + startName + ' 境修行';
     $('btnNext').disabled = false;
     S.diagTarget = start;
     $('btnHint').disabled = true;
@@ -378,7 +422,7 @@
       b.textContent = txt;
       bd.appendChild(b);
     }
-    badge((w.lv || S.level).toUpperCase(), 'lv');
+    badge(wordRealmOf(w.lv) || REALM_NAME[S.level] || '词', 'lv');
     if (w.focus === 3) badge('★ 重点', 'star3');
     else if (w.focus === 2) badge('☆ 次重点', 'star2');
     var tags = w.tags.split('/').filter(Boolean);
@@ -471,7 +515,7 @@
 
   function renderOptions() {
     var w = S.cur;
-    var list = cache[S.level] || [];
+    var list = realmList(S.level);
     var wrongs = [];
     var guard = 0;
     while (wrongs.length < 3 && guard < 400) {
@@ -524,7 +568,8 @@
     var w = S.cur;
     bumpStat(w.key, ok);
     if (S.diag) {
-      var r = S.diagRight[w.lv] || (S.diagRight[w.lv] = { right: 0, total: 0 });
+      var rm = wordRealmOf(w.lv) === '筑基' ? 'zhuji' : wordRealmOf(w.lv) === '凝气' ? 'ningqi' : 'huashen';
+      var r = S.diagRight[rm] || (S.diagRight[rm] = { right: 0, total: 0 });
       r.total += 1;
       if (ok) r.right += 1;
     }
@@ -813,7 +858,7 @@
     loadStat();
     buildTabs();
     renderLoading();
-    loadLevel(S.level)
+    loadRealm(S.level)
       .then(function () { buildTabs(); startRound(); })
       .catch(function (e) {
         $('wordLine').textContent = '数据加载失败';
