@@ -43,7 +43,7 @@
 
   // ---------------------------------------------------------------- 状态
   var S = {
-    level: 'all',
+    level: 'huashen',
     mode: 'copy',
     filter: 'all',
     round: [],
