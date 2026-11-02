@@ -1,0 +1,17 @@
+{
+  "name": "N1修道之路 · 日语N1词汇修行",
+  "short_name": "N1修道之路",
+  "description": "日语 N1 词汇与语法修行 · N1–N5 · 五种练习 + 句法心诀",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0f12",
+  "theme_color": "#0a0f12",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

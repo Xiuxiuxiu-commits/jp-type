@@ -1,0 +1,11 @@
+# 非部署文件：构建脚本、截图、辅助工具、超大源数据
+build_grammar.js
+shots/
+tools/
+data/words.json
+data/vocab-n1.csv
+data/vocab-n2.csv
+server.js
+node_modules/
+.DS_Store
+*.log

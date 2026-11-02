@@ -1,0 +1,3442 @@
+{
+ "books": [
+  {
+   "id": "lanbao",
+   "name": "蓝宝书·新日本语能力考试N1文法",
+   "author": "许小明/Reika/新世界图书事业部",
+   "press": "华东理工大学出版社"
+  },
+  {
+   "id": "shintan",
+   "name": "新完全マスターブ文法 N1/N2/N3",
+   "author": "スリーエーネットワーク",
+   "press": "凡人社"
+  },
+  {
+   "id": "soumatome",
+   "name": "日本語総まとめ文法",
+   "author": "",
+   "press": "アスク出版"
+  },
+  {
+   "id": "minna",
+   "name": "みんなの日本語/標準日本語（基础句型体系）",
+   "author": "",
+   "press": ""
+  }
+ ],
+ "levels": [
+  {
+   "id": "n5",
+   "name": "N5 基础",
+   "order": 1
+  },
+  {
+   "id": "n4",
+   "name": "N4 初阶",
+   "order": 2
+  },
+  {
+   "id": "n3",
+   "name": "N3 进阶",
+   "order": 3
+  },
+  {
+   "id": "n2",
+   "name": "N2 中阶",
+   "order": 4
+  },
+  {
+   "id": "n1",
+   "name": "N1 高阶",
+   "order": 5
+  }
+ ],
+ "items": [
+  {
+   "id": "n5-masu",
+   "level": "n5",
+   "cat": "敬体·断定",
+   "pattern": "〜ます / 〜です",
+   "reading": "ます / です",
+   "kana": "ます / です",
+   "mean": "动词/名词的礼貌体（敬体）",
+   "book": "minna",
+   "note": "ます接在动词ます形后",
+   "examples": [
+    {
+     "ja": "行きます",
+     "kana": "いきます",
+     "zh": "去"
+    },
+    {
+     "ja": "学生です",
+     "kana": "がくせいです",
+     "zh": "是学生"
+    }
+   ]
+  },
+  {
+   "id": "n5-te",
+   "level": "n5",
+   "cat": "接续·并列",
+   "pattern": "〜て",
+   "reading": "て",
+   "kana": "て",
+   "mean": "表示并列、先后顺序、手段等",
+   "book": "minna",
+   "note": "て形连接",
+   "examples": [
+    {
+     "ja": "本を読んで、友だちに会う",
+     "kana": "ほんをよんで、ともだちにあう",
+     "zh": "读书，然后见朋友"
+    }
+   ]
+  },
+  {
+   "id": "n5-ta",
+   "level": "n5",
+   "cat": "时态",
+   "pattern": "〜た / 〜だった",
+   "reading": "た / だった",
+   "kana": "た / だった",
+   "mean": "过去式（动词た形/名词だった）",
+   "book": "minna",
+   "note": "た形",
+   "examples": [
+    {
+     "ja": "食べた",
+     "kana": "たべた",
+     "zh": "吃了"
+    }
+   ]
+  },
+  {
+   "id": "n5-nai",
+   "level": "n5",
+   "cat": "否定",
+   "pattern": "〜ない / 〜じゃない",
+   "reading": "ない / じゃない",
+   "kana": "ない / じゃない",
+   "mean": "否定（动词ない形/名词じゃない）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "行かない",
+     "kana": "いかない",
+     "zh": "不去"
+    },
+    {
+     "ja": "忙しくない",
+     "kana": "いそがしくない",
+     "zh": "不忙"
+    }
+   ]
+  },
+  {
+   "id": "n5-tai",
+   "level": "n5",
+   "cat": "愿望",
+   "pattern": "〜たい",
+   "reading": "たい",
+   "kana": "たい",
+   "mean": "想做……（第一人称愿望）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "水が飲みたい",
+     "kana": "みずがのみたい",
+     "zh": "想喝水"
+    }
+   ]
+  },
+  {
+   "id": "n5-nakatta",
+   "level": "n5",
+   "cat": "过去否定",
+   "pattern": "〜なかった / 〜じゃなかった",
+   "reading": "なかった / じゃなかった",
+   "kana": "なかった / じゃなかった",
+   "mean": "过去否定",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "行かなかった",
+     "kana": "いかなかった",
+     "zh": "没去"
+    }
+   ]
+  },
+  {
+   "id": "n5-teiru",
+   "level": "n5",
+   "cat": "体态",
+   "pattern": "〜ている",
+   "reading": "ている",
+   "kana": "ている",
+   "mean": "动作正在进行；或结果状态",
+   "book": "minna",
+   "note": "接在动词て形后",
+   "examples": [
+    {
+     "ja": "本を読んでいる",
+     "kana": "ほんをよんでいる",
+     "zh": "正在读书"
+    },
+    {
+     "ja": "窓が開いている",
+     "kana": "まどがあいている",
+     "zh": "窗户开着"
+    }
+   ]
+  },
+  {
+   "id": "n5-tearu",
+   "level": "n5",
+   "cat": "体态",
+   "pattern": "〜てある",
+   "reading": "てある",
+   "kana": "てある",
+   "mean": "某物被保持着某种状态（他动词+てある）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "壁に地図が貼ってある",
+     "kana": "かべにちずがはってある",
+     "zh": "墙上贴着地图"
+    }
+   ]
+  },
+  {
+   "id": "n5-ok",
+   "level": "n5",
+   "cat": "准备",
+   "pattern": "〜ておく",
+   "reading": "ておく",
+   "kana": "ておく",
+   "mean": "预先做好……（准备）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "晩ご飯を作っておく",
+     "kana": "ばんごはんをつくっておく",
+     "zh": "事先做好晚饭"
+    }
+   ]
+  },
+  {
+   "id": "n5-simau",
+   "level": "n5",
+   "cat": "完了·遗憾",
+   "pattern": "〜てしまう",
+   "reading": "てしまう",
+   "kana": "てしまう",
+   "mean": "完成；或表达遗憾、后悔",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "宿題を忘れてしまった",
+     "kana": "しゅくだいをわすれてしまった",
+     "zh": "把作业忘了（遗憾）"
+    }
+   ]
+  },
+  {
+   "id": "n5-iku-kuru",
+   "level": "n5",
+   "cat": "趋向",
+   "pattern": "〜ていく / 〜てくる",
+   "reading": "ていく / てくる",
+   "kana": "ていく / てくる",
+   "mean": "……下去/……过来（空间或时间上的趋向）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "走っていく",
+     "kana": "はしっていく",
+     "zh": "跑过去"
+    },
+    {
+     "ja": "持ってくる",
+     "kana": "もってくる",
+     "zh": "拿来"
+    }
+   ]
+  },
+  {
+   "id": "n5-moii",
+   "level": "n5",
+   "cat": "许可",
+   "pattern": "〜てもいい",
+   "reading": "てもいい",
+   "kana": "てもいい",
+   "mean": "可以做……（许可）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "ここで写真を撮ってもいい",
+     "kana": "ここでしゃしんをとってもいい",
+     "zh": "可以在这里拍照"
+    }
+   ]
+  },
+  {
+   "id": "n5-waikenai",
+   "level": "n5",
+   "cat": "禁止",
+   "pattern": "〜てはいけない",
+   "reading": "てはいけない",
+   "kana": "てはいけない",
+   "mean": "不可以……（禁止）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "遅れてはいけない",
+     "kana": "おくれてはいけない",
+     "zh": "不能迟到"
+    }
+   ]
+  },
+  {
+   "id": "n5-nakerebanaranai",
+   "level": "n5",
+   "cat": "义务",
+   "pattern": "〜なければならない",
+   "reading": "なければならない",
+   "kana": "なければならない",
+   "mean": "必须……",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "約束を守らなければならない",
+     "kana": "やくそくをまもらなければならない",
+     "zh": "必须遵守约定"
+    }
+   ]
+  },
+  {
+   "id": "n5-nomitai",
+   "level": "n5",
+   "cat": "劝诱",
+   "pattern": "〜ましょう / 〜ませんか",
+   "reading": "ましょう / ませんか",
+   "kana": "ましょう / ませんか",
+   "mean": "一起……吧（劝诱）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "一緒に行きましょう",
+     "kana": "いっしょにいきましょう",
+     "zh": "一起去吧"
+    }
+   ]
+  },
+  {
+   "id": "n5-ba",
+   "level": "n5",
+   "cat": "条件",
+   "pattern": "〜ば",
+   "reading": "ば",
+   "kana": "ば",
+   "mean": "如果……（ば形条件）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "安ければ買う",
+     "kana": "やすければかう",
+     "zh": "便宜的话就买"
+    }
+   ]
+  },
+  {
+   "id": "n5-to",
+   "level": "n5",
+   "cat": "条件·恒常",
+   "pattern": "〜と",
+   "reading": "と",
+   "kana": "と",
+   "mean": "一……就……；必然结果",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "このボタンを押すと、電源が入る",
+     "kana": "このぼたんをおすと、でんげんがはいる",
+     "zh": "一按这个按钮，电源就开"
+    }
+   ]
+  },
+  {
+   "id": "n5-tara",
+   "level": "n5",
+   "cat": "条件",
+   "pattern": "〜たら",
+   "reading": "たら",
+   "kana": "たら",
+   "mean": "如果……；……之后（たら形）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "暇だったら、遊びに来て",
+     "kana": "ひまだったら、あそびにきて",
+     "zh": "有空的话来玩"
+    }
+   ]
+  },
+  {
+   "id": "n5-nara",
+   "level": "n5",
+   "cat": "条件",
+   "pattern": "〜なら",
+   "reading": "なら",
+   "kana": "なら",
+   "mean": "如果是……（承接对方话题）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "日本語なら、私が教える",
+     "kana": "にほんごなら、わたしがおしえる",
+     "zh": "如果是日语，我来教"
+    }
+   ]
+  },
+  {
+   "id": "n5-node",
+   "level": "n5",
+   "cat": "原因",
+   "pattern": "〜ので",
+   "reading": "ので",
+   "kana": "ので",
+   "mean": "因为……（客观、礼貌原因）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "風邪を引いたので、休む",
+     "kana": "かぜをひいたので、やすむ",
+     "zh": "因为感冒了，所以休息"
+    }
+   ]
+  },
+  {
+   "id": "n5-kara",
+   "level": "n5",
+   "cat": "原因",
+   "pattern": "〜から",
+   "reading": "から",
+   "kana": "から",
+   "mean": "因为……（主观原因，常用于句尾）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "忙しいから、行けない",
+     "kana": "いそがしいから、いけない",
+     "zh": "因为忙，去不了"
+    }
+   ]
+  },
+  {
+   "id": "n5-toki",
+   "level": "n5",
+   "cat": "时间",
+   "pattern": "〜とき",
+   "reading": "とき",
+   "kana": "とき",
+   "mean": "……的时候",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "子どものとき、大阪に住んでいた",
+     "kana": "こどものとき、おおさかにすんでいた",
+     "zh": "小时候住在大阪"
+    }
+   ]
+  },
+  {
+   "id": "n5-tari-tari",
+   "level": "n5",
+   "cat": "列举",
+   "pattern": "〜たり〜たり",
+   "reading": "たり〜たり",
+   "kana": "たり〜たり",
+   "mean": "又……又……；时而……时而……",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "休みの日は、本を読んだり、散歩したりする",
+     "kana": "やすみのひは、ほんをよんだり、さんぽしたりする",
+     "zh": "休息日看看书、散散步"
+    }
+   ]
+  },
+  {
+   "id": "n5-youni",
+   "level": "n5",
+   "cat": "目的·变化",
+   "pattern": "〜ように / 〜ようになる",
+   "reading": "ように / ようになる",
+   "kana": "ように / ようになる",
+   "mean": "为了……；变得会……",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "日本語が話せるようになった",
+     "kana": "にほんごがはなせるようになった",
+     "zh": "变得会说日语了"
+    }
+   ]
+  },
+  {
+   "id": "n5-kotoga",
+   "level": "n5",
+   "cat": "能力·习惯",
+   "pattern": "〜ことができる",
+   "reading": "ことができる",
+   "kana": "ことができる",
+   "mean": "能够……（能力）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "泳ぐことができる",
+     "kana": "およぐことができる",
+     "zh": "会游泳"
+    }
+   ]
+  },
+  {
+   "id": "n5-niiku",
+   "level": "n5",
+   "cat": "移动目的",
+   "pattern": "〜に行く / 〜に来る",
+   "reading": "にいく / にくる",
+   "kana": "にいく / にくる",
+   "mean": "去/来做……（移动目的，接动词ます形去ます）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "映画を見に行く",
+     "kana": "えいがをみにいく",
+     "zh": "去看电影"
+    }
+   ]
+  },
+  {
+   "id": "n5-garu",
+   "level": "n5",
+   "cat": "第三人称心理",
+   "pattern": "〜がる",
+   "reading": "がる",
+   "kana": "がる",
+   "mean": "（第三人称）表现出……的样子",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "子どもは新しいおもちゃをほしがっている",
+     "kana": "こどもはあたらしいおもちゃをほしがっている",
+     "zh": "孩子想要新玩具"
+    }
+   ]
+  },
+  {
+   "id": "n5-mitai",
+   "level": "n5",
+   "cat": "推测·比喻",
+   "pattern": "〜みたい",
+   "reading": "みたい",
+   "kana": "みたい",
+   "mean": "好像……；像……一样（推测/比喻）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "あの人は日本人みたい",
+     "kana": "あのひとはにほんじんみたい",
+     "zh": "那个人好像是日本人"
+    }
+   ]
+  },
+  {
+   "id": "n5-rashii",
+   "level": "n5",
+   "cat": "推测·典型",
+   "pattern": "〜らしい",
+   "reading": "らしい",
+   "kana": "らしい",
+   "mean": "好像……；典型的……",
+   "book": "minna",
+   "note": "接名词/推断",
+   "examples": [
+    {
+     "ja": "今日は春らしい天気だ",
+     "kana": "きょうははるらしいてんきだ",
+     "zh": "今天是春天般的好天气"
+    }
+   ]
+  },
+  {
+   "id": "n5-soudesu",
+   "level": "n5",
+   "cat": "传闻·样态",
+   "pattern": "〜そうだ（传闻）/ 〜そう（样态）",
+   "reading": "そうだ / そう",
+   "kana": "そうだ / そう",
+   "mean": "听说……；看起来……",
+   "book": "minna",
+   "note": "传闻接普通体；样态接ます形去ます",
+   "examples": [
+    {
+     "ja": "雨が降るそうだ",
+     "kana": "あめがふるそうだ",
+     "zh": "听说要下雨"
+    },
+    {
+     "ja": "おいしそうなケーキ",
+     "kana": "おいしそうなけーき",
+     "zh": "看起来很好吃的蛋糕"
+    }
+   ]
+  },
+  {
+   "id": "n5-hougaii",
+   "level": "n5",
+   "cat": "比较",
+   "pattern": "〜ほうがいい",
+   "reading": "ほうがいい",
+   "kana": "ほうがいい",
+   "mean": "最好……（建议）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "早く寝たほうがいい",
+     "kana": "はやくねたほうがいい",
+     "zh": "最好早点睡"
+    }
+   ]
+  },
+  {
+   "id": "n5-kureru",
+   "level": "n5",
+   "cat": "授受",
+   "pattern": "〜てくれる / 〜てもらう / 〜てあげる",
+   "reading": "てくれる / てもらう / てあげる",
+   "kana": "てくれる / てもらう / てあげる",
+   "mean": "别人给我（くれる）/ 我请别人做（もらう）/ 我给别人做（あげる）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "友だちが本を貸してくれた",
+     "kana": "ともだちがほんをかしてくれた",
+     "zh": "朋友借给了我书"
+    }
+   ]
+  },
+  {
+   "id": "n5-passive",
+   "level": "n5",
+   "cat": "被动",
+   "pattern": "〜れる / 〜られる（受身）",
+   "reading": "れる / られる",
+   "kana": "れる / られる",
+   "mean": "被……（被动）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "犬に手を噛まれた",
+     "kana": "いぬにてをかまれた",
+     "zh": "手被狗咬了"
+    }
+   ]
+  },
+  {
+   "id": "n5-causative",
+   "level": "n5",
+   "cat": "使役",
+   "pattern": "〜せる / 〜させる（使役）",
+   "reading": "せる / させる",
+   "kana": "せる / させる",
+   "mean": "让/使……做（使役）",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "子どもに野菜を食べさせる",
+     "kana": "こどもにやさいをたべさせる",
+     "zh": "让孩子吃蔬菜"
+    }
+   ]
+  },
+  {
+   "id": "n5-exclam",
+   "level": "n5",
+   "cat": "感叹·程度",
+   "pattern": "〜ても / 疑问词+でも",
+   "reading": "ても / でも",
+   "kana": "ても / でも",
+   "mean": "即使……也；无论……都",
+   "book": "minna",
+   "examples": [
+    {
+     "ja": "何度言っても分からない",
+     "kana": "なんどいってもわからない",
+     "zh": "说多少遍都不懂"
+    }
+   ]
+  },
+  {
+   "id": "n4-teform",
+   "level": "n4",
+   "cat": "手段",
+   "pattern": "〜てformで",
+   "reading": "てformで",
+   "kana": "てで",
+   "mean": "用……方式（て形+で）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "歩いて行く",
+     "kana": "あるいていく",
+     "zh": "步行去"
+    }
+   ]
+  },
+  {
+   "id": "n4-bakari",
+   "level": "n4",
+   "cat": "限定·倾向",
+   "pattern": "〜ばかり",
+   "reading": "ばかり",
+   "kana": "ばかり",
+   "mean": "光是……；刚刚（〜たばかり）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "游戏ばかりしている",
+     "kana": "げーむばかりしている",
+     "zh": "光玩游戏"
+    },
+    {
+     "ja": "日本に来たばかりだ",
+     "kana": "にほんできたばかりだ",
+     "zh": "刚来日本"
+    }
+   ]
+  },
+  {
+   "id": "n4-hazu",
+   "level": "n4",
+   "cat": "预期",
+   "pattern": "〜はず",
+   "reading": "はず",
+   "kana": "はず",
+   "mean": "理应……；应该……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "彼は知っているはずだ",
+     "kana": "かれはしっているはずだ",
+     "zh": "他应该知道"
+    }
+   ]
+  },
+  {
+   "id": "n4-kamosirenai",
+   "level": "n4",
+   "cat": "推测",
+   "pattern": "〜かもしれない",
+   "reading": "かもしれない",
+   "kana": "かもしれない",
+   "mean": "也许……；可能……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "雨が降るかもしれない",
+     "kana": "あめがふるかもしれない",
+     "zh": "也许会下雨"
+    }
+   ]
+  },
+  {
+   "id": "n4-nchigainai",
+   "level": "n4",
+   "cat": "确信",
+   "pattern": "〜に違いない",
+   "reading": "にちがいない",
+   "kana": "にちがいない",
+   "mean": "一定……（很有把握的推断）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "あの人は日本人に違いない",
+     "kana": "あのひとはにほんじんにちがいない",
+     "zh": "那人一定是日本人"
+    }
+   ]
+  },
+  {
+   "id": "n4-youni-iu",
+   "level": "n4",
+   "cat": "引用·命令",
+   "pattern": "〜ように言う",
+   "reading": "ようにいう",
+   "kana": "ようにいう",
+   "mean": "叫/让（某人）做……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "先生に宿題を忘れないように言われた",
+     "kana": "せんせいにしゅくだいをわすれないようにいわれた",
+     "zh": "被老师提醒别忘作业"
+    }
+   ]
+  },
+  {
+   "id": "n4-teagemasu",
+   "level": "n4",
+   "cat": "授受",
+   "pattern": "〜てさしあげる / 〜てくださる",
+   "reading": "てさしあげる / てくださる",
+   "kana": "てさしあげる / てくださる",
+   "mean": "（自谦）给上位者做 / （尊敬）上位者给我做",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "先生が説明してくださった",
+     "kana": "せんせいがせつめいしてくださった",
+     "zh": "老师给我做了说明"
+    }
+   ]
+  },
+  {
+   "id": "n4-tokoroda",
+   "level": "n4",
+   "cat": "阶段",
+   "pattern": "〜ところだ",
+   "reading": "ところだ",
+   "kana": "ところだ",
+   "mean": "正要……/ 正在……/ 刚刚……（接不同体）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "今出かけるところだ",
+     "kana": "いまでかけるところだ",
+     "zh": "现在正要出门"
+    }
+   ]
+  },
+  {
+   "id": "n4-kotogaaru",
+   "level": "n4",
+   "cat": "有时",
+   "pattern": "〜ことがある",
+   "reading": "ことがある",
+   "kana": "ことがある",
+   "mean": "有时……（习惯）/ 曾经……过（过去）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "たまに遅刻することがある",
+     "kana": "たまにちこくすることがある",
+     "zh": "偶尔会迟到"
+    }
+   ]
+  },
+  {
+   "id": "n4-mada",
+   "level": "n4",
+   "cat": "未完",
+   "pattern": "まだ〜ない",
+   "reading": "まだ〜ない",
+   "kana": "まだ〜ない",
+   "mean": "还没……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "まだ终わっていない",
+     "kana": "まだおわっていない",
+     "zh": "还没结束"
+    }
+   ]
+  },
+  {
+   "id": "n4-dake",
+   "level": "n4",
+   "cat": "限定",
+   "pattern": "〜だけ",
+   "reading": "だけ",
+   "kana": "だけ",
+   "mean": "只……；仅……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "水だけ飲む",
+     "kana": "みずだけのむ",
+     "zh": "只喝水"
+    }
+   ]
+  },
+  {
+   "id": "n4-shika",
+   "level": "n4",
+   "cat": "否定限定",
+   "pattern": "〜しか〜ない",
+   "reading": "しか〜ない",
+   "kana": "しか〜ない",
+   "mean": "只……（后接否定）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "日本語しか話せない",
+     "kana": "にほんごしかはなせない",
+     "zh": "只会说日语"
+    }
+   ]
+  },
+  {
+   "id": "n4-bakaride",
+   "level": "n4",
+   "cat": "限定",
+   "pattern": "〜ばかりでなく〜も",
+   "reading": "ばかりでなく〜も",
+   "kana": "ばかりでなく〜も",
+   "mean": "不仅……而且……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "歌ばかりでなく、ダンスも上手だ",
+     "kana": "うたばかりでなく、だんすもじょうずだ",
+     "zh": "不仅唱歌，跳舞也拿手"
+    }
+   ]
+  },
+  {
+   "id": "n4-nounikui",
+   "level": "n4",
+   "cat": "难易",
+   "pattern": "〜にくい / 〜やすい",
+   "reading": "にくい / やすい",
+   "kana": "にくい / やすい",
+   "mean": "难……/ 容易……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "このペンは書きやすい",
+     "kana": "このぺんはかきやすい",
+     "zh": "这支笔好写"
+    }
+   ]
+  },
+  {
+   "id": "n4-souda-hearsay",
+   "level": "n4",
+   "cat": "传闻",
+   "pattern": "〜そうだ（传闻）",
+   "reading": "そうだ",
+   "kana": "そうだ",
+   "mean": "听说……（传闻，接普通体）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "明日は雪だそうだ",
+     "kana": "あすはゆきだそうだ",
+     "zh": "听说明天有雪"
+    }
+   ]
+  },
+  {
+   "id": "n4-kke",
+   "level": "n4",
+   "cat": "回忆询问",
+   "pattern": "〜っけ",
+   "reading": "っけ",
+   "kana": "っけ",
+   "mean": "……来着？（回忆、确认）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "今日の予定は何だっけ",
+     "kana": "きょうのよていはなんだっけ",
+     "zh": "今天的安排是什么来着"
+    }
+   ]
+  },
+  {
+   "id": "n4-tekure",
+   "level": "n4",
+   "cat": "授受",
+   "pattern": "〜てくれないか",
+   "reading": "てくれないか",
+   "kana": "てくれないか",
+   "mean": "能不能给我做……（请求）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "窓を開けてくれないか",
+     "kana": "まどをあけてくれないか",
+     "zh": "能不能帮我开窗"
+    }
+   ]
+  },
+  {
+   "id": "n4-temoii",
+   "level": "n4",
+   "cat": "让步",
+   "pattern": "疑问词+〜ても",
+   "reading": "ても",
+   "kana": "ても",
+   "mean": "无论……都",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "誰が言っても信じない",
+     "kana": "だれがいってもしんじない",
+     "zh": "无论谁说都不信"
+    }
+   ]
+  },
+  {
+   "id": "n4-node-conf",
+   "level": "n4",
+   "cat": "原因",
+   "pattern": "〜し",
+   "reading": "し",
+   "kana": "し",
+   "mean": "既……又……（并列理由）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "安いし、美味しいし、よく買う",
+     "kana": "やすいし、おいしいし、よくかう",
+     "zh": "又便宜又好吃，常买"
+    }
+   ]
+  },
+  {
+   "id": "n4-kuse",
+   "level": "n4",
+   "cat": "习惯",
+   "pattern": "〜くせに",
+   "reading": "くせに",
+   "kana": "くせに",
+   "mean": "明明……却……（含责难）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "知っているくせに教えてくれない",
+     "kana": "しっているくせにおしえてくれない",
+     "zh": "明明知道却不告诉我"
+    }
+   ]
+  },
+  {
+   "id": "n4-nchigai",
+   "level": "n4",
+   "cat": "误判",
+   "pattern": "〜ちがう",
+   "reading": "ちがう",
+   "kana": "ちがう",
+   "mean": "不对；不同",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "答えが違う",
+     "kana": "こたえがちがう",
+     "zh": "答案不对"
+    }
+   ]
+  },
+  {
+   "id": "n4-tsumori",
+   "level": "n4",
+   "cat": "意图",
+   "pattern": "〜つもり",
+   "reading": "つもり",
+   "kana": "つもり",
+   "mean": "打算……；自以为……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "来年日本へ行くつもりだ",
+     "kana": "らいねんにほんへいくつもりだ",
+     "zh": "打算明年去日本"
+    }
+   ]
+  },
+  {
+   "id": "n4-yotei",
+   "level": "n4",
+   "cat": "预定",
+   "pattern": "〜予定",
+   "reading": "よてい",
+   "kana": "よてい",
+   "mean": "预定……；计划……",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "明日出張する予定だ",
+     "kana": "あすしゅっちょうするよていだ",
+     "zh": "预定明天出差"
+    }
+   ]
+  },
+  {
+   "id": "n4-naruhodo",
+   "level": "n4",
+   "cat": "变化",
+   "pattern": "〜なる",
+   "reading": "なる",
+   "kana": "なる",
+   "mean": "变成……（形容词く/に）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "夜がふけて、静かになった",
+     "kana": "よるがふけて、しずかになった",
+     "zh": "夜深了，安静下来"
+    }
+   ]
+  },
+  {
+   "id": "n4-teok",
+   "level": "n4",
+   "cat": "存续",
+   "pattern": "〜ておく（放置）",
+   "reading": "ておく",
+   "kana": "ておく",
+   "mean": "保持……状态",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "窓を開けておく",
+     "kana": "まどをあけておく",
+     "zh": "让窗户开着"
+    }
+   ]
+  },
+  {
+   "id": "n4-ka",
+   "level": "n4",
+   "cat": "疑问",
+   "pattern": "〜か",
+   "reading": "か",
+   "kana": "か",
+   "mean": "是否……；……吗",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "行くかどうか決めていない",
+     "kana": "いくかどうかきめていない",
+     "zh": "还没决定去不去"
+    }
+   ]
+  },
+  {
+   "id": "n4-no",
+   "level": "n4",
+   "cat": "名词化",
+   "pattern": "〜こと / 〜の（名词化）",
+   "reading": "こと / の",
+   "kana": "こと / の",
+   "mean": "把句子名词化（こと偏书面，の偏口语）",
+   "book": "shintan",
+   "examples": [
+    {
+     "ja": "秘密を守ることは大切だ",
+     "kana": "ひみつをまもることはたいせつだ",
+     "zh": "保守秘密很重要"
+    }
+   ]
+  },
+  {
+   "id": "n3-teishimau",
+   "level": "n3",
+   "cat": "完了",
+   "pattern": "〜てしまう（强调完结）",
+   "reading": "てしまう",
+   "kana": "てしまう",
+   "mean": "彻底完成；无法挽回",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "全部食べてしまった",
+     "kana": "ぜんぶたべてしまった",
+     "zh": "全吃完了"
+    }
+   ]
+  },
+  {
+   "id": "n3-nakute",
+   "level": "n3",
+   "cat": "原因否定",
+   "pattern": "〜なくて",
+   "reading": "なくて",
+   "kana": "なくて",
+   "mean": "不……（中顿、原因）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "お金がなくて、買えなかった",
+     "kana": "おかねがなくて、かえなかった",
+     "zh": "没钱，没买成"
+    }
+   ]
+  },
+  {
+   "id": "n3-naihougaii",
+   "level": "n3",
+   "cat": "建议",
+   "pattern": "〜ないほうがいい",
+   "reading": "ないほうがいい",
+   "kana": "ないほうがいい",
+   "mean": "最好不要……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "無理をしないほうがいい",
+     "kana": "むりをしないほうがいい",
+     "zh": "最好不要勉强"
+    }
+   ]
+  },
+  {
+   "id": "n3-youni-naru",
+   "level": "n3",
+   "cat": "能力变化",
+   "pattern": "〜ようになる / 〜なくなる",
+   "reading": "ようになる / なくなる",
+   "kana": "ようになる / なくなる",
+   "mean": "变得会/变得不会……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "一人で行けるようになった",
+     "kana": "ひとりでいけるようになった",
+     "zh": "变得能一个人去了"
+    }
+   ]
+  },
+  {
+   "id": "n3-tsumori-de",
+   "level": "n3",
+   "cat": "意图",
+   "pattern": "〜つもりで",
+   "reading": "つもりで",
+   "kana": "つもりで",
+   "mean": "以……的打算",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "忘れたつもりでいた",
+     "kana": "わすれたつもりでいた",
+     "zh": "一直以为忘了"
+    }
+   ]
+  },
+  {
+   "id": "n3-koto-ni-suru",
+   "level": "n3",
+   "cat": "决定",
+   "pattern": "〜ことにする / 〜ことになる",
+   "reading": "ことにする / ことになる",
+   "kana": "ことにする / ことになる",
+   "mean": "（主观）决定…… / （客观）决定……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "毎日歩くことにした",
+     "kana": "まいにちあるくことにした",
+     "zh": "决定每天走路"
+    }
+   ]
+  },
+  {
+   "id": "n3-tame-ni",
+   "level": "n3",
+   "cat": "目的",
+   "pattern": "〜ために",
+   "reading": "ために",
+   "kana": "ために",
+   "mean": "为了……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "健康のために、ジョギングをする",
+     "kana": "けんこうのために、じょっぎんぐをする",
+     "zh": "为了健康而慢跑"
+    }
+   ]
+  },
+  {
+   "id": "n3-node-soft",
+   "level": "n3",
+   "cat": "原因",
+   "pattern": "〜もので / 〜んで",
+   "reading": "もので / んで",
+   "kana": "もので / んで",
+   "mean": "因为……（口语化原因）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "rainのため、中止なんだ",
+     "kana": "あめのため、ちゅうしなんだ",
+     "zh": "因为下雨，中止了"
+    }
+   ]
+  },
+  {
+   "id": "n3-teage",
+   "level": "n3",
+   "cat": "授受",
+   "pattern": "〜させてもらう / 〜させていただく",
+   "reading": "させてもらう / させていただく",
+   "kana": "させてもらう / させていただく",
+   "mean": "承蒙允许我做……（自谦）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "休ませていただきます",
+     "kana": "やすませていただきます",
+     "zh": "请允许我休息"
+    }
+   ]
+  },
+  {
+   "id": "n3-causative-passive",
+   "level": "n3",
+   "cat": "使役被动",
+   "pattern": "〜させられる",
+   "reading": "させられる",
+   "kana": "させられる",
+   "mean": "被迫做……（使役被动）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "嫌いな野菜を食べさせられた",
+     "kana": "きらいなやさいをたべさせられた",
+     "zh": "被迫吃了讨厌的蔬菜"
+    }
+   ]
+  },
+  {
+   "id": "n3-bakari-ill",
+   "level": "n3",
+   "cat": "负面倾向",
+   "pattern": "〜ばかりだ",
+   "reading": "ばかりだ",
+   "kana": "ばかりだ",
+   "mean": "一味……；越来越……（贬义倾向）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "病気は悪化するばかりだ",
+     "kana": "びょうきはあっかするばかりだ",
+     "zh": "病情一味恶化"
+    }
+   ]
+  },
+  {
+   "id": "n3-kiri",
+   "level": "n3",
+   "cat": "限止",
+   "pattern": "〜きり",
+   "reading": "きり",
+   "kana": "きり",
+   "mean": "只……（后常接否定，表\"仅此而已\"）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "彼とは一度会ったきりだ",
+     "kana": "かれとはいちどあったきりだ",
+     "zh": "和他只见过一次"
+    }
+   ]
+  },
+  {
+   "id": "n3-nado",
+   "level": "n3",
+   "cat": "列举",
+   "pattern": "〜など",
+   "reading": "など",
+   "kana": "など",
+   "mean": "……之类；等等",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "本やノートなどを買った",
+     "kana": "ほんやのーとなどをかった",
+     "zh": "买了书、笔记本之类的"
+    }
+   ]
+  },
+  {
+   "id": "n3-kuseni",
+   "level": "n3",
+   "cat": "逆接",
+   "pattern": "〜くせに",
+   "reading": "くせに",
+   "kana": "くせに",
+   "mean": "明明……却……（强烈责难）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "学生のくせに、勉強しない",
+     "kana": "がくせいのくせに、べんきょうしない",
+     "zh": "明明是学生却不学习"
+    }
+   ]
+  },
+  {
+   "id": "n3-to-nitemo",
+   "level": "n3",
+   "cat": "假定",
+   "pattern": "〜としたら / 〜とすれば",
+   "reading": "としたら / とすれば",
+   "kana": "としたら / とすれば",
+   "mean": "假如……的话",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "宝くじが当たったとしたら、どうする",
+     "kana": "たからくじがあたったとしたら、どうする",
+     "zh": "假如中奖了怎么办"
+    }
+   ]
+  },
+  {
+   "id": "n3-teoku-prep",
+   "level": "n3",
+   "cat": "准备",
+   "pattern": "〜ておく（预先）",
+   "reading": "ておく",
+   "kana": "ておく",
+   "mean": "事先做好……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "明日の準備をしておく",
+     "kana": "あすのじゅんびをしておく",
+     "zh": "事先做好明天的准备"
+    }
+   ]
+  },
+  {
+   "id": "n3-ka-douka",
+   "level": "n3",
+   "cat": "疑问词",
+   "pattern": "〜かどうか",
+   "reading": "かどうか",
+   "kana": "かどうか",
+   "mean": "是否……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "行くかどうか知らない",
+     "kana": "いくかどうかしらない",
+     "zh": "不知道去不去"
+    }
+   ]
+  },
+  {
+   "id": "n3-mono",
+   "level": "n3",
+   "cat": "理由",
+   "pattern": "〜もの",
+   "reading": "もの",
+   "kana": "もの",
+   "mean": "因为……嘛（辩解、强调理由）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "初めてだもの、分からない",
+     "kana": "はじめてだもの、わからない",
+     "zh": "因为是第一次，所以不懂"
+    }
+   ]
+  },
+  {
+   "id": "n3-monoda",
+   "level": "n3",
+   "cat": "感慨",
+   "pattern": "〜ものだ",
+   "reading": "ものだ",
+   "kana": "ものだ",
+   "mean": "本来就该……；真是……（感慨）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "子どもは元気なものだ",
+     "kana": "こどもはげんきなものだ",
+     "zh": "孩子本来就该活泼"
+    }
+   ]
+  },
+  {
+   "id": "n3-nchigau-yo",
+   "level": "n3",
+   "cat": "转折",
+   "pattern": "〜が、〜けれども",
+   "reading": "が / けれども",
+   "kana": "が / けれども",
+   "mean": "虽然……但是……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "行きたいが、時間がない",
+     "kana": "いきたいが、じかんがない",
+     "zh": "想去，但没时间"
+    }
+   ]
+  },
+  {
+   "id": "n3-node-demo",
+   "level": "n3",
+   "cat": "让步",
+   "pattern": "〜ても、〜でも",
+   "reading": "ても / でも",
+   "kana": "ても / でも",
+   "mean": "即使……也",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "雨が降っても行く",
+     "kana": "あめがふってもいく",
+     "zh": "即使下雨也去"
+    }
+   ]
+  },
+  {
+   "id": "n3-koto-ga-dekiru",
+   "level": "n3",
+   "cat": "能力",
+   "pattern": "〜ことができる（可能）",
+   "reading": "ことができる",
+   "kana": "ことができる",
+   "mean": "会……；能……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "漢字が読めるようになった",
+     "kana": "かんじがよめるようになった",
+     "zh": "变得能读汉字了"
+    }
+   ]
+  },
+  {
+   "id": "n3-tekudasai",
+   "level": "n3",
+   "cat": "请求",
+   "pattern": "〜てください",
+   "reading": "てください",
+   "kana": "てください",
+   "mean": "请做……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "静かにしてください",
+     "kana": "しずかにしてください",
+     "zh": "请安静"
+    }
+   ]
+  },
+  {
+   "id": "n3-naritai",
+   "level": "n3",
+   "cat": "变化愿望",
+   "pattern": "〜になりたい",
+   "reading": "になりたい",
+   "kana": "になりたい",
+   "mean": "想成为……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "医者になりたい",
+     "kana": "いしゃになりたい",
+     "zh": "想成为医生"
+    }
+   ]
+  },
+  {
+   "id": "n3-no-desu",
+   "level": "n3",
+   "cat": "说明",
+   "pattern": "〜んです / 〜のです",
+   "reading": "んです / のです",
+   "kana": "んです / のです",
+   "mean": "（强调、解释说明）是……的",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "遅れたのは、電車が止まったんです",
+     "kana": "おくれたのは、でんしゃがとまったんです",
+     "zh": "迟到是因为电车停了"
+    }
+   ]
+  },
+  {
+   "id": "n3-kara-ii",
+   "level": "n3",
+   "cat": "许可",
+   "pattern": "〜さえ〜ば",
+   "reading": "さえ〜ば",
+   "kana": "さえ〜ば",
+   "mean": "只要……就……",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "お金さえあれば、買える",
+     "kana": "おかねさえあれば、かえる",
+     "zh": "只要有钱就能买"
+    }
+   ]
+  },
+  {
+   "id": "n3-okagade",
+   "level": "n3",
+   "cat": "原因（受益）",
+   "pattern": "〜おかげで",
+   "reading": "おかげで",
+   "kana": "おかげで",
+   "mean": "多亏……（好的原因）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "先生のおかげで、合格した",
+     "kana": "せんせいのおかげで、ごうかくした",
+     "zh": "多亏老师，合格了"
+    }
+   ]
+  },
+  {
+   "id": "n3-sewa",
+   "level": "n3",
+   "cat": "原因（受害）",
+   "pattern": "〜せいで / 〜せいか",
+   "reading": "せいで / せいか",
+   "kana": "せいで / せいか",
+   "mean": "都怪……（不好的原因）",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "疲労のせいで、ミスした",
+     "kana": "ひろうのせいで、みすした",
+     "zh": "都怪疲劳，出了错"
+    }
+   ]
+  },
+  {
+   "id": "n3-kawari",
+   "level": "n3",
+   "cat": "代替",
+   "pattern": "〜かわりに",
+   "reading": "かわりに",
+   "kana": "かわりに",
+   "mean": "代替……；作为交换",
+   "book": "soumatome",
+   "examples": [
+    {
+     "ja": "私が行くかわりに、君は残って",
+     "kana": "わたしがいくかわりに、きみはのこって",
+     "zh": "我去，你留下"
+    }
+   ]
+  },
+  {
+   "id": "n2-node-ni",
+   "level": "n2",
+   "cat": "逆接",
+   "pattern": "〜ものの",
+   "reading": "ものの",
+   "kana": "ものの",
+   "mean": "虽然……但是……（多用于书面）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "努力したものの、結果は出なかった",
+     "kana": "どりょくしたものの、けっかはでなかった",
+     "zh": "虽然努力了，但没出结果"
+    }
+   ]
+  },
+  {
+   "id": "n2-dokoro",
+   "level": "n2",
+   "cat": "递进否定",
+   "pattern": "〜どころか",
+   "reading": "どころか",
+   "kana": "どころか",
+   "mean": "别说……连……都（根本不是/不如）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "日本語どころか、英語も話せない",
+     "kana": "にほんごどころか、えいごもはなせない",
+     "zh": "别说日语，连英语都不会说"
+    }
+   ]
+  },
+  {
+   "id": "n2-bakari",
+   "level": "n2",
+   "cat": "倾向",
+   "pattern": "〜っぽい",
+   "reading": "っぽい",
+   "kana": "っぽい",
+   "mean": "带有……倾向；像……的",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "忘れっぽい",
+     "kana": "わすれっぽい",
+     "zh": "健忘的"
+    }
+   ]
+  },
+  {
+   "id": "n2-gachi",
+   "level": "n2",
+   "cat": "负面倾向",
+   "pattern": "〜がち",
+   "reading": "がち",
+   "kana": "がち",
+   "mean": "容易……；往往……（偏负面）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "冬は病気しがちだ",
+     "kana": "ふゆはびょうきしがちだ",
+     "zh": "冬天容易生病"
+    }
+   ]
+  },
+  {
+   "id": "n2-nagara",
+   "level": "n2",
+   "cat": "逆接",
+   "pattern": "〜ながら（逆接）",
+   "reading": "ながら",
+   "kana": "ながら",
+   "mean": "虽然……却……（ながら表逆接）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "知っていながら、教えなかった",
+     "kana": "しっていながら、おしえなかった",
+     "zh": "虽然知道却没说"
+    }
+   ]
+  },
+  {
+   "id": "n2-teikanai",
+   "level": "n2",
+   "cat": "让步",
+   "pattern": "〜てもかまわない",
+   "reading": "てもかまわない",
+   "kana": "てもかまわない",
+   "mean": "即使……也无妨",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "静かなら、ここで食べてもかまわない",
+     "kana": "しずかなら、ここでたべてもかまわない",
+     "zh": "只要安静，在这里吃也无妨"
+    }
+   ]
+  },
+  {
+   "id": "n2-kagiri",
+   "level": "n2",
+   "cat": "限定条件",
+   "pattern": "〜かぎり",
+   "reading": "かぎり",
+   "kana": "かぎり",
+   "mean": "只要……就；在……范围内",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "気力があるかぎり、続ける",
+     "kana": "きりょくがあるかぎり、つづける",
+     "zh": "只要有毅力就继续"
+    }
+   ]
+  },
+  {
+   "id": "n2-kagiride",
+   "level": "n2",
+   "cat": "否定限定",
+   "pattern": "〜にかぎって",
+   "reading": "にかぎって",
+   "kana": "にかぎって",
+   "mean": "偏偏……；唯独……（不会/会）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "彼にかぎって、遅刻しない",
+     "kana": "かれにかぎって、ちこくしない",
+     "zh": "唯独他不会迟到"
+    }
+   ]
+  },
+  {
+   "id": "n2-tohan",
+   "level": "n2",
+   "cat": "契机",
+   "pattern": "〜をきっかけに",
+   "reading": "をきっかけに",
+   "kana": "をきっかけに",
+   "mean": "以……为契机",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "留学をきっかけに、日本語を学んだ",
+     "kana": "りゅうがくをきっかけに、にほんごをまなんだ",
+     "zh": "以留学为契机学了日语"
+    }
+   ]
+  },
+  {
+   "id": "n2-tohan2",
+   "level": "n2",
+   "cat": "契机",
+   "pattern": "〜を皮切りに",
+   "reading": "をかわきりに",
+   "kana": "をかわきりに",
+   "mean": "以……为开端",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "東京公演を皮切りに、全国ツアーを行う",
+     "kana": "とうきょうこうえんをかわきりに、ぜんこくつあーを行う",
+     "zh": "以东京公演为开端，进行全国巡演"
+    }
+   ]
+  },
+  {
+   "id": "n2-aida",
+   "level": "n2",
+   "cat": "期间",
+   "pattern": "〜ている間に",
+   "reading": "ているあいだに",
+   "kana": "ているあいだに",
+   "mean": "在……期间（趁……时）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "留守の間に、泥棒が入った",
+     "kana": "るすのあいだに、どろぼうがはいった",
+     "zh": "趁家里没人，小偷进来了"
+    }
+   ]
+  },
+  {
+   "id": "n2-ouchi",
+   "level": "n2",
+   "cat": "期间",
+   "pattern": "〜うちに",
+   "reading": "うちに",
+   "kana": "うちに",
+   "mean": "趁……；在……之内",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "若いうちに、多く経験したい",
+     "kana": "わかいうちに、おおくけいけんしたい",
+     "zh": "想趁年轻多经历"
+    }
+   ]
+  },
+  {
+   "id": "n2-sae",
+   "level": "n2",
+   "cat": "强调",
+   "pattern": "〜さえ〜ば",
+   "reading": "さえ〜ば",
+   "kana": "さえ〜ば",
+   "mean": "只要……就（强调最低条件）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "言葉さえ分かれば、暮らせる",
+     "kana": "ことばさえわかれば、くらせる",
+     "zh": "只要懂语言就能生活"
+    }
+   ]
+  },
+  {
+   "id": "n2-shika-nai",
+   "level": "n2",
+   "cat": "最低限",
+   "pattern": "〜にすぎない",
+   "reading": "にすぎない",
+   "kana": "にすぎない",
+   "mean": "只不过是……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "噂にすぎない",
+     "kana": "うわさにすぎない",
+     "zh": "只不过是传闻"
+    }
+   ]
+  },
+  {
+   "id": "n2-ka-wa",
+   "level": "n2",
+   "cat": "部分否定",
+   "pattern": "〜かどうか",
+   "reading": "かどうか",
+   "kana": "かどうか",
+   "mean": "是否……（用于不确定）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "成功するかどうか、分からない",
+     "kana": "せいこうするかどうか、わからない",
+     "zh": "不知道能否成功"
+    }
+   ]
+  },
+  {
+   "id": "n2-toie",
+   "level": "n2",
+   "cat": "逆接让步",
+   "pattern": "〜といえども",
+   "reading": "といえども",
+   "kana": "といえども",
+   "mean": "即使……也（书面、正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "子どもといえども、責任がある",
+     "kana": "こどもといえども、せきにんがある",
+     "zh": "即使是孩子也有责任"
+    }
+   ]
+  },
+  {
+   "id": "n2-womotte",
+   "level": "n2",
+   "cat": "手段·依据",
+   "pattern": "〜をもって",
+   "reading": "をもって",
+   "kana": "をもって",
+   "mean": "以……；凭借……（正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "自信をもって、発表した",
+     "kana": "じしんをもって、はっぴょうした",
+     "zh": "充满自信地发表了"
+    }
+   ]
+  },
+  {
+   "id": "n2-ikande",
+   "level": "n2",
+   "cat": "依据",
+   "pattern": "〜に基づいて",
+   "reading": "にもとづいて",
+   "kana": "にもとづいて",
+   "mean": "基于……；根据……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "事実に基づいて、話す",
+     "kana": "じじつにもとづいて、はなす",
+     "zh": "基于事实说话"
+    }
+   ]
+  },
+  {
+   "id": "n2-toitukara",
+   "level": "n2",
+   "cat": "关联",
+   "pattern": "〜に関して / 〜について",
+   "reading": "について / に関して",
+   "kana": "について / に関して",
+   "mean": "关于……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "環境問題について、議論した",
+     "kana": "かんきょうもんだいについて、ぎろんした",
+     "zh": "关于环境问题进行了讨论"
+    }
+   ]
+  },
+  {
+   "id": "n2-tajyou",
+   "level": "n2",
+   "cat": "对立",
+   "pattern": "〜に対して",
+   "reading": "に対して",
+   "kana": "に対して",
+   "mean": "对……（对象）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "先生に対して、失礼な態度をとる",
+     "kana": "せんせいに対して、しつれいなたいどをとる",
+     "zh": "对老师采取失礼的态度"
+    }
+   ]
+  },
+  {
+   "id": "n2-node-oni",
+   "level": "n2",
+   "cat": "伴随",
+   "pattern": "〜に伴って",
+   "reading": "にともなって",
+   "kana": "にともなって",
+   "mean": "伴随……；随着……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "高齢化に伴って、問題が増えた",
+     "kana": "こうれいかにともなって、もんだいがふえた",
+     "zh": "伴随老龄化，问题增多"
+    }
+   ]
+  },
+  {
+   "id": "n2-awase",
+   "level": "n2",
+   "cat": "并列",
+   "pattern": "〜に加えて",
+   "reading": "にくわえて",
+   "kana": "にくわえて",
+   "mean": "加上……；而且……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "雪に加えて、風も強い",
+     "kana": "ゆきにくわえて、かぜもつよい",
+     "zh": "加上雪，风也大"
+    }
+   ]
+  },
+  {
+   "id": "n2-kawari",
+   "level": "n2",
+   "cat": "代替·转折",
+   "pattern": "〜かわりに（转折）",
+   "reading": "かわりに",
+   "kana": "かわりに",
+   "mean": "虽然……但是（作为补偿/反面）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "安いかわりに、品質はいまいち",
+     "kana": "やすいかわりに、ひんしつはいまいち",
+     "zh": "虽然便宜，但质量一般"
+    }
+   ]
+  },
+  {
+   "id": "n2-ppoi2",
+   "level": "n2",
+   "cat": "样态",
+   "pattern": "〜らしく",
+   "reading": "らしく",
+   "kana": "らしく",
+   "mean": "像……的样子；典型的",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "春らしい陽気",
+     "kana": "はるらしいようき",
+     "zh": "春天般的天气"
+    }
+   ]
+  },
+  {
+   "id": "n2-ppan",
+   "level": "n2",
+   "cat": "方式",
+   "pattern": "〜ように（示例）",
+   "reading": "ように",
+   "kana": "ように",
+   "mean": "像……那样",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "先生が言ったように、勉強する",
+     "kana": "せんせいがいったように、べんきょうする",
+     "zh": "像老师说的那样学习"
+    }
+   ]
+  },
+  {
+   "id": "n2-tohan3",
+   "level": "n2",
+   "cat": "契机",
+   "pattern": "〜を契機に",
+   "reading": "をけいきに",
+   "kana": "をけいきに",
+   "mean": "以……为契机",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "結婚を契機に、会社を辞めた",
+     "kana": "けっこんをけいきに、かいしゃをやめた",
+     "zh": "以结婚为契机辞了工作"
+    }
+   ]
+  },
+  {
+   "id": "n2-teoku-n2",
+   "level": "n2",
+   "cat": "准备",
+   "pattern": "〜ておく（持续准备）",
+   "reading": "ておく",
+   "kana": "ておく",
+   "mean": "预先做好并保持",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "資料をコピーしておく",
+     "kana": "しりょうをこぴーしておく",
+     "zh": "事先复印好资料"
+    }
+   ]
+  },
+  {
+   "id": "n2-maka",
+   "level": "n2",
+   "cat": "比喻",
+   "pattern": "〜まま",
+   "reading": "まま",
+   "kana": "まま",
+   "mean": "保持……状态",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "靴のまま、上がって",
+     "kana": "くつのまま、あがって",
+     "zh": "穿着鞋上来"
+    }
+   ]
+  },
+  {
+   "id": "n2-tohan4",
+   "level": "n2",
+   "cat": "契机",
+   "pattern": "〜を機に",
+   "reading": "をきに",
+   "kana": "をきに",
+   "mean": "借……之机",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "引越しを機に、断捨離した",
+     "kana": "ひっこしをきに、だんしゃりした",
+     "zh": "借搬家之机做了断舍离"
+    }
+   ]
+  },
+  {
+   "id": "n2-koso",
+   "level": "n2",
+   "cat": "强调",
+   "pattern": "〜こそ",
+   "reading": "こそ",
+   "kana": "こそ",
+   "mean": "正是……；才",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "これこそ、求めていた答えだ",
+     "kana": "これこそ、もとめていたこたえだ",
+     "zh": "这正是寻求的答案"
+    }
+   ]
+  },
+  {
+   "id": "n2-shika-nai2",
+   "level": "n2",
+   "cat": "仅此",
+   "pattern": "〜しかない",
+   "reading": "しかない",
+   "kana": "しかない",
+   "mean": "只能……；只有……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "待つしかない",
+     "kana": "まつしかない",
+     "zh": "只能等"
+    }
+   ]
+  },
+  {
+   "id": "n2-koto-ni",
+   "level": "n2",
+   "cat": "决定",
+   "pattern": "〜ことになっている",
+   "reading": "ことになっている",
+   "kana": "ことになっている",
+   "mean": "规定……；按惯例……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "ここでは、禁煙することになっている",
+     "kana": "ここでは、きんえんすることになっている",
+     "zh": "这里规定禁烟"
+    }
+   ]
+  },
+  {
+   "id": "n2-mono-ka",
+   "level": "n2",
+   "cat": "强烈否定",
+   "pattern": "〜ものか",
+   "reading": "ものか",
+   "kana": "ものか",
+   "mean": "怎么会……！（强烈否定）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "あんな店、二度と行くものか",
+     "kana": "あんなみせ、にどといくものか",
+     "zh": "那种店怎么会再去第二次"
+    }
+   ]
+  },
+  {
+   "id": "n2-teiku",
+   "level": "n2",
+   "cat": "趋向",
+   "pattern": "〜ていく（変化・継続）",
+   "reading": "ていく",
+   "kana": "ていく",
+   "mean": "……下去（变化/继续）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "習慣がなくなっていく",
+     "kana": "しゅうかんがなくなっていく",
+     "zh": "习惯逐渐消失"
+    }
+   ]
+  },
+  {
+   "id": "n2-tekuru",
+   "level": "n2",
+   "cat": "趋向",
+   "pattern": "〜てくる（変化・開始）",
+   "reading": "てくる",
+   "kana": "てくる",
+   "mean": "……起来（变化/开始）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "日本語が面白くなってきた",
+     "kana": "にほんごがおもしろくなってきた",
+     "zh": "日语变得有意思起来了"
+    }
+   ]
+  },
+  {
+   "id": "n2-node-res",
+   "level": "n2",
+   "cat": "结果",
+   "pattern": "〜あげく",
+   "reading": "あげく",
+   "kana": "あげく",
+   "mean": "最后……（多指负面结果）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "悩んだあげく、辞めた",
+     "kana": "なやんだあげく、やめた",
+     "zh": "烦恼到最后辞职了"
+    }
+   ]
+  },
+  {
+   "id": "n2-tohan5",
+   "level": "n2",
+   "cat": "契机",
+   "pattern": "〜を境に",
+   "reading": "をさかいに",
+   "kana": "をさかいに",
+   "mean": "以……为界",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "2020年を境に、方針を変えた",
+     "kana": "2020ねんをさかいに、ほうしんをかえた",
+     "zh": "以2020年为界改变了方针"
+    }
+   ]
+  },
+  {
+   "id": "n2-kuse-n2",
+   "level": "n2",
+   "cat": "逆接",
+   "pattern": "〜くせして",
+   "reading": "くせして",
+   "kana": "くせして",
+   "mean": "明明……却……（口语责难）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "知ってるくせして、知らないふり",
+     "kana": "しってるくせして、しらないふり",
+     "zh": "明明知道却装不知道"
+    }
+   ]
+  },
+  {
+   "id": "n2-teoku-n3",
+   "level": "n2",
+   "cat": "准备",
+   "pattern": "〜ておく（放任）",
+   "reading": "ておく",
+   "kana": "ておく",
+   "mean": "放置不管",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "そのままにしておく",
+     "kana": "そのままにしておく",
+     "zh": "就那样放着"
+    }
+   ]
+  },
+  {
+   "id": "n1-zaru",
+   "level": "n1",
+   "cat": "义务·必然",
+   "pattern": "〜ざるを得ない",
+   "reading": "ざるをえない",
+   "kana": "ざるをえない",
+   "mean": "不得不……；被迫……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "止むを得ず、延期した",
+     "kana": "やむをえず、えんきたした",
+     "zh": "不得已延期了"
+    }
+   ]
+  },
+  {
+   "id": "n1-beki",
+   "level": "n1",
+   "cat": "义务·劝告",
+   "pattern": "〜べき / 〜べきではない",
+   "reading": "べき",
+   "kana": "べき",
+   "mean": "应该……；不应……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "約束は守るべきだ",
+     "kana": "やくそくはまもるべきだ",
+     "zh": "约定应该遵守"
+    }
+   ]
+  },
+  {
+   "id": "n1-beku",
+   "level": "n1",
+   "cat": "目的",
+   "pattern": "〜べく",
+   "reading": "べく",
+   "kana": "べく",
+   "mean": "为了……（书面目的）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "勝つべく、練習した",
+     "kana": "かつべく、れんしゅうした",
+     "zh": "为了取胜而练习"
+    }
+   ]
+  },
+  {
+   "id": "n1-mono-wo",
+   "level": "n1",
+   "cat": "逆接",
+   "pattern": "〜ものを",
+   "reading": "ものを",
+   "kana": "ものを",
+   "mean": "明明……却（含遗憾、责备）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "言えばよいものを、黙っていた",
+     "kana": "いえばよいものを、だまっていた",
+     "zh": "明明说就好，却沉默了"
+    }
+   ]
+  },
+  {
+   "id": "n1-taru",
+   "level": "n1",
+   "cat": "资格·状态",
+   "pattern": "〜たる",
+   "reading": "たる",
+   "kana": "たる",
+   "mean": "作为……的；具有……资格的",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "教育者たる者、公平でなければならない",
+     "kana": "きょういくしゃたるもの、こうへいでなければならない",
+     "zh": "作为教育者必须公平"
+    }
+   ]
+  },
+  {
+   "id": "n1-gotoki",
+   "level": "n1",
+   "cat": "比喻·例示",
+   "pattern": "〜ごとき / 〜ごとく",
+   "reading": "ごとき / ごとく",
+   "kana": "ごとき / ごとく",
+   "mean": "像……一样；如同……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "夢のごとく、消えた",
+     "kana": "ゆめのごとく、きえた",
+     "zh": "如梦般消失了"
+    }
+   ]
+  },
+  {
+   "id": "n1-zuniwa",
+   "level": "n1",
+   "cat": "必然",
+   "pattern": "〜ずにはすまない",
+   "reading": "ずにはすまない",
+   "kana": "ずにはすまない",
+   "mean": "不……不行（社会/情理上必须）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "謝らずにはすまない",
+     "kana": "あやまらずにはすまない",
+     "zh": "不道歉不行"
+    }
+   ]
+  },
+  {
+   "id": "n1-inai-de",
+   "level": "n1",
+   "cat": "必然",
+   "pattern": "〜ないではいられない",
+   "reading": "ないではいられない",
+   "kana": "ないではいられない",
+   "mean": "忍不住……；不能不……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "笑わないではいられなかった",
+     "kana": "わらわないではいられなかった",
+     "zh": "忍不住笑了"
+    }
+   ]
+  },
+  {
+   "id": "n1-nbakari",
+   "level": "n1",
+   "cat": "样态·限度",
+   "pattern": "〜んばかり",
+   "reading": "んばかり",
+   "kana": "んばかり",
+   "mean": "简直要……；眼看就要……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "飛び上がらんばかりに、喜んだ",
+     "kana": "とびあがらんばかりに、よろこんだ",
+     "zh": "高兴得几乎要跳起来"
+    }
+   ]
+  },
+  {
+   "id": "n1-sobakara",
+   "level": "n1",
+   "cat": "即刻",
+   "pattern": "〜そばから",
+   "reading": "そばから",
+   "kana": "そばから",
+   "mean": "刚……就……（常含徒劳）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "教えるそばから、忘れる",
+     "kana": "おしえるそばから、わすれる",
+     "zh": "刚教完就忘"
+    }
+   ]
+  },
+  {
+   "id": "n1-dani",
+   "level": "n1",
+   "cat": "否定强调",
+   "pattern": "〜だに",
+   "reading": "だに",
+   "kana": "だに",
+   "mean": "连……都（与否定呼应，表\"甚至\"）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "夢にだに見ない",
+     "kana": "ゆめにだにみない",
+     "zh": "连梦都不曾梦见"
+    }
+   ]
+  },
+  {
+   "id": "n1-nominarazu",
+   "level": "n1",
+   "cat": "递进",
+   "pattern": "〜のみならず",
+   "reading": "のみならず",
+   "kana": "のみならず",
+   "mean": "不仅……而且……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "日本のみならず、海外でも人気",
+     "kana": "にほんのみならず、かいがいでもにんき",
+     "zh": "不仅日本，海外也受欢迎"
+    }
+   ]
+  },
+  {
+   "id": "n1-ikkan",
+   "level": "n1",
+   "cat": "依据",
+   "pattern": "〜いかん",
+   "reading": "いかん",
+   "kana": "いかん",
+   "mean": "根据……；取决于……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "結果いかんでは、方針を見直す",
+     "kana": "けっかいかんでは、ほうしんをみなおす",
+     "zh": "视结果重新审视方针"
+    }
+   ]
+  },
+  {
+   "id": "n1-o-hajime",
+   "level": "n1",
+   "cat": "列举",
+   "pattern": "〜をはじめ（として）",
+   "reading": "をはじめ",
+   "kana": "をはじめ",
+   "mean": "以……为首；……以及……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "東京をはじめ、大都市で開催",
+     "kana": "とうきょうをはじめ、だいとしでかいさい",
+     "zh": "以东京为首在大城市举办"
+    }
+   ]
+  },
+  {
+   "id": "n1-aatte",
+   "level": "n1",
+   "cat": "原因·契机",
+   "pattern": "〜とあって",
+   "reading": "とあって",
+   "kana": "とあって",
+   "mean": "因为……（特殊的理由）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "休日とあって、混雑している",
+     "kana": "きゅうじつとあって、こんざつしている",
+     "zh": "因为是休息日，很拥挤"
+    }
+   ]
+  },
+  {
+   "id": "n1-atarashite",
+   "level": "n1",
+   "cat": "场合",
+   "pattern": "〜にあたって / 〜にあたり",
+   "reading": "にあたって",
+   "kana": "にあたって",
+   "mean": "在……之际；当……时",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "卒業にあたって、感謝を述べる",
+     "kana": "そつぎょうにあたって、かんしゃをのべる",
+     "zh": "在毕业之际表达感谢"
+    }
+   ]
+  },
+  {
+   "id": "n1-katagata",
+   "level": "n1",
+   "cat": "兼顾",
+   "pattern": "〜かたがた",
+   "reading": "かたがた",
+   "kana": "かたがた",
+   "mean": "顺便……；借……之便",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "散歩かたがた、買い物をする",
+     "kana": "さんぽかたがた、かいものをする",
+     "zh": "散步顺便买东西"
+    }
+   ]
+  },
+  {
+   "id": "n1-hayai",
+   "level": "n1",
+   "cat": "即刻",
+   "pattern": "〜が早いか",
+   "reading": "がはやいか",
+   "kana": "がはやいか",
+   "mean": "刚……就（几乎同时）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "ベルが鳴るが早いか、飛び出した",
+     "kana": "べるがなるがはやいか、とびだした",
+     "zh": "铃刚响就冲了出去"
+    }
+   ]
+  },
+  {
+   "id": "n1-sokonomu",
+   "level": "n1",
+   "cat": "否定强调",
+   "pattern": "〜そもそも",
+   "reading": "そもそも",
+   "kana": "そもそも",
+   "mean": "根本……；究竟（用于质疑前提）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "そもそも、その話は本当か",
+     "kana": "そもそも、そのはなしはほんとうか",
+     "zh": "说到底那件事是真的吗"
+    }
+   ]
+  },
+  {
+   "id": "n1-toite",
+   "level": "n1",
+   "cat": "逆接让步",
+   "pattern": "〜とはいえ",
+   "reading": "とはいえ",
+   "kana": "とはいえ",
+   "mean": "虽说……但是……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "春とはいえ、寒い",
+     "kana": "はるとはいえ、さむい",
+     "zh": "虽说是春天，但很冷"
+    }
+   ]
+  },
+  {
+   "id": "n1-toiutemo",
+   "level": "n1",
+   "cat": "逆接让步",
+   "pattern": "〜といっても",
+   "reading": "といっても",
+   "kana": "といっても",
+   "mean": "虽说……（也……）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "独身といっても、子どもがいる",
+     "kana": "どくしんといっても、こどもがいる",
+     "zh": "虽是单身，但有孩子"
+    }
+   ]
+  },
+  {
+   "id": "n1-itte",
+   "level": "n1",
+   "cat": "让步",
+   "pattern": "〜としたところで",
+   "reading": "としたところで",
+   "kana": "としたところで",
+   "mean": "即使……也（用于人）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "彼としたところで、同じだ",
+     "kana": "かれとしたところで、おなじだ",
+     "zh": "即使他也一样"
+    }
+   ]
+  },
+  {
+   "id": "n1-toiutemo2",
+   "level": "n1",
+   "cat": "条件",
+   "pattern": "〜とあれば",
+   "reading": "とあれば",
+   "kana": "とあれば",
+   "mean": "如果……（出于必要/理由）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "必要とあれば、行く",
+     "kana": "ひつようとあれば、いく",
+     "zh": "如果有必要就去"
+    }
+   ]
+  },
+  {
+   "id": "n1-ka-to",
+   "level": "n1",
+   "cat": "选择",
+   "pattern": "〜か〜ないかのうちに",
+   "reading": "か〜ないかのうちに",
+   "kana": "か〜ないかのうちに",
+   "mean": "刚一……就……（几乎同时）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "着くか着かないかのうちに、雨が降った",
+     "kana": "つくかつかないかのうちに、あめがふった",
+     "zh": "刚到就下雨了"
+    }
+   ]
+  },
+  {
+   "id": "n1-toieba",
+   "level": "n1",
+   "cat": "话题",
+   "pattern": "〜といえば",
+   "reading": "といえば",
+   "kana": "といえば",
+   "mean": "说起……；提到……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "京都といえば、紅葉が有名",
+     "kana": "きょうといえば、こうようがゆうめい",
+     "zh": "说起京都，红叶有名"
+    }
+   ]
+  },
+  {
+   "id": "n1-makade",
+   "level": "n1",
+   "cat": "极限",
+   "pattern": "〜極み",
+   "reading": "きわみ",
+   "kana": "きわみ",
+   "mean": "……之极；极其……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "感激の極み",
+     "kana": "かんげきのきわみ",
+     "zh": "感激之极"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka2",
+   "level": "n1",
+   "cat": "比喻极端",
+   "pattern": "〜の至り",
+   "reading": "のいたり",
+   "kana": "のいたり",
+   "mean": "……之至（形容达到极点）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "光栄の至り",
+     "kana": "こうえいのいたり",
+     "zh": "无比光荣"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka3",
+   "level": "n1",
+   "cat": "复数强调",
+   "pattern": "〜も〜ば〜も",
+   "reading": "も〜ば〜も",
+   "kana": "も〜ば〜も",
+   "mean": "既……又……；……也好……也好",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "酒も飲めば、歌も歌う",
+     "kana": "さけものめば、うたもうたう",
+     "zh": "又喝酒又唱歌"
+    }
+   ]
+  },
+  {
+   "id": "n1-yara",
+   "level": "n1",
+   "cat": "列举不定",
+   "pattern": "〜やら〜やら",
+   "reading": "やら〜やら",
+   "kana": "やら〜やら",
+   "mean": "又……又……（列举，含混乱）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "忙しいやら、疲れるやらで、大変",
+     "kana": "いそがしいやら、つかれるやらで、たいへん",
+     "zh": "又忙又累，不得了"
+    }
+   ]
+  },
+  {
+   "id": "n1-tari",
+   "level": "n1",
+   "cat": "例示",
+   "pattern": "〜なり〜なり",
+   "reading": "なり〜なり",
+   "kana": "なり〜なり",
+   "mean": "……也好……也好（任选其一）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "電話なり、メールなりで連絡",
+     "kana": "でんわなり、めーるなりでれんらく",
+     "zh": "电话或邮件联系"
+    }
+   ]
+  },
+  {
+   "id": "n1-toie",
+   "level": "n1",
+   "cat": "逆接",
+   "pattern": "〜とて",
+   "reading": "とて",
+   "kana": "とて",
+   "mean": "即使……也（书面）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "子どもとて、分かる",
+     "kana": "こどもとて、わかる",
+     "zh": "即便是孩子也懂"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-ya",
+   "level": "n1",
+   "cat": "原因·理由",
+   "pattern": "〜ゆえ（に）",
+   "reading": "ゆえ",
+   "kana": "ゆえ",
+   "mean": "因为……（书面、正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "不公平ゆえ、反対する",
+     "kana": "ふこうへいゆえ、はんたいする",
+     "zh": "因不公而反对"
+    }
+   ]
+  },
+  {
+   "id": "n1-miso",
+   "level": "n1",
+   "cat": "让步极限",
+   "pattern": "〜ないまでも",
+   "reading": "ないまでも",
+   "kana": "ないまでも",
+   "mean": "即使不……也（至少……）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "賛成しないまでも、反対もしない",
+     "kana": "さんせいしないまでも、はんたいもしない",
+     "zh": "即使不赞成也不反对"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-niwa",
+   "level": "n1",
+   "cat": "逆接",
+   "pattern": "〜なくはない",
+   "reading": "なくはない",
+   "kana": "なくはない",
+   "mean": "并非不……；也不是不……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "行きたくなくはない",
+     "kana": "いきたくなくはない",
+     "zh": "也不是不想去"
+    }
+   ]
+  },
+  {
+   "id": "n1-miso2",
+   "level": "n1",
+   "cat": "限止",
+   "pattern": "〜ないものでもない",
+   "reading": "ないものでもない",
+   "kana": "ないものでもない",
+   "mean": "也不是不……（有某种可能）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "条件によっては、考えないものでもない",
+     "kana": "じょうけんによっては、かんがえないものでもない",
+     "zh": "视条件也不是不考虑"
+    }
+   ]
+  },
+  {
+   "id": "n1-yari",
+   "level": "n1",
+   "cat": "目的",
+   "pattern": "〜んがため（に）",
+   "reading": "んがため",
+   "kana": "んがため",
+   "mean": "为了……（强烈书面目的）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "成功せんがため、努力した",
+     "kana": "せいこうせんがため、どりょくした",
+     "zh": "为了成功而努力"
+    }
+   ]
+  },
+  {
+   "id": "n1-toiereba",
+   "level": "n1",
+   "cat": "话题",
+   "pattern": "〜といえども",
+   "reading": "といえども",
+   "kana": "といえども",
+   "mean": "即使称其为……也",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "プロといえども、ミスはある",
+     "kana": "ぷろといえども、みすはある",
+     "zh": "即使是专业也有失误"
+    }
+   ]
+  },
+  {
+   "id": "n1-koso",
+   "level": "n1",
+   "cat": "强调",
+   "pattern": "〜からこそ",
+   "reading": "からこそ",
+   "kana": "からこそ",
+   "mean": "正因为……才……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "君がいるからこそ、頑張れる",
+     "kana": "きみがいるからこそ、がんばれる",
+     "zh": "正因为有你才能坚持"
+    }
+   ]
+  },
+  {
+   "id": "n1-ppan2",
+   "level": "n1",
+   "cat": "方式",
+   "pattern": "〜ずに（は）",
+   "reading": "ずに",
+   "kana": "ずに",
+   "mean": "不……而……（书面否定伴随）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "準備せずに、出かけた",
+     "kana": "じゅんびせずに、でかけた",
+     "zh": "没准备就出门了"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka4",
+   "level": "n1",
+   "cat": "比喻",
+   "pattern": "〜かのよう",
+   "reading": "かのよう",
+   "kana": "かのよう",
+   "mean": "好像……似的",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "何も知らないかのよう",
+     "kana": "なにもしらないかのよう",
+     "zh": "好像什么都不知道似的"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan6",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜をもって（结束）",
+   "reading": "をもって",
+   "kana": "をもって",
+   "mean": "以……（结束、起始，正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "本日をもって、終了する",
+     "kana": "ほんじつをもって、しゅうりょうする",
+     "zh": "以今日为止结束"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-ka",
+   "level": "n1",
+   "cat": "原因疑问",
+   "pattern": "〜こととて",
+   "reading": "こととて",
+   "kana": "こととて",
+   "mean": "因为……（书面理由）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "慣れぬこととて、失敗した",
+     "kana": "なれぬこととて、しっぱいした",
+     "zh": "因为不习惯而失败了"
+    }
+   ]
+  },
+  {
+   "id": "n1-miso3",
+   "level": "n1",
+   "cat": "限止",
+   "pattern": "〜ないではおかない",
+   "reading": "ないではおかない",
+   "kana": "ないではおかない",
+   "mean": "必然会使……（不由得）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "笑わせないではおかない",
+     "kana": "わらわせないではおかない",
+     "zh": "必然让人发笑"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan7",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜を限りに",
+   "reading": "をかぎりに",
+   "kana": "をかぎりに",
+   "mean": "以……为限；到……为止",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "今大会を限りに、引退する",
+     "kana": "こんたいかいをかぎりに、いんたいする",
+     "zh": "以本届大会为限退役"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka5",
+   "level": "n1",
+   "cat": "并列",
+   "pattern": "〜といい〜といい",
+   "reading": "といい〜といい",
+   "kana": "といい〜といい",
+   "mean": "……也好……也好（都）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "料理といい、接客といい、最高",
+     "kana": "りょうりといい、せっきゃくといい、さいこう",
+     "zh": "料理也好服务也好都顶级"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-res2",
+   "level": "n1",
+   "cat": "结果",
+   "pattern": "〜あげく（の果て）",
+   "reading": "あげく",
+   "kana": "あげく",
+   "mean": "最后……（负面结果，同N2强化）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "長期間の治療のあげく、回復",
+     "kana": "ちょうきかんのちりょうのあげく、かいふく",
+     "zh": "长期治疗最后康复"
+    }
+   ]
+  },
+  {
+   "id": "n1-ppan3",
+   "level": "n1",
+   "cat": "比喻",
+   "pattern": "〜かのごとく",
+   "reading": "かのごとく",
+   "kana": "かのごとく",
+   "mean": "如同……一般",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "自分かのごとく、助けた",
+     "kana": "じぶんかのごとく、たすけた",
+     "zh": "如同救自己一般救了他"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan8",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜を皮切りとして",
+   "reading": "をかわきりとして",
+   "kana": "をかわきりとして",
+   "mean": "以……为开端（正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "東京を皮切りとして、公演",
+     "kana": "とうきょうをかわきりとして、こうえん",
+     "zh": "以东京为开端公演"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka6",
+   "level": "n1",
+   "cat": "比喻极端",
+   "pattern": "〜の極み",
+   "reading": "のきわみ",
+   "kana": "のきわみ",
+   "mean": "……的极点（同極み）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "名誉の極み",
+     "kana": "めいよのきわみ",
+     "zh": "名誉之极"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-ya2",
+   "level": "n1",
+   "cat": "原因",
+   "pattern": "〜ゆえの",
+   "reading": "ゆえの",
+   "kana": "ゆえの",
+   "mean": "……之故的（连体修饰）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "貧しさゆえの悲劇",
+     "kana": "まずしさゆえのひげき",
+     "zh": "因贫穷而起的悲剧"
+    }
+   ]
+  },
+  {
+   "id": "n1-miso4",
+   "level": "n1",
+   "cat": "限止",
+   "pattern": "〜ないことはない",
+   "reading": "ないことはない",
+   "kana": "ないことはない",
+   "mean": "也不是不……（有某种可能）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "行けないことはない",
+     "kana": "いけないことはない",
+     "zh": "也不是不能去"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan9",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜を機にして",
+   "reading": "をきにして",
+   "kana": "をきにして",
+   "mean": "以……为契机（同を機に）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "独立を機にして、新生活",
+     "kana": "どくりつをきにして、しんせいかつ",
+     "zh": "以独立为契机新生活"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka7",
+   "level": "n1",
+   "cat": "强调",
+   "pattern": "〜もさることながら",
+   "reading": "もさることながら",
+   "kana": "もさることながら",
+   "mean": "……固然……更……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "味もさることながら、見た目も",
+     "kana": "あじもさることながら、みためも",
+     "zh": "味道固然好，外观也"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-res3",
+   "level": "n1",
+   "cat": "结果",
+   "pattern": "〜末（に）",
+   "reading": "すえ",
+   "kana": "すえ",
+   "mean": "经过……最后",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "検討した末、採用した",
+     "kana": "けんとうしたすえ、さいようした",
+     "zh": "探讨最后采用了"
+    }
+   ]
+  },
+  {
+   "id": "n1-ppan4",
+   "level": "n1",
+   "cat": "比喻",
+   "pattern": "〜かのような",
+   "reading": "かのような",
+   "kana": "かのような",
+   "mean": "像……一样的（连体）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "夢かのような体験",
+     "kana": "ゆめかのようなたいけん",
+     "zh": "如梦般的体验"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan10",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜を契機として",
+   "reading": "をけいきとして",
+   "kana": "をけいきとして",
+   "mean": "以……为契机（正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "改革を契機として、成長",
+     "kana": "かいかくをけいきとして、せいちょう",
+     "zh": "以改革为契机成长"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka8",
+   "level": "n1",
+   "cat": "列举",
+   "pattern": "〜といい〜といい",
+   "reading": "といい〜といい",
+   "kana": "といい〜といい",
+   "mean": "……也好……也好（强调全部）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "色といい、形といい、完璧",
+     "kana": "いろといい、かたちといい、かんぺき",
+     "zh": "颜色也好形状也好都完美"
+    }
+   ]
+  },
+  {
+   "id": "n1-koso2",
+   "level": "n1",
+   "cat": "强调",
+   "pattern": "〜からこそ〜のだ",
+   "reading": "からこそ〜のだ",
+   "kana": "からこそ〜のだ",
+   "mean": "正因为……才……（强调原因）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "好きだからこそ、厳しく言う",
+     "kana": "すきだからこそ、きびしくいう",
+     "zh": "正因为喜欢才说得严厉"
+    }
+   ]
+  },
+  {
+   "id": "n1-miso5",
+   "level": "n1",
+   "cat": "限止",
+   "pattern": "〜ないまでも",
+   "reading": "ないまでも",
+   "kana": "ないまでも",
+   "mean": "即使不……也（至少）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "全額でなくとも、一部払う",
+     "kana": "ぜんがくでなくとも、いちぶはらう",
+     "zh": "即使不是全额也付一部分"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-ya3",
+   "level": "n1",
+   "cat": "原因",
+   "pattern": "〜がゆえに",
+   "reading": "がゆえに",
+   "kana": "がゆえに",
+   "mean": "因为……（が接在体言/形容动词）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "古いがゆえに、価値がある",
+     "kana": "ふるいがゆえに、かちがある",
+     "zh": "因古老而有价值"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan11",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜を境として",
+   "reading": "をさかいとして",
+   "kana": "をさかいとして",
+   "mean": "以……为界（正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "事件を境として、方針転換",
+     "kana": "じけんをさかいとして、ほうしんてんかん",
+     "zh": "以事件为界转变方针"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka9",
+   "level": "n1",
+   "cat": "强调",
+   "pattern": "〜はおろか",
+   "reading": "はおろか",
+   "kana": "はおろか",
+   "mean": "别说……连……都（同どころか正式）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "漢字はおろか、ひらがなも",
+     "kana": "かんじはおろか、ひらがなも",
+     "zh": "别说汉字，连平假名都"
+    }
+   ]
+  },
+  {
+   "id": "n1-node-res4",
+   "level": "n1",
+   "cat": "结果",
+   "pattern": "〜あげくの果て",
+   "reading": "あげくのはて",
+   "kana": "あげくのはて",
+   "mean": "最后……（更强调负面）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "迷ったあげくの果て、決断",
+     "kana": "まよったあげくのはて、けつだん",
+     "zh": "迷茫最后做出决断"
+    }
+   ]
+  },
+  {
+   "id": "n1-ppan5",
+   "level": "n1",
+   "cat": "比喻",
+   "pattern": "〜が如く",
+   "reading": "がごとく",
+   "kana": "がごとく",
+   "mean": "如……般（书面比喻）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "風が如く、駆け抜けた",
+     "kana": "かぜがごとく、かけぬけた",
+     "zh": "如风般驰骋"
+    }
+   ]
+  },
+  {
+   "id": "n1-tohan12",
+   "level": "n1",
+   "cat": "契机",
+   "pattern": "〜をもちまして",
+   "reading": "をもちまして",
+   "kana": "をもちまして",
+   "mean": "以……（郑重起始/结束）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "これをもちまして、閉会",
+     "kana": "これをもちまして、へいかい",
+     "zh": "以此宣布闭幕"
+    }
+   ]
+  },
+  {
+   "id": "n1-maka10",
+   "level": "n1",
+   "cat": "并列",
+   "pattern": "〜にしろ〜にしろ",
+   "reading": "にしろ〜にしろ",
+   "kana": "にしろ〜にしろ",
+   "mean": "无论……还是……",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "雨にしろ、雪にしろ、行く",
+     "kana": "あめにしろ、ゆきにしろ、いく",
+     "zh": "无论雨还是雪都去"
+    }
+   ]
+  },
+  {
+   "id": "n1-koso3",
+   "level": "n1",
+   "cat": "强调",
+   "pattern": "〜こそ〜れ",
+   "reading": "こそ〜れ",
+   "kana": "こそ〜れ",
+   "mean": "正是……才（强调，后接ば/ても等）",
+   "book": "lanbao",
+   "examples": [
+    {
+     "ja": "これこそが、本物",
+     "kana": "これこそが、ほんもの",
+     "zh": "这才是真货"
+    }
+   ]
+  }
+ ]
+}

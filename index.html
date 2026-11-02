@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0f14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="N1修道之路">
+  <title>N1修道之路 · 日语N1词汇修行</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- ===================== 开场动画（仙侠水墨） ===================== -->
+  <div class="intro" id="intro">
+    <div class="intro-mountains" aria-hidden="true">
+      <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="mg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a3a4d"/><stop offset="1" stop-color="#16202c"/>
+          </linearGradient>
+          <linearGradient id="mg2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1c2a38"/><stop offset="1" stop-color="#0e151d"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,420 C140,340 240,400 360,360 C500,312 600,400 740,350 C860,308 940,372 1000,340 L1000,600 L0,600 Z" fill="url(#mg2)" opacity=".9"/>
+        <path d="M0,470 C160,420 280,470 420,430 C560,392 680,470 820,430 C900,404 960,440 1000,420 L1000,600 L0,600 Z" fill="url(#mg1)"/>
+        <circle cx="760" cy="150" r="54" fill="#e9d9b0" opacity=".75"/>
+      </svg>
+    </div>
+    <div class="intro-mist"></div>
+    <div class="intro-inner">
+      <div class="intro-seal">修</div>
+      <h1 class="intro-title">N1修道之路</h1>
+      <p class="intro-sub">执笔为剑，以言入道</p>
+      <button class="intro-enter" id="btnEnter">入 山 求 道</button>
+    </div>
+  </div>
+
+  <div class="wrap" id="wrap" hidden>
+
+    <!-- ===================== 练习页 ===================== -->
+    <section class="page page-practice" id="pagePractice">
+
+      <!-- 顶栏 -->
+      <header class="bar">
+        <div class="brand">
+          <span class="logo">修</span>
+          <span class="brand-text">N1修道之路<em>日语N1词汇修行</em></span>
+        </div>
+        <button class="icon-btn" id="btnSettings" aria-label="设置">⚙</button>
+      </header>
+
+      <div class="section">
+        <div class="section-head"><span class="section-kicker">第一关</span>选择级别</div>
+        <nav class="tabs levels" id="levelTabs" aria-label="级别"></nav>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><span class="section-kicker">第二关</span>修行方式</div>
+        <nav class="tabs modes" id="modeTabs" aria-label="模式"></nav>
+        <div class="chips" id="filterChips" aria-label="筛选"></div>
+        <button class="diag-link" id="btnDiag">不知道从哪开始？先做 25 词摸底 →</button>
+      </div>
+
+      <main class="card" id="card">
+        <div class="progress-row">
+          <div class="progress"><i id="progressFill"></i></div>
+          <div class="counter" id="counter">0 / 0</div>
+        </div>
+
+        <section class="prompt">
+          <div class="badges" id="badges"></div>
+          <div class="word" id="wordLine"></div>
+          <div class="reading" id="readingLine"></div>
+          <div class="meta" id="metaLine"></div>
+          <div class="meaning" id="meaningLine"></div>
+        </section>
+
+        <div class="cells" id="cells"></div>
+
+        <div class="input-row" id="inputRow">
+          <input id="typed" type="text" inputmode="latin" autocomplete="off"
+                 autocorrect="off" autocapitalize="off" spellcheck="false"
+                 placeholder="罗马字，如 fumae-ru / shinjuku">
+          <button class="clear-btn" id="btnClear" aria-label="清空">✕</button>
+        </div>
+
+        <div class="options" id="options"></div>
+
+        <section class="feedback" id="feedback"></section>
+
+        <div class="study-bar" id="studyBar" hidden>
+          <button class="ghost" id="btnNoKnow">✗ 不认识</button>
+          <button class="ghost" id="btnStudySpeak">🔊 发音</button>
+          <button class="primary" id="btnKnow">✓ 认识</button>
+        </div>
+
+        <div class="actions" id="actions">
+          <button class="ghost" id="btnHint">提示</button>
+          <button class="ghost" id="btnSpeak">发音</button>
+          <button class="ghost" id="btnSkip">跳过</button>
+          <button class="primary" id="btnNext">下一个</button>
+        </div>
+      </main>
+      <footer class="stats" id="stats"></footer>
+    </section>
+
+    <!-- ===================== 词表页 ===================== -->
+    <section class="page page-words" id="pageWords" hidden>
+      <div class="section-head page-title">词 库 经 卷</div>
+      <div class="list-tools">
+        <input id="listSearch" type="search" placeholder="搜词形 / 读音 / 中文释义" autocomplete="off">
+        <select id="listFocus">
+          <option value="0">全部</option>
+          <option value="2">★+ 重点/次重点</option>
+          <option value="3">★ 重点</option>
+        </select>
+      </div>
+      <div class="list-body" id="listBody"></div>
+    </section>
+
+    <!-- ===================== 语法页 ===================== -->
+    <section class="page page-grammar" id="pageGrammar" hidden>
+      <div class="section-head page-title">句 法 心 诀</div>
+      <div class="grammar-stage" id="grammarStage"></div>
+      <div class="list-tools grammar-tools">
+        <input id="grammarSearch" type="search" placeholder="搜句型 / 读音 / 中文" autocomplete="off">
+        <select id="grammarLevel">
+          <option value="all">全部阶梯</option>
+          <option value="n5">N5 基础</option>
+          <option value="n4">N4 初阶</option>
+          <option value="n3">N3 进阶</option>
+          <option value="n2">N2 中阶</option>
+          <option value="n1">N1 高阶</option>
+        </select>
+      </div>
+      <div class="list-body" id="grammarBody"></div>
+    </section>
+
+    <!-- ===================== 进度页 ===================== -->
+    <section class="page page-progress" id="pageProgress" hidden>
+      <div class="section-head page-title">修 行 功 课</div>
+      <div class="progress-grid" id="progressGrid"></div>
+    </section>
+
+    <!-- ===================== 关于页 ===================== -->
+    <section class="page page-about" id="pageAbout" hidden>
+      <div class="section-head page-title">关 于 此 道</div>
+      <div class="about-card">
+        <p class="about-lead">《N1修道之路》是一款离线可用的日语 N1 词汇修行工具。以「看、打、听、默、辨」五种方式反复锤炼，配合两年常考重点标注，助你通关 N1。</p>
+        <div class="about-block">
+          <h3>翻译与释义参考</h3>
+          <p>本词库的中文释义，主要参考以下两本国内权威 N1 词汇书校订：</p>
+          <ul class="book-list">
+            <li>
+              <div class="book-name">《新日本语能力考试 N1 文字词汇（红宝书）》</div>
+              <div class="book-meta">许小明、(日)Reika 编著 · 华东理工大学出版社</div>
+            </li>
+            <li>
+              <div class="book-name">《新完全掌握 日语能力考试 N1 词汇》</div>
+              <div class="book-meta">北京语言大学出版社</div>
+            </li>
+            <li>
+              <div class="book-name">《新日本语能力考试 N1 文法（蓝宝书）》</div>
+              <div class="book-meta">许小明、Reika、新世界图书事业部 编 · 华东理工大学出版社</div>
+            </li>
+            <li>
+              <div class="book-name">《新完全マスター 文法 N1 / N2 / N3》</div>
+              <div class="book-meta">スリーエーネットワーク · 凡人社</div>
+            </li>
+          </ul>
+        </div>
+        <div class="about-block">
+          <h3>修行路线</h3>
+          <p>主战场为 <b>N1 + N2 合并词库（7257 词）</b>。若摸底某级低于 60%，回去补该级的 ★ 重点即可。建议：第 1 遍跟打 ★+ → 第 2 遍待复习 → 第 3 遍听写/默写。</p>
+        </div>
+        <div class="about-block">
+          <h3>词库来源</h3>
+          <p>kotoba-local（CC BY-NC 4.0）本地词库 · 离线缓存，可安装到手机主屏当作 App 使用。</p>
+        </div>
+        <button class="about-settings" id="btnAboutSettings">打开设置</button>
+      </div>
+    </section>
+
+    <!-- ===================== 底部导航 ===================== -->
+    <nav class="nav-pages" id="navPages">
+      <button class="nav-item on" data-page="practice"><span class="nav-ico">📝</span><span>修行</span></button>
+      <button class="nav-item" data-page="grammar"><span class="nav-ico">🗡️</span><span>句法</span></button>
+      <button class="nav-item" data-page="words"><span class="nav-ico">📚</span><span>词库</span></button>
+      <button class="nav-item" data-page="progress"><span class="nav-ico">📊</span><span>功课</span></button>
+      <button class="nav-item" data-page="about"><span class="nav-ico">ℹ️</span><span>关于</span></button>
+    </nav>
+  </div>
+
+  <!-- ===================== 设置面板 ===================== -->
+  <div class="sheet-mask" id="sheetMask" hidden>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="设置">
+      <div class="sheet-head">
+        <h2>设置</h2>
+        <button class="icon-btn" id="btnCloseSheet" aria-label="关闭">✕</button>
+      </div>
+      <div class="sheet-body">
+        <label class="row">
+          <span>每轮词数</span>
+          <select id="setRoundSize">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+        <label class="row">
+          <span>答对后自动下一题</span>
+          <input type="checkbox" id="setAutoNext" checked>
+        </label>
+        <label class="row">
+          <span>跟打模式显示假名提示</span>
+          <input type="checkbox" id="setShowKana">
+        </label>
+        <label class="row">
+          <span>答对后朗读</span>
+          <input type="checkbox" id="setAutoSpeak">
+        </label>
+        <div class="sheet-note">
+          手机端请把输入法切到「英文」键盘，输入罗马字会自动转成假名；
+          也可以直接切日语键盘打假名/汉字。
+        </div>
+        <button class="danger" id="btnResetProgress">清空学习记录</button>
+        <div class="sheet-note" id="versionNote"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/kana.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
